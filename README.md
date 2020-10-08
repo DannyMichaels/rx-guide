@@ -7,11 +7,11 @@ RXGuide
 ## Project Description
 
 RXGuide is an app made to help the user organize his medication.
-The user will be able to add medication, select time to take, and check if he took or skipped the medication.
+The user will be able to add, edit or remove medication and check if he took or skipped the medication.
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+Homepage Desktop: ![alt text](https://i.imgur.com/nGl2Pbi.png)
 
 ## Component Hierarchy
 
