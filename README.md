@@ -15,7 +15,7 @@ Homepage: ![alt text](https://i.imgur.com/nGl2Pbi.png)
 
 ## Component Hierarchy
 
-Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
+![alt text](https://i.imgur.com/twF7C35.png)
 
 ## API and Data Sample
 
