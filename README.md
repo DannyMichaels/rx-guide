@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+## Project Name
 
-In the project directory, you can run:
+RXGuide 
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+RXGuide is an app made to help the user organize his medication.
+The user will be able to add medication, select time to take, and check if he took or skipped the medication.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Wireframes
 
-### `npm test`
+Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Component Hierarchy
 
-### `npm run build`
+Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## API and Data Sample
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### MVP 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Have the main RXGuide page (User should be able to add RX, remove, edit, or skip)
+- Use ReactDOM for other pages (About, etc.)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### PostMVP  
+- Create a RX interactions page.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Schedule
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+|  Day | Deliverable | Status
+|---|---| ---|
+|October 8 | Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|October 9| Project Approval | Incomplete
+|October 11 | Core Application Structure (HTML, CSS, etc.) | Incomplete
+|October 12| Pseudocode / actual code | Incomplete
+|October 13 | Initial Clickable Model  | Incomplete
+|October 14 | MVP | Incomplete
+|October 16 | Presentations | Incomplete
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Timeframes
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 6hrs| 5hrs | 5hrs |
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## SWOT Analysis
 
-### Making a Progressive Web App
+### Strengths:
+- User will be able to add, edit, snooze, or remove RX.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Weaknesses:
+- User will only be able to select a limited # of RX from a list.
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Opportunities:
+- There aren't many good looking RX websites or apps, creating a nice looking RX app can be very competitive. 
+### Threats:
+- There are other apps with the simillar idea competing for the same people.
