@@ -11,7 +11,7 @@ The user will be able to add, edit or remove medication and check if he took or 
 
 ## Wireframes
 
-Homepage Desktop: ![alt text](https://i.imgur.com/nGl2Pbi.png)
+Homepage: ![alt text](https://i.imgur.com/nGl2Pbi.png)
 
 ## Component Hierarchy
 
@@ -24,7 +24,8 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 
 #### MVP 
 
-- Have the main RXGuide page (User should be able to add RX, remove, edit, or skip)
+- Have the main RXGuide page 
+- User should be able to add, remove, edit, or skip RX.
 - Use ReactDOM for other pages (About, etc.)
 
 
@@ -50,19 +51,21 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Creating base | H | 10hrs | N/A | N/A  |
+| Working with API | H | 8hrs | N/A | N/A |
+| MVP | H | 10hrs | N/A | N/A |
+| Total | H | 50hrs | N/A | N/A |
 
 ## SWOT Analysis
 
 ### Strengths:
-- User will be able to add, edit, snooze, or remove RX.
+- User will be able to add, edit, skip, or remove RX.
 
 ### Weaknesses:
 - User will only be able to select a limited # of RX from a list.
 
 ### Opportunities:
 - There aren't many good looking RX websites or apps, creating a nice looking RX app can be very competitive. 
+- most RX apps are cold-hearted/elegant looking, I went for a different approach which might attract people.
 ### Threats:
 - There are other apps with the simillar idea competing for the same people.
