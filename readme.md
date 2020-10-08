@@ -14,6 +14,7 @@ The user will be able to add medication, select time to take, and check if he to
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
 ## Component Hierarchy
+
 Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
 
 ## API and Data Sample
@@ -23,8 +24,12 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 
 #### MVP 
 
+- Have the main RXGuide page (User should be able to add RX, remove, edit, or skip)
+- Use ReactDOM for other pages (About, etc.)
+
 
 #### PostMVP  
+- Create a RX interaction page.
 
 
 
