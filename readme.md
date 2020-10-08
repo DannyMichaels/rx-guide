@@ -64,9 +64,12 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ## SWOT Analysis
 
 ### Strengths:
+- User will be able to add, edit, snooze, or remove RX.
 
 ### Weaknesses:
+- User will only be able to select a limited # of RX from a list.
 
 ### Opportunities:
 
 ### Threats:
+There are other apps with the simillar idea competing for the same people.
