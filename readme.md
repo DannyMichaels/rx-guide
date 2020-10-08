@@ -2,11 +2,12 @@
 
 ## Project Name
 
-The name of your project.
+RXGuide 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+RXGuide is an app made to help the user organize his medication.
+The user will be able to add medication, select time to take, and check if he took or skipped the medication.
 
 ## Wireframes
 
@@ -19,22 +20,13 @@ Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/u
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
 
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+
 
 ## Project Schedule
 
@@ -44,13 +36,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|October 8 | Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|October 9| Project Approval | Incomplete
+|October 11 | Core Application Structure (HTML, CSS, etc.) | Incomplete
+|October 12| Pseudocode / actual code | Incomplete
+|October 13 | Initial Clickable Model  | Incomplete
+|October 14 | MVP | Incomplete
+|October 16 | Presentations | Incomplete
 
 ## Timeframes
 
