@@ -2,7 +2,7 @@
 
 ## Project Name
 
-RXGuide 
+RXGuide
 
 ## Project Description
 
@@ -11,7 +11,9 @@ The user will be able to add, edit or remove medication and check if he took or 
 
 ## Wireframes
 
-Homepage: ![alt text](https://i.imgur.com/nGl2Pbi.png)
+Desktop: ![desktop](https://i.imgur.com/nGl2Pbi.png)
+Mobile: ![mobile](https://i.imgur.com/1d2Rrpz.png)
+Tablet: ![tablet](https://i.imgur.com/5UDLN0K.png)
 
 ## Component Hierarchy
 
@@ -19,53 +21,55 @@ Homepage: ![alt text](https://i.imgur.com/nGl2Pbi.png)
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+Airtable
 
+#### MVP
 
-#### MVP 
-
-- Have the main RXGuide page 
+- Have the main RXGuide page
 - User should be able to add, remove, edit, or skip RX.
 - Use ReactDOM for other pages (About, etc.)
 
+#### PostMVP
 
-#### PostMVP  
 - Create a RX interactions page.
+- User could choose a drug class before choosing drug name from list.
 
 ## Project Schedule
 
-
-|  Day | Deliverable | Status
-|---|---| ---|
-|October 8 | Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|October 9| Project Approval | Incomplete
-|October 11 | Core Application Structure (HTML, CSS, etc.) | Incomplete
-|October 12| Pseudocode / actual code | Incomplete
-|October 13 | Initial Clickable Model  | Incomplete
-|October 14 | MVP | Incomplete
-|October 16 | Presentations | Incomplete
+| Day        | Deliverable                                        | Status     |
+| ---------- | -------------------------------------------------- | ---------- |
+| October 8  | Prompt / Wireframes / Priority Matrix / Timeframes | Complete   |
+| October 9  | Project Approval                                   | Incomplete |
+| October 11 | Core Application Structure (HTML, CSS, etc.)       | Incomplete |
+| October 12 | Pseudocode / actual code                           | Incomplete |
+| October 13 | Initial Clickable Model                            | Incomplete |
+| October 14 | MVP                                                | Incomplete |
+| October 16 | Presentations                                      | Incomplete |
 
 ## Timeframes
 
-
-
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Creating base | H | 10hrs | N/A | N/A  |
-| Working with API | H | 8hrs | N/A | N/A |
-| MVP | H | 10hrs | N/A | N/A |
-| Total | H | 50hrs | N/A | N/A |
+| Component        | Priority | Estimated Time | Time Invested | Actual Time |
+| ---------------- | :------: | :------------: | :-----------: | :---------: |
+| Creating base    |    H     |     10hrs      |      N/A      |     N/A     |
+| Working with API |    H     |      8hrs      |      N/A      |     N/A     |
+| MVP              |    H     |     10hrs      |      N/A      |     N/A     |
+| Total            |    H     |     50hrs      |      N/A      |     N/A     |
 
 ## SWOT Analysis
 
 ### Strengths:
+
 - User will be able to add, edit, skip, or remove RX.
 
 ### Weaknesses:
+
 - User will only be able to select a limited # of RX from a list.
 
 ### Opportunities:
-- There aren't many good looking RX websites or apps, creating a nice looking RX app can be very competitive. 
+
+- There aren't many good looking RX websites or apps, creating a nice looking RX app can be very competitive.
 - most RX apps are cold-hearted/elegant looking, I went for a different approach which might attract people.
+
 ### Threats:
+
 - There are other apps with the simillar idea competing for the same people.
