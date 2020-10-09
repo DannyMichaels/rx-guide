@@ -85,6 +85,7 @@ Airtable API : https://airtable.com/
 
 ### Strengths:
 
+- App will be comfortable to use.
 - User will be able to add, edit, skip, or remove RX.
 
 ### Weaknesses:
