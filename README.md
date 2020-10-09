@@ -11,8 +11,11 @@ The user will be able to add, edit or remove medication and check if he took or 
 
 ## Wireframes
 
+####
 Desktop: ![desktop](https://i.imgur.com/nGl2Pbi.png)
+####
 Mobile: ![mobile](https://i.imgur.com/1d2Rrpz.png)
+####
 Tablet: ![tablet](https://i.imgur.com/5UDLN0K.png)
 
 ## Component Hierarchy
