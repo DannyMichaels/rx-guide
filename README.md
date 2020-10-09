@@ -21,7 +21,30 @@ Tablet: ![tablet](https://i.imgur.com/5UDLN0K.png)
 
 ## API and Data Sample
 
-Airtable
+Airtable API : https://airtable.com/
+```
+[
+    {
+        "id": "att6f75cc83f1b648",
+        "size": 26317,
+        "url": "https://www.filepicker.io/api/file/5YTJXioCQG0tYWPw6OPw",
+        "type": "image/jpeg",
+        "filename": "33823_3_xl.jpg",
+        "thumbnails": {
+            "small": {
+                 "url": "https://www.filepicker.io/api/file/Dy5gioxaShSUvHX0LgIC",
+                 "width": 54,
+                 "height": 36
+             },
+            "large": {
+                 "url": "https://www.filepicker.io/api/file/ueYi00yRiqhuUn420UZA",
+                 "width": 197,
+                 "height": 131
+             }
+         }
+    }
+]
+```                         
 
 #### MVP
 
