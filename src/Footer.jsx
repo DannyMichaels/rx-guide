@@ -8,7 +8,7 @@ const Footer = (props) => {
 
         {/* PLUS BUTTON */}
        
-        {props.location.pathname === '/About' ? null :
+        {/* {props.location.pathname === '/About' ? null :
           <img
             src="https://i.imgur.com/BZOV6FC.png"
             width="100"
@@ -16,7 +16,7 @@ const Footer = (props) => {
             className="plus-button"
             alt="plus button"
           />
-        }
+        } */}
 
 
         {/* ABOUT */}
@@ -35,7 +35,7 @@ const Footer = (props) => {
             
             <a onClick href='https://github.com/DannyMichaels/' target='_blank'>
               <img
-              src="https://i.pinimg.com/originals/f0/b4/e1/f0b4e156fa3664144cc219f32ac67f86.png"
+              src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
                 width='150'
                 height='150'
                 className='about'

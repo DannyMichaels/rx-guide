@@ -17,8 +17,8 @@ footer {
 .about {
   width: 100px;
   height: 100px;
-position: absolute;
-right: 0px;
+  position: absolute;
+  right: 0px;
 
 }
 
@@ -33,4 +33,29 @@ width: 350px;
   left: 0px;
 }
 
+.med {
+  margin: 0 auto;
+  border: 1px solid black;
+  background: #ffccff;
+  box-shadow: 5px 5px peachpuff;
+  width: 50%;
+  text-align: center;
+}
 
+.add {
+ width: 20px;
+ height: 20px;
+}
+
+form {
+  text-align: center;
+}
+button {
+  margin: 10px;
+  
+}
+
+button:hover{
+  cursor: pointer;
+  
+}
