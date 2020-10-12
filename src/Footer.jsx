@@ -4,6 +4,22 @@ const Footer = () => {
   return (
     <div>
        <footer>
+      
+        {/* PLUS BUTTON */}
+        
+        <a href="#">
+            <img
+           src="https://i.imgur.com/BZOV6FC.png"
+           width="100"
+            height="100"
+           className="plus-button"
+                alt="plus button"
+              />
+        </a>
+        
+
+        {/* ABOUT */}
+
         <a href="#">
             <img
            src="https://i.imgur.com/Zhlm6SD.png"
@@ -13,7 +29,8 @@ const Footer = () => {
                 alt="Logo"
               />
           </a>
-          </footer>
+          
+      </footer>
     </div>
   );
 };

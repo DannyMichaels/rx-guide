@@ -7,16 +7,19 @@ flex-direction: column;
 
 footer {
   position:fixed;
-  left:0px;
-  bottom:0px;
-  height:100px;
-  width:100%;
+  left: 0px;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
   background:#999;
 }
 
 .about {
   width: 100px;
-  height: 100px
+  height: 100px;
+position: absolute;
+right: 0px;
+
 }
 
 .rxguide-logo {
@@ -25,6 +28,9 @@ width: 350px;
 }
 
 
-
+.plus-button {
+  position: absolute;
+  left: 0px;
+}
 
 
