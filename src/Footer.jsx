@@ -1,23 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div>
       <footer>
 
         {/* PLUS BUTTON */}
-
-        <img
-          src="https://i.imgur.com/BZOV6FC.png"
-          width="100"
-          height="100"
-          className="plus-button"
-          alt="plus button"
-        />
+       
+        {props.location.pathname === '/About' ? null :
+          <img
+            src="https://i.imgur.com/BZOV6FC.png"
+            width="100"
+            height="100"
+            className="plus-button"
+            alt="plus button"
+          />
+        }
 
 
         {/* ABOUT */}
+      
         <Link to='/About'>
           <img
             src="https://i.imgur.com/Zhlm6SD.png"
@@ -32,4 +35,6 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default withRouter(Footer); 
+
+// withRouter gives access to the router props.
