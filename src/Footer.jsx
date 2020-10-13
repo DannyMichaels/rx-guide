@@ -31,6 +31,8 @@ const Footer = (props) => {
               alt="Logo"
             />
           }
+
+        
           {props.location.pathname === '/' ? null :
             
             <a onClick href='https://github.com/DannyMichaels/' target='_blank'>

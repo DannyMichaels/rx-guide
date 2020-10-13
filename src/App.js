@@ -6,11 +6,13 @@ import Footer from './Footer'
 import About from './About'
 import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom'
+
 import './App.css';
 
 function App() {
   const [meds, setMeds] = useState([])
-
+  const [fetchMeds, setFetchMeds] = useState(false)
   useEffect(() => {
     const getApi = async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
@@ -22,7 +24,7 @@ function App() {
       setMeds(response.data.records)
     }
   getApi()
-  }, [])
+  }, [fetchMeds])
  
   return (
     <>
@@ -31,17 +33,21 @@ function App() {
           <Header />
 
           
-          {meds.map((med) => <Med med={med} />)}
-       <CreateMed />
-
+          {meds.map((med) => 
+            
+            <Med med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds}/>)}
+            
+          < CreateMed meds={meds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds}/>
+          
           <Footer />
           <Switch>
-            <Route path="/About" component={About} />
+            <Route path="/About" exact component={About} />
           </Switch>
         </div>
       </Router>
     </>
   );
 }
+
 
 export default App;

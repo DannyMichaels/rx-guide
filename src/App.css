@@ -1,8 +1,14 @@
+.App {
+  font-family: 'Sansita Swashed';
+}
+
 body {
 background-color: #fffcdc;
 display: flex;
 flex-direction: column;
-
+ min-height: 400px;
+   margin-bottom: 120px;
+   clear: both;
 }
 
 footer {
@@ -35,11 +41,14 @@ width: 350px;
 
 .med {
   margin: 0 auto;
-  border: 1px solid black;
+  border: 1px solid pink;
   background: #ffccff;
   box-shadow: 5px 5px peachpuff;
-  width: 50%;
+  width: 250px;
+  max-width: 250px;
+  margin: 20px auto;
   text-align: center;
+
 }
 
 .add {
@@ -48,14 +57,36 @@ width: 350px;
 }
 
 form {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  width: 200px;
+  max-width: 200px;
+  margin: 0 auto;
+  border: 1px solid pink;
+  padding: 10px;
+  background-color: #ffccff;
+  box-shadow: 5px 5px peachpuff;
 }
+
 button {
   margin: 10px;
-  
+  padding: 10px;
+  background-color: white;
+  border: 1px solid pink;
 }
 
 button:hover{
   cursor: pointer;
   
+}
+
+.med-pic{
+  margin-left: 75%;
+  margin-bottom: -10%;
+}
+
+.update-med {
+  box-shadow: none;
+  border: none;
 }
