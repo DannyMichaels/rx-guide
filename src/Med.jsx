@@ -16,7 +16,7 @@ const Med = (props) => {
       });
       props.setFetchMeds(!props.fetchMeds)
       setDeleted(false)
-    }, 2000)
+    }, 1000)
   }
 
 
@@ -45,7 +45,7 @@ const Med = (props) => {
         setFetchMeds={props.setFetchMeds}
 
       />
-      <button onClick={handleDelete}>{deleted ? 'deleted' : <img src="https://i.imgur.com/JRRT416.png"
+      <button onClick={handleDelete}>{deleted ? 'deleting' : <img src="https://i.imgur.com/JRRT416.png"
         width='20px'
       />
       }
