@@ -7,6 +7,7 @@ import About from './About'
 import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link, withRouter } from 'react-router-dom'
+import Home from './Home'
 
 import './App.css';
 
@@ -32,6 +33,10 @@ function App() {
         <div className="App">
           <Header />
 
+          {/* <main> */}
+
+            {/* <Home /> */}
+          {/* </main> */}
           
           {meds.map((med) => 
             

@@ -10,7 +10,9 @@ flex-direction: column;
    margin-bottom: 120px;
    clear: both;
 }
-
+nav {
+  text-align: center;
+}
 footer {
   position:fixed;
   left: 0px;
