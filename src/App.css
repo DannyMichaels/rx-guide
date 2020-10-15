@@ -71,6 +71,8 @@ form {
   padding: 10px;
   background-color: #ffccff;
   box-shadow: 5px 5px peachpuff;
+  align-items: center;
+  margin-top: 20px;
 }
 
 button {
@@ -78,12 +80,13 @@ button {
   padding: 10px;
   background-color: white;
   border: 1px solid pink;
-}
-
-button{ 
+  align-items: center;
+  text-align: center;
   padding: 10px 40px;  
   overflow:hidden;
 }
+
+
 
 
 .med-pic{
@@ -146,7 +149,9 @@ button:hover {
 
  }
 .med{
-  display: inline-block;
+   display: inline-block;
+  margin-left: 20px; 
+ 
 }
 
 .med-container{
@@ -168,6 +173,7 @@ button:before {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+  margin-bottom: 30px;
  }
 
 }

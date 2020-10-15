@@ -6,17 +6,6 @@ const Footer = (props) => {
     <div>
       <footer>
 
-        {/* PLUS BUTTON */}
-       
-        {/* {props.location.pathname === '/About' ? null :
-          <img
-            src="https://i.imgur.com/BZOV6FC.png"
-            width="100"
-            height="100"
-            className="plus-button"
-            alt="plus button"
-          />
-        } */}
 
 
         {/* ABOUT */}
