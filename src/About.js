@@ -43,7 +43,7 @@ const About = () => {
     <div>
       <div className="about-text">
       <h1>About RXGuide:</h1>
-      <p>RXGuide is an app made to help the user organize his medication. The user will be able to add, edit or remove medication.</p>
+      <p>RXGuide, created by Daniel Michael, is an app made to help the user organize his medication. The user will be able to add, edit or remove medication.</p>
       <h2>List of Medications:</h2>
     </div>
       {meds.map((med) =>
