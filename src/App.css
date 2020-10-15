@@ -9,6 +9,7 @@ flex-direction: column;
  min-height: 400px;
    margin-bottom: 120px;
    clear: both;
+
 }
 nav {
   text-align: center;
@@ -20,6 +21,7 @@ footer {
   height: 100px;
   width: 100%;
   background:#999;
+
 }
 
 .about {
@@ -85,23 +87,6 @@ button{
 }
 
 
-button:before {
-  position: absolute;
-  top: 11px;
-  left: -30px;
-  transition: all 300ms ease;
-}
-
-
-button:hover{
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-
-
 .med-pic{
   margin-left: 75%;
   margin-bottom: -10%;
@@ -116,13 +101,6 @@ button:hover{
   text-align: center;
 }
 
-.med:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  cursor: pointer;
-  margin: 20px;
-}
 
 @media only screen and (min-width: 1024px) {
  body{
@@ -135,6 +113,29 @@ button:hover{
 .med{
   display: inline-block;
   margin: 10px;
+}
+
+button:before {
+  position: absolute;
+  top: 11px;
+  left: -30px;
+  transition: all 300ms ease;
+}
+
+button:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor: pointer;  
+}
+
+.med:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 }
