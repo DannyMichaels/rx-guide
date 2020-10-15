@@ -2,27 +2,35 @@ import React, { useState } from 'react';
 import axios from 'axios'
 
 const CreateMed = (props) => { 
-  console.log(props)
+  // console.log(props)
   const [name, setName] = useState('Prozac')
   const [taken, setTaken] = useState('')
   const [description, setDescription] = useState('')
-
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const selectedMed = props.meds.find(m => m.fields.name === name); 
+    // if (selectedMed) {
+    //   image = selectedMed.image
+    // }
+    console.log('HELLO!!', selectedMed)
+    const image = selectedMed?.fields?.image;
 
     const fields = {
       name,
+      image,
       description,
       taken,
-  
     }
+    console.log(fields,' fields before the post method');
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
     await axios.post(airtableURL, { fields }, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     })
+    console.log('post method called');
     props.setFetchMeds(!props.fetchMeds)
     setName('');
     setTaken('');

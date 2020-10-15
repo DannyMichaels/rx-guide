@@ -11,12 +11,12 @@ const Med = (props) => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`
       await axios.delete(airtableURL, {
         headers: {
-          Authorization: `Bearer: ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
       props.setFetchMeds(!props.fetchMeds)
       setDeleted(false)
-    }, 1000)
+    }, 500)
   }
 
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Med from './Med'
 import CreateMed from './CreateMed'
@@ -14,21 +14,42 @@ export default function Home() {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
         }
       })
-      setMeds(response.data.records)
+      console.log(response.data.records)
+      const sortedMeds = response.data.records.sort((recordA, recordB) => {
+        const date1 = new Date(recordA.createdTime).getTime();
+        const date2 = new Date(recordB.createdTime).getTime();
+
+        if (date1 < date2) {
+          // console.log('less than');
+          return -1;
+        }
+        else if (date1 > date2) {
+          // console.log('greater than');
+
+          return 1;
+        }
+
+        else {
+          // console.log('equal to ');
+
+          return 0;
+        }
+      })
+      setMeds(sortedMeds)
     }
-  getApi()
+    getApi()
   }, [fetchMeds])
 
   return (
     <>
       <div>
-        
-      {meds.map((med) => 
-            
-            <Med med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds}/>)}
-            
-          < CreateMed meds={meds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds}/>
-</div>
+
+        {meds.map((med) =>
+
+          <Med med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />)}
+
+        < CreateMed meds={meds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
+      </div>
     </>
- )
+  )
 }
