@@ -16,7 +16,7 @@ const Med = (props) => {
       });
       props.setFetchMeds(!props.fetchMeds)
       setDeleted(false)
-    }, 500)
+    }, 100)
   }
 
 
@@ -38,6 +38,7 @@ const Med = (props) => {
       />
 
       <p>{props.med.fields.description}</p>
+     <h4>Strength: </h4> <p>{props.med.fields.dose}</p>
       {props.editable && (<div>
         <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
 

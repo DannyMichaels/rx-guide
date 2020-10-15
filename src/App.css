@@ -92,3 +92,7 @@ button:hover{
   box-shadow: none;
   border: none;
 }
+
+.about-text {
+  text-align: center;
+}

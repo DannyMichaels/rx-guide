@@ -5,7 +5,7 @@ const CreateMed = (props) => {
   // console.log(props)
   const [name, setName] = useState('Prozac')
   const [taken, setTaken] = useState('')
-  // const [description, setDescription] = useState('')
+  const [dose, setDose] = useState('')
   
 
   const handleSubmit = async (e) => {
@@ -14,23 +14,23 @@ const CreateMed = (props) => {
     // if (selectedMed) {
     //   image = selectedMed.image
     // }
-    console.log('HELLO!!', selectedMed)
+    // console.log('HELLO!!', selectedMed)
     const image = selectedMed?.fields?.image;
 
     const fields = {
       name,
       image,
-      // description,
+      dose,
       taken,
     }
-    console.log(fields,' fields before the post method');
+    // console.log(fields,' fields before the post method');
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
     await axios.post(airtableURL, { fields }, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     })
-    console.log('post method called');
+    // console.log('post method called');
     props.setFetchMeds(!props.fetchMeds)
     setName('');
     setTaken('');
@@ -53,6 +53,11 @@ const CreateMed = (props) => {
         <input name='taken' type='time'
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
+
+  <label htmlFor="dosage" type='dogase'>Dose</label>
+          <input name='text' type='text'
+            value={dose} onChange={(e) => setDose(e.target.value)}
+          />
 
         <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" /></button>
       </form>
