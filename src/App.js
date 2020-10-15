@@ -12,20 +12,23 @@ function App() {
  
   return (
     <>
+       <Header />
       <Router>
         <div className="App">
-          <Header />
+         
           <main>
           <Route exact path='/'>
         <Home />  
         </Route>
           </main>
-          <Footer />
+          
           <Switch>
             <Route path="/About" exact component={About} />
           </Switch>
+          
         </div>
       </Router>
+      <Footer />
     </>
   );
 }
