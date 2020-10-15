@@ -51,9 +51,10 @@ Airtable API : https://airtable.com/
 
 #### MVP
 
-- Have the main RXGuide page
-- User should be able to add, remove, edit, or skip RX.
-- Use ReactDOM for other pages (About, etc.)
+
+- User should be able to add, remove, and edit RX.
+- Use ReactDOM for other page/s (About, etc).
+
 
 #### PostMVP
 
@@ -65,10 +66,10 @@ Airtable API : https://airtable.com/
 | Day        | Deliverable                                        | Status     |
 | ---------- | -------------------------------------------------- | ---------- |
 | October 8  | Prompt / Wireframes / Priority Matrix / Timeframes | Complete   |
-| October 9  | Project Approval                                   | Incomplete |
-| October 11 | Core Application Structure (HTML, CSS, etc.)       | Incomplete |
-| October 12 | Pseudocode / actual code                           | Incomplete |
-| October 13 | Initial Clickable Model                            | Incomplete |
+| October 9  | Project Approval                                   | Complete |
+| October 11 | Core Application Structure (HTML, CSS, etc.)       | Complete |
+| October 12 | Pseudocode / actual code                           | Complete |
+| October 13 | Initial Clickable Model                            | Complete |
 | October 14 | MVP                                                | Incomplete |
 | October 16 | Presentations                                      | Incomplete |
 
@@ -76,10 +77,11 @@ Airtable API : https://airtable.com/
 
 | Component        | Priority | Estimated Time | Time Invested | Actual Time |
 | ---------------- | :------: | :------------: | :-----------: | :---------: |
-| Creating base    |    H     |     10hrs      |      N/A      |     N/A     |
-| Working with API |    H     |      8hrs      |      N/A      |     N/A     |
+| Creating base    |    H     |     10hrs      |      4hrs     |     4hrs    |
+| Working with API |    H     |      8hrs      |      10hrs    |     10hrs   |
 | MVP              |    H     |     10hrs      |      N/A      |     N/A     |
-| Total            |    H     |     50hrs      |      N/A      |     N/A     |
+| Post MVP         |    H     |     10hrs      |      10hrs    |     10hrs   |
+| Total            |    H     |                |      N/A      |     N/A     |
 
 ## SWOT Analysis
 
