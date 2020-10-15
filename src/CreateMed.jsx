@@ -13,6 +13,10 @@ const CreateMed = (props) => {
     //   image = selectedMed.image
     // }
     // console.log('HELLO!!', selectedMed)
+    if (!taken) {
+      alert('You have to choose the time!')
+      return 
+    }
     const image = selectedMed?.fields?.image;
 
     const fields = {
