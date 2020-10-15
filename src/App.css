@@ -102,27 +102,6 @@ button{
 }
 
 
-
-@media only screen and (min-width: 1024px) {
- body{
-  display: flex;
-  flex-direction: column;
-   min-height: 400px;
-     margin-bottom: 120px;
-     clear: both;
- }
-.med{
-  display: inline-block;
-  margin: 10px;
-}
-
-button:before {
-  position: absolute;
-  top: 11px;
-  left: -30px;
-  transition: all 300ms ease;
-}
-
 /* This button hover idea was taken from google. */
 
 @keyframes bounce {  
@@ -154,6 +133,27 @@ button:hover {
   animation: bounce 1s;
 }
 
+
+@media only screen and (min-width: 1024px) {
+ body{
+  display: flex;
+  flex-direction: column;
+   min-height: 400px;
+     margin-bottom: 120px;
+     clear: both;
+ }
+.med{
+  display: inline-block;
+  margin: 10px;
+}
+
+button:before {
+  position: absolute;
+  top: 11px;
+  left: -30px;
+  transition: all 300ms ease;
+}
+
 .med:hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -161,6 +161,5 @@ button:hover {
   cursor: pointer;
   margin-left: 20px;
   margin-right: 20px;
-}
-
+ }
 }
