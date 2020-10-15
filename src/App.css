@@ -140,8 +140,8 @@ button:hover {
   display: flex;
   flex-direction: column;
    min-height: 400px;
-     margin-bottom: 120px;
-     clear: both;
+   margin-bottom: 120px;
+   clear: both;
  }
 .med{
   display: inline-block;
@@ -162,5 +162,9 @@ button:before {
   margin-left: 20px;
   margin-right: 20px;
  }
+
+}
+
+@media only screen and (min-width: 768px) {
 
 }
