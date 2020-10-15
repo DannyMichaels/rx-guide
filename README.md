@@ -20,7 +20,7 @@ The user will be able to add, edit or remove medication and check if he took or 
 
 ## Component Hierarchy
 
-![alt text](https://i.imgur.com/twF7C35.png)
+![alt text](https://i.imgur.com/4WMSkTa.png)
 
 ## API and Data Sample
 
@@ -71,7 +71,7 @@ Airtable API : https://airtable.com/
 | October 11 | Core Application Structure (HTML, CSS, etc.)       | Complete |
 | October 12 | Pseudocode / actual code                           | Complete |
 | October 13 | Initial Clickable Model                            | Complete |
-| October 14 | MVP                                                | Incomplete |
+| October 14 | MVP                                                | Complete |
 | October 16 | Presentations                                      | Incomplete |
 
 ## Timeframes
@@ -80,9 +80,9 @@ Airtable API : https://airtable.com/
 | ---------------- | :------: | :------------: | :-----------: | :---------: |
 | Creating base    |    H     |     10hrs      |      4hrs     |     4hrs    |
 | Working with API |    H     |      8hrs      |      10hrs    |     10hrs   |
-| MVP              |    H     |     10hrs      |      12       |     10hrs   |
+| MVP              |    H     |     10hrs      |      12       |     12hrs   |
 | Post MVP         |    H     |     10hrs      |      10hrs    |     10hrs   |
-| Total            |    H     |                |      N/A      |     N/A     |
+| Total            |    H     |                |               |     36hrs    |
 
 ## SWOT Analysis
 
