@@ -60,6 +60,7 @@ Airtable API : https://airtable.com/
 
 - Create a RX interactions page.
 - User could choose a drug class before choosing drug name from list.
+- CSS animations and other candy
 
 ## Project Schedule
 
@@ -79,7 +80,7 @@ Airtable API : https://airtable.com/
 | ---------------- | :------: | :------------: | :-----------: | :---------: |
 | Creating base    |    H     |     10hrs      |      4hrs     |     4hrs    |
 | Working with API |    H     |      8hrs      |      10hrs    |     10hrs   |
-| MVP              |    H     |     10hrs      |      N/A      |     N/A     |
+| MVP              |    H     |     10hrs      |      12       |     10hrs   |
 | Post MVP         |    H     |     10hrs      |      10hrs    |     10hrs   |
 | Total            |    H     |                |      N/A      |     N/A     |
 
