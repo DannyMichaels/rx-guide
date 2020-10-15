@@ -21,7 +21,7 @@ footer {
   height: 100px;
   width: 100%;
   background:#999;
-
+  z-index: 100; 
 }
 
 .about {
@@ -127,6 +127,7 @@ button:hover {
 }
 .rxguide-logo:hover {
   animation: bounce 1s;
+
 }
 
 .about:hover {
@@ -158,8 +159,8 @@ button:before {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  cursor: pointer;
   margin-left: 20px;
   margin-right: 20px;
  }
+
 }

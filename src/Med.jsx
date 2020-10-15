@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import UpdateMed from './UpdateMed'
 import axios from 'axios'
 const Med = (props) => {
@@ -24,13 +24,7 @@ const Med = (props) => {
 
 
     <div className='med'>
-      {/* <img src="https://i.imgur.com/1qUV2SU.png"
-           width='50'
-          height='50'
-         className ='med-pic'
-        /> */}
-
-
+    
       <h3>{props.med.fields.name}</h3>
       <img src={props.med.fields.image}
         width='100'
@@ -47,7 +41,7 @@ const Med = (props) => {
           setFetchMeds={props.setFetchMeds}
 
         />
-        <button onClick={handleDelete}>{deleted ? 'deleting' : <img src="https://i.imgur.com/JRRT416.png"
+        <button onClick={handleDelete}>{deleted ? 'Deleting...' : <img src="https://i.imgur.com/JRRT416.png" alt="delete"
           width='20px'
         />
         }

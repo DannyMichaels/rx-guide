@@ -35,7 +35,7 @@ const Footer = (props) => {
         
           {props.location.pathname === '/' ? null :
             
-            <a onClick href='https://github.com/DannyMichaels/' target='_blank'>
+            <a onClick href='https://github.com/DannyMichaels/' target='_blank' rel="noopener noreferrer">
               <img
               src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
                 width='150'
