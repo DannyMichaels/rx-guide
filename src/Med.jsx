@@ -29,7 +29,7 @@ const Med = (props) => {
       <img src={props.med.fields.image}
         width='100'
         height='50'
-        alt="Medication Image"
+        alt="Medication"
       />
 
       <p>{props.med.fields.description}</p>

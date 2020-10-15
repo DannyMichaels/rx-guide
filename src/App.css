@@ -159,12 +159,19 @@ button:before {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  margin-left: 20px;
-  margin-right: 20px;
  }
 
 }
 
 @media only screen and (min-width: 768px) {
-
+  .med{
+    display: inline-block;
+    margin: 10px;
+    margin-left: 100px;
+  }
+  .med:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+   }  
 }
