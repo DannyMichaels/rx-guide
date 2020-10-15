@@ -142,12 +142,11 @@ button:hover {
   min-height: 400px;
    margin-bottom: 120px;
    align-items: center;
-   margin: 0 auto;
-   
+   margin-bottom: 120px;
+
  }
 .med{
   display: inline-block;
-  margin: 10px;
 }
 
 .med-container{
@@ -174,14 +173,6 @@ button:before {
 }
 
 @media only screen and (min-width: 768px) {
-  .med{
-    display: inline-block;
-    margin: 10px;
-  
-  }
-  .med:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-   }  
+
+ 
 }
