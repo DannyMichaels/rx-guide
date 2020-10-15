@@ -42,7 +42,7 @@ const CreateMed = (props) => {
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
 
-        <button type='Submit'><img className="add" src="https://i.imgur.com/SnXF0hi.png" /></button>
+        <button className='edit-button' type='Submit'><img className="add" src="https://i.imgur.com/SnXF0hi.png" /></button>
       </form>
     </div>
   );

@@ -54,10 +54,10 @@ const CreateMed = (props) => {
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
 
-  <label htmlFor="dosage" type='dogase'>Dose</label>
+  {/* <label htmlFor="dosage" type='dogase'>Dose</label>
           <input name='text' type='text'
             value={dose} onChange={(e) => setDose(e.target.value)}
-          />
+          /> */}
 
         <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" /></button>
       </form>
