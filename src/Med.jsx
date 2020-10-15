@@ -38,18 +38,21 @@ const Med = (props) => {
       />
 
       <p>{props.med.fields.description}</p>
-      <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
+      {props.editable && (<div>
+        <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
 
-      <UpdateMed med={props.med}
-        fetchMeds={props.fetchMeds}
-        setFetchMeds={props.setFetchMeds}
+        <UpdateMed med={props.med}
+          fetchMeds={props.fetchMeds}
+          setFetchMeds={props.setFetchMeds}
 
-      />
-      <button onClick={handleDelete}>{deleted ? 'deleting' : <img src="https://i.imgur.com/JRRT416.png"
-        width='20px'
-      />
-      }
-      </button>
+        />
+        <button onClick={handleDelete}>{deleted ? 'deleting' : <img src="https://i.imgur.com/JRRT416.png"
+          width='20px'
+        />
+        }
+        </button>
+      </div>)}
+
     </div>
   );
 };

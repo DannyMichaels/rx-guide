@@ -4,17 +4,31 @@ import Med from './Med'
 import CreateMed from './CreateMed'
 
 export default function Home() {
-  const [meds, setMeds] = useState([])
+  const [addedMeds, setMeds] = useState([]);
+  const [prescribedMeds, setPrescribedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false)
   useEffect(() => {
     const getApi = async () => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
-      const response = await axios.get(airtableURL, {
+    const prescriptionsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
+      const prescriptionResponse = await axios.get(prescriptionsUrl, {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
         }
       })
-      console.log(response.data.records)
+      setPrescribedMeds(prescriptionResponse.data.records);
+    }
+    getApi();
+  },[])
+  useEffect(() => {
+    const getApi = async () => {
+      const addedMedsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
+      const response = await axios.get(addedMedsUrl, {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+        }
+      })
+      
+      console.log('RECORDS', response.data.records)
       const sortedMeds = response.data.records.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
         const date2 = new Date(recordB.createdTime).getTime();
@@ -44,11 +58,11 @@ export default function Home() {
     <>
       <div>
 
-        {meds.map((med) =>
+        {addedMeds.map((med) =>
 
-          <Med med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />)}
+          <Med editable={true} med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />)}
 
-        < CreateMed meds={meds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
+        < CreateMed meds={prescribedMeds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
       </div>
     </>
   )

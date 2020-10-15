@@ -5,12 +5,12 @@ const CreateMed = (props) => {
   // console.log(props)
   const [name, setName] = useState('Prozac')
   const [taken, setTaken] = useState('')
-  const [description, setDescription] = useState('')
+  // const [description, setDescription] = useState('')
   
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const selectedMed = props.meds.find(m => m.fields.name === name); 
+    const selectedMed = props.meds.find(m => m.fields.name.trim() === name.trim()); 
     // if (selectedMed) {
     //   image = selectedMed.image
     // }
@@ -20,11 +20,11 @@ const CreateMed = (props) => {
     const fields = {
       name,
       image,
-      description,
+      // description,
       taken,
     }
     console.log(fields,' fields before the post method');
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
+    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
     await axios.post(airtableURL, { fields }, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
