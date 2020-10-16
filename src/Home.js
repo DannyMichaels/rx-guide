@@ -28,11 +28,10 @@ export default function Home() {
         }
       })
       
-      console.log('RECORDS', response.data.records)
-      const sortedMeds = response.data.records.sort((recordA, recordB) => {
+        const sortedMeds = response.data.records.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
         const date2 = new Date(recordB.createdTime).getTime();
-
+          
         if (date1 < date2) {
           // console.log('less than');
           return -1;
@@ -63,6 +62,7 @@ export default function Home() {
           <Med editable={true} med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />)}
 
         < CreateMed meds={prescribedMeds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
+
       </div>
     </>
   )

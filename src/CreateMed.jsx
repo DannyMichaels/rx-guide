@@ -24,14 +24,14 @@ const CreateMed = (props) => {
       image,
       taken,
     }
-    // console.log(fields,' fields before the post method');
+
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
     await axios.post(airtableURL, { fields }, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     })
-    // console.log('post method called');
+
     props.setFetchMeds(!props.fetchMeds)
     setName('');
     setTaken('');

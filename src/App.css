@@ -4,6 +4,8 @@
 
 body {
 background-color: #fffcdc;
+background: linear-gradient(to right, #ffefba, #ffffff);
+
 display: flex;
 flex-direction: column;
  min-height: 400px;

@@ -22,7 +22,6 @@ const Med = (props) => {
 
   return (
 
-
     <div className='med'>
     
       <h3>{props.med.fields.name}</h3>
