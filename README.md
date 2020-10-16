@@ -11,7 +11,7 @@ https://rxguide.netlify.app/
 ## Project Description
 
 RXGuide is an app made to help the user organize his medication.
-The user will be able to add, edit or remove medication and check if he took or skipped the medication.
+The user will be able to add, edit or remove medication.
 
 ## Wireframes
 
