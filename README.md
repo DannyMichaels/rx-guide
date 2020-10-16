@@ -107,3 +107,32 @@ Airtable API : https://airtable.com/
 ### Threats:
 
 - There are other apps with the simillar idea competing for the same people.
+
+
+### Code snippet I'm proud of
+```
+const sortedMeds = response.data.records.sort((recordA, recordB) => {
+        const date1 = new Date(recordA.createdTime).getTime();
+        const date2 = new Date(recordB.createdTime).getTime();
+          
+        if (date1 < date2) {
+          // console.log('less than');
+          return -1;
+        }
+        else if (date1 > date2) {
+          // console.log('greater than');
+
+          return 1;
+        }
+
+        else {
+          // console.log('equal to ');
+
+          return 0;
+        }
+      })
+      setMeds(sortedMeds)
+    }
+    getApi()
+  }, [fetchMeds])
+```
