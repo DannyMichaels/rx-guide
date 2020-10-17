@@ -76,7 +76,7 @@ Airtable API : https://airtable.com/
 | October 12 | Pseudocode / actual code                           | Complete |
 | October 13 | Initial Clickable Model                            | Complete |
 | October 14 | MVP                                                | Complete |
-| October 16 | Presentations                                      | Incomplete |
+| October 16 | Presentations                                      | Complete |
 
 ## Timeframes
 
@@ -110,6 +110,7 @@ Airtable API : https://airtable.com/
 
 
 ### Code snippet I'm proud of
+
 ```
 const sortedMeds = response.data.records.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
