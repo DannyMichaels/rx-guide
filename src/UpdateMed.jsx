@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'
 
 const UpdateMed = (props) => { 
+  const [name, setName] = useState(props.med.fields.name)
 
   const [taken, setTaken] = useState(props.med.fields.taken)  
 
@@ -12,9 +13,11 @@ const UpdateMed = (props) => {
     const image = props.med.fields.image
     
     const fields = {
+      name,
       taken,  
       image,
     }
+    
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`
     await axios.put(airtableURL, { fields }, {
       headers: {

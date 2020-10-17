@@ -12,9 +12,11 @@ flex-direction: column;
    margin-bottom: 120px;
 
 }
+
 nav {
   text-align: center;
 }
+
 footer {
   position:fixed;
   left: 0px;
@@ -124,14 +126,14 @@ button {
     transform: translateY(-10px);
   }
 }
+
 button:hover {
   animation: bounce 1s;
   cursor: pointer;
-  
 }
+
 .rxguide-logo:hover {
   animation: bounce 1s;
-
 }
 
 .about:hover {

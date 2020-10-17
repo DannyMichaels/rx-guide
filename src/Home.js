@@ -4,7 +4,7 @@ import Med from './Med'
 import CreateMed from './CreateMed'
 
 export default function Home() {
-  const [addedMeds, setMeds] = useState([]);
+  const [addedMeds, setAddedMeds] = useState([]);
   const [prescribedMeds, setPrescribedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false)
   useEffect(() => {
@@ -36,6 +36,7 @@ export default function Home() {
           // console.log('less than');
           return -1;
         }
+          
         else if (date1 > date2) {
           // console.log('greater than');
 
@@ -48,7 +49,7 @@ export default function Home() {
           return 0;
         }
       })
-      setMeds(sortedMeds)
+      setAddedMeds(sortedMeds)
     }
     getApi()
   }, [fetchMeds])

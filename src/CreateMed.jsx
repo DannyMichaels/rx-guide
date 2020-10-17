@@ -54,7 +54,6 @@ const CreateMed = (props) => {
         <input name='taken' type='time'
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
-
         <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" alt="Submit"/></button>
       </form>
     </div>
