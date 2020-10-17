@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'
 
 const UpdateMed = (props) => { 
-  const [name, setName] = useState(props.med.fields.name)
+  const [name] = useState(props.med.fields.name)
 
   const [taken, setTaken] = useState(props.med.fields.taken)  
 
