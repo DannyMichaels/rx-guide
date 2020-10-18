@@ -29,6 +29,7 @@ function Custom(props) {
     );
     setName("");
     setImage("");
+    setDescription("");
   };
 
   return (
