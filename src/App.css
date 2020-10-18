@@ -107,7 +107,6 @@ button {
   text-align: center;
 }
 
-
 /* This button hover idea was taken from google. */
 
 @keyframes bounce {  
@@ -138,6 +137,10 @@ button:hover {
 
 .about:hover {
   animation: bounce 1s;
+}
+
+.custom-link:hover {
+  animation:bounce 1s;
 }
 
 

@@ -22,7 +22,7 @@ const Footer = (props) => {
           }
 
         
-          {props.location.pathname === '/' ? null :
+          {props.location.pathname !== '/About' ? null :
             
             <a onClick href='https://github.com/DannyMichaels/' target='_blank' rel="noopener noreferrer">
               <img
@@ -34,6 +34,29 @@ const Footer = (props) => {
               />
             </a>
          
+          }
+        </Link>
+
+        <Link to='./Custom'>
+        {props.location.pathname === '/Custom' ? null :
+            <img
+              src="https://i.imgur.com/BZOV6FC.png"
+              width="100"
+              height="100"
+              className="custom-link"
+              alt="Add custom RX"
+            />
+          }
+        </Link>
+        <Link to='/' >
+          {props.location.pathname === '/' ? null :
+            <img
+              src="https://i.imgur.com/yM56ZTA.png"
+              width="100"
+              height="100"
+              className="custom-link"
+              alt="Home Page"
+            />
           }
         </Link>
       </footer>
