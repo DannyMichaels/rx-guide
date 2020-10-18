@@ -36,6 +36,18 @@ const Footer = (props) => {
          
           }
         </Link>
+       
+        <Link to='/' >
+          {props.location.pathname === '/' ? null :
+            <img
+              src="https://i.imgur.com/yM56ZTA.png"
+              width="100"
+              height="100"
+              className="custom-link"
+              alt="Home Page"
+            />
+          }
+        </Link>
 
         <Link to='./Custom'>
         {props.location.pathname === '/Custom' ? null :
@@ -48,17 +60,7 @@ const Footer = (props) => {
             />
           }
         </Link>
-        <Link to='/' >
-          {props.location.pathname === '/' ? null :
-            <img
-              src="https://i.imgur.com/yM56ZTA.png"
-              width="100"
-              height="100"
-              className="custom-link"
-              alt="Home Page"
-            />
-          }
-        </Link>
+     
       </footer>
     </div>
   );
