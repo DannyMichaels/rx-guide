@@ -70,7 +70,7 @@ function Custom(props) {
           onChange={(e) => setImage(e.target.value)}
         />
 
-        <button>Add Custom Medication</button>
+        <button><img src='https://i.imgur.com/BZOV6FC.png' className='add' alt='add custom medication'/></button>
       </form>
     </div>
   );
