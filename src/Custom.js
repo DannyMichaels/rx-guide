@@ -17,7 +17,7 @@ function Custom(props) {
       alert('You have to add a name!')
       return 
     } else if (!description) {
-      alert('You have to add an description!')
+      alert('You have to add a description!')
       return
     } else if (!image) {
       alert('You have to add a image')
