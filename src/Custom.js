@@ -5,11 +5,27 @@ function Custom(props) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
+  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     //  const image = props.med.fields.image
+   
+    if (!name) {
+      alert('You have to add a name!')
+      return 
+    } else if (!description) {
+      alert('You have to add an description!')
+      return
+    } else if (!image) {
+      alert('You have to add a image')
+      return
+    }
+
+    alert("Medication Added!")
+
 
     const fields = {
       name,
