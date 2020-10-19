@@ -7,6 +7,7 @@ export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);
   const [prescribedMeds, setPrescribedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false)
+  
   useEffect(() => {
     const getApi = async () => {
     const prescriptionsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
