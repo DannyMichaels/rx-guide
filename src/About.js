@@ -17,7 +17,6 @@ const Form = styled.div`
     padding: 12px 20px 12px 40px;
     border: 1px solid pink;
     margin: 40px;
-    text-transform: capitalize;
     text-align: center;
     box-shadow: 5px 5px peachpuff;
   }
@@ -58,7 +57,7 @@ const About = () => {
   }, [fetchMeds]);
 
   const filteredMeds = meds.filter((med) =>
-    med.fields.name.toLowerCase().includes(`${search}`)
+    med.fields.name.toLowerCase().includes(`${search}`.toLowerCase())
   );
 
   return (
@@ -77,7 +76,7 @@ const About = () => {
           name="search"
           id="search"
           placeholder="Search Medication"
-          value={search.toLowerCase()}
+          value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </Form>
