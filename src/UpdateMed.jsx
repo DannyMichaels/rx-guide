@@ -1,5 +1,40 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Form = styled.form`
+
+select {
+  border: peachpuff;
+  cursor: pointer;
+}
+
+ 
+
+select:focus {
+  outline: none;
+}
+
+input {
+  border: peachpuff;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+img{
+  width: 40%;
+  height: 40%; 
+}
+`
 
 const UpdateMed = (props) => { 
   const [name] = useState(props.med.fields.name)
@@ -30,7 +65,7 @@ const UpdateMed = (props) => {
 
   return (
     <div>
-      <form className="update-med" onSubmit={handleSubmit}>
+      <Form className="update-med" onSubmit={handleSubmit}>
      
         
           <label htmlFor="taken" type='text'>Edit Time:</label>
@@ -38,8 +73,8 @@ const UpdateMed = (props) => {
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
 
-        <button className='edit-button' type='Submit'><img className="add" src="https://i.imgur.com/SnXF0hi.png" alt="Add"/></button>
-      </form>
+        <button className='edit-button' type='submit'><img className="add" src="https://i.imgur.com/SnXF0hi.png" alt="Add"/></button>
+      </Form>
     </div>
   );
 };

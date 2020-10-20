@@ -2,6 +2,22 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom'
 import UpdateMed from './UpdateMed'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Button = styled.button`
+  background: none;
+  border: none;
+
+&:focus {
+  outline: none;
+}
+
+img {
+  width: 30%;
+  height: 30%;
+}
+`
+
 const Med = (props) => {
   const [deleted, setDeleted] = useState(false)
 
@@ -40,11 +56,11 @@ const Med = (props) => {
           setFetchMeds={props.setFetchMeds}
 
         />
-        <button onClick={handleDelete}>{deleted ? <img src="https://i.imgur.com/JRRT416.png" alt='delete' width='20px'/> : <img src="https://i.imgur.com/NhIlDPF.png" alt="delete"
+        <Button onClick={handleDelete}>{deleted ? <img src="https://i.imgur.com/JRRT416.png" alt='delete' width='20px'/> : <img src="https://i.imgur.com/NhIlDPF.png" alt="delete"
           width='20px'
         />
         }
-        </button>
+        </Button>
       </div>)}
     </div>
   );

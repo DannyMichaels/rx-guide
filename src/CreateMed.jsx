@@ -1,5 +1,40 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Form = styled.form`
+
+select {
+  border: peachpuff;
+  cursor: pointer;
+}
+
+ 
+
+select:focus {
+  outline: none;
+}
+
+input {
+  border: peachpuff;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+img{
+  width: 40%;
+  height: 40%; 
+}
+`
 
 const CreateMed = (props) => { 
   const [name, setName] = useState('Prozac')
@@ -40,7 +75,7 @@ const CreateMed = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <label htmlFor="name" type='text'>Name:</label>
         <select name='name' type='text'
           value={name}
@@ -55,7 +90,7 @@ const CreateMed = (props) => {
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
         <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" alt="Submit"/></button>
-      </form>
+      </Form>
     </div>
   );
 };
