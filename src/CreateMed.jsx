@@ -7,9 +7,17 @@ const Form = styled.form`
 select {
   border: peachpuff;
   cursor: pointer;
+  text-align-last: center;
+  margin: 10px;
 }
 
- 
+ .select-css{
+  width: 100%;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+  font-size: 18px;
+  color: #60666d;
+  width: 180px;   
+ }
 
 select:focus {
   outline: none;
@@ -18,6 +26,15 @@ select:focus {
 input {
   border: peachpuff;
   cursor: pointer;
+  display: block;
+  width: 100%;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+  font-size: 18px;
+  color: #60666d;
+  text-align-last: center;
+  margin: 5px;
+  width: 140px;   
+
 }
 input:focus {
   outline: none;
@@ -77,7 +94,7 @@ const CreateMed = (props) => {
     <div>
       <Form onSubmit={handleSubmit}>
         <label htmlFor="name" type='text'>Name:</label>
-        <select name='name' type='text'
+        <select className='select-css' name='name' type='text'
           value={name}
           onChange={(e) => setName(e.target.value)}>
           {props.meds.map((med) => (

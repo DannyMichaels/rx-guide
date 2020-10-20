@@ -64,8 +64,8 @@ const About = () => {
   return (
     <div>
       <div className="about-text">
-        <h1>About RXGuide:</h1>
-        <p>
+      <h1 style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>About RXGuide:</h1>
+        <p style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>
           RXGuide, created by Daniel Michael, is an app made to help the user
           organize his medication. The user will be able to add, edit or remove
           medication.
@@ -82,7 +82,7 @@ const About = () => {
         />
       </Form>
       {search === "" ? (
-        <h2 style={{ textAlign: "center" }}>List of Medications:</h2>
+        <h2 style={{ textAlign: "center", textShadow: '2px 2px peachpuff', color: 'black'}}>List of Medications:</h2>
       ) : (
         <div className="med-container">
           {filteredMeds.map((med, index) => (

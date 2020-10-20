@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import styled from 'styled-components'
+
+
 
 function Custom(props) {
   const [name, setName] = useState("");
@@ -50,9 +53,9 @@ function Custom(props) {
 
   return (
     <div className="about-text">
-      <h1>Add your own custom drug!</h1>
+      <h1 style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>Add your own custom medication!</h1>
 
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <label htmlFor="name" type="text">
           Name:
         </label>
@@ -67,14 +70,14 @@ function Custom(props) {
         <label htmlFor="description" type="text">
           Description:
         </label>
-        <input
+        <textarea
           name="description"
           type="text"
           className="input-description"
           placeholder="Drug Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />
+        ></textarea>
 
         <label htmlFor="image" type="text">
           Image:
@@ -88,9 +91,47 @@ function Custom(props) {
         />
 
         <button><img src='https://i.imgur.com/BZOV6FC.png' className='add' alt='add custom medication'/></button>
-      </form>
+      </Form>
     </div>
   );
 }
 
 export default Custom;
+
+const Form = styled.form`
+
+input {
+  border: peachpuff;
+  padding: 10px;
+  text-align: center;
+  margin: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  border: peachpuff;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: 5px;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+img{
+  width: 40%;
+  height: 40%; 
+}
+`
