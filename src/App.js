@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import About from "./About";
+import Header from "./Components/shared/Header/Header";
+import Footer from "./Components/shared/Footer/Footer";
+import About from "./screens/About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Custom from "./Custom.jsx";
+import Home from "./screens/Home";
+import Custom from "./screens/Custom";
 import "./App.css";
-import MedDetail from "./MedDetail";
+import MedDetail from "./screens/MedDetail";
 import axios from "axios";
+import Layout from './Components/shared/Layout/Layout'
 
 function App() {
   const [meds, setMeds] = useState([]);
@@ -43,13 +44,12 @@ function App() {
     <>
       <Router>
         <div className="App">
-          <Header />
+          <Layout>
           <main>
             <Route exact path="/">
               <Home />
             </Route>
           </main>
-          <Footer />
           <Switch>
             <Route path="/About" exact component={About} />
             <Route path="/Custom" exact component={Custom} />
@@ -60,7 +60,9 @@ function App() {
                 setFetchMeds={setFetchMeds}
               />
             </Route>
-          </Switch>
+            </Switch>
+            </Layout >
+
         </div>
       </Router>
     </>

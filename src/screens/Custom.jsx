@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styled from 'styled-components'
-import CustomMedForm from './Components/CustomMedForm'
+// import CustomMedForm from './Components/CustomMedForm'
 
 
 function Custom(props) {
