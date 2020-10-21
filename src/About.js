@@ -1,29 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Med from "./Med";
-import styled from "styled-components";
+import { Link } from 'react-router-dom'
+import { getMeds } from './services/meds'
+// import { getSortedMeds } from './services/sortedMeds'
+import Search from './Components/Search'
 
-const Form = styled.div`
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  input {
-    width: 50vw;
-    font-size: 18px;
-    letter-spacing: 0.1px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid pink;
-    margin: 40px;
-    text-align: center;
-    box-shadow: 5px 5px peachpuff;
-  }
-  input:focus {
-    outline: none;
-  }
-`;
 
 const About = () => {
   const [meds, setMeds] = useState([]);
@@ -32,14 +13,8 @@ const About = () => {
 
   useEffect(() => {
     const getApi = async () => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`;
-      const response = await axios.get(airtableURL, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      });
-
-      const sortedMeds = response.data.records.sort((recordA, recordB) => {
+      const medications = await getMeds() // importing axios call from a js file.
+        const sortedMeds = medications.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
         const date2 = new Date(recordB.createdTime).getTime();
 
@@ -51,11 +26,12 @@ const About = () => {
           return 0;
         }
       });
-      setMeds(sortedMeds);
+       setMeds(sortedMeds);
     };
     getApi();
   }, [fetchMeds]);
 
+  
   const filteredMeds = meds.filter((med) =>
     med.fields.name.toLowerCase().includes(`${search}`.toLowerCase())
   );
@@ -70,27 +46,22 @@ const About = () => {
           medication.
         </p>
       </div>
-      <Form>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search Medication"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </Form>
+
+      <Search setSearch={setSearch} />
+
+      
       {search === "" ? (
         <h2 style={{ textAlign: "center", textShadow: '2px 2px peachpuff', color: 'black'}}>List of Medications:</h2>
       ) : (
         <div className="med-container">
-          {filteredMeds.map((med, index) => (
+          {filteredMeds.map((med) => (
+           <Link style={{color: 'black', textDecoration: 'none'}} to='/'>
             <Med
               med={med}
               fetchMeds={fetchMeds}
               setFetchMeds={setFetchMeds}
               editable={false}
-            />
+            /></Link>
           ))}
         </div>
       )}
@@ -98,13 +69,16 @@ const About = () => {
       {search === "" ? (
         <div className="med-container">
           {meds.map((med) => (
+            // <Link style={{color: 'black', textDecoration: 'none'}} to={`/medication/${med.name}`}>
+
             <Med
               style={{ textAlign: "center" }}
               med={med}
               fetchMeds={fetchMeds}
               setFetchMeds={setFetchMeds}
               editable={false}
-            />
+              />
+            // </Link>
           ))}
         </div>
       ) : <> </> }

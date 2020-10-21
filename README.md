@@ -141,6 +141,9 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 ## Changelogs:
 
 - 10/16/2020: Fixed a bug where medication name would dissapear when edited.
+
 - 10/18/2020: Added a page where user can create his own custom medication, added a home button shortcut in footer, changed image for removing medication to a trash bin.
 
 - 10/19/2020: Added a search medication functionality in the about page, got rid of border for buttons, changed styling for form, added more styling for text.
+
+- 10/21/2020: Added a window that asks user if he's sure he wants to submit his custom medication. 

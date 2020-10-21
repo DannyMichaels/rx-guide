@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styled from 'styled-components'
-
+import CustomMedForm from './Components/CustomMedForm'
 
 
 function Custom(props) {
@@ -14,11 +14,10 @@ function Custom(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //  const image = props.med.fields.image
    
     if (!name) {
       alert('You have to add a name!')
-      return 
+      return
     } else if (!description) {
       alert('You have to add a description!')
       return
@@ -27,8 +26,13 @@ function Custom(props) {
       return
     }
 
-    alert("Medication Added!")
-
+    if (window.confirm(`Are you sure you want to add this medication? 
+    \n Name: ${name} \n Description: ${description} \n Image URL: ${image}`)) {
+     
+      alert("Medication Added!")
+    } else {
+      return
+    }
 
     const fields = {
       name,
@@ -54,6 +58,15 @@ function Custom(props) {
   return (
     <div className="about-text">
       <h1 style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>Add your own custom medication!</h1>
+{/* 
+      <CustomMedForm 
+        onSubmit={handleSubmit}
+        name={name}
+        setName={setName}
+        description={description}
+        setDescription={setDescription}
+        image={image} setImage={setImage}
+        /> */}
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="name" type="text">
