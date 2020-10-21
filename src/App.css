@@ -46,15 +46,14 @@ width: 350px;
   left: 0px;
 }
 
-.med {
+.med { 
  
-  margin: 0 auto;
+  margin: 20px auto;
   border: 1px solid pink;
   background: #ffccff;
   box-shadow: 5px 5px peachpuff;
   width: 250px;
   max-width: 250px;
-  margin: 20px auto;
   text-align: center;
 
 }
@@ -191,15 +190,13 @@ button:before {
     flex-direction: column;
     justify-content: center;
     min-height: 400px;
-     margin-bottom: 120px;
      align-items: center;
      margin-bottom: 120px;
-  
    }
+
   .med{
      display: inline-block;
-    margin-left: 20px; 
-   
+    margin: 20px; 
   }
   
   .med-container{
