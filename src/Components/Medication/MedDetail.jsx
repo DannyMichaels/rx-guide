@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import '../App.css'
+import '../../App.css'
 
 
 export default function MedDetail(props) {

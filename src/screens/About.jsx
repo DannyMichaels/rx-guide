@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Med from "../Med";
+import Med from "../Components/Medication/Med";
 import { Link } from 'react-router-dom'
 import { getMeds } from '../services/meds'
 // import { getSortedMeds } from './services/sortedMeds'
-import Search from '../Components/Search'
+import Search from '../Components/Forms/Search'
 
 
 const About = () => {

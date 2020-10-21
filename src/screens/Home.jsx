@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Med from '../Med'
-import CreateMed from '../CreateMed'
+import Med from '../Components/Medication/Med'
+import CreateMed from '../Components/Medication/CreateMed'
 
 export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);

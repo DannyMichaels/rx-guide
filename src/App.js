@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Components/shared/Header/Header";
-import Footer from "./Components/shared/Footer/Footer";
 import About from "./screens/About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Custom from "./screens/Custom";
 import "./App.css";
-import MedDetail from "./screens/MedDetail";
+import MedDetail from "./Components/Medication/MedDetail";
 import axios from "axios";
 import Layout from './Components/shared/Layout/Layout'
 
