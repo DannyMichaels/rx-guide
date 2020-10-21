@@ -49,8 +49,8 @@ function App() {
             </Route>
           </main>
           <Switch>
-            <Route path="/About" exact component={About} />
-            <Route path="/Custom" exact component={Custom} />
+            <Route path="/about" exact component={About} />
+            <Route path="/custom-medication" exact component={Custom} />
             <Route exact path="/medication/:name">
               <MedDetail
                 meds={meds}
