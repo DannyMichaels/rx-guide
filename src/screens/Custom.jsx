@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import styled from 'styled-components'
 // import CustomMedForm from './Components/CustomMedForm'
-import yesno from "yesno-dialog";
-import './YesorNo.css'
+// import yesno from "yesno-dialog";
+// import './YesorNo.css'
 
 function Custom(props) {
   const [name, setName] = useState("");
@@ -26,26 +26,32 @@ function Custom(props) {
       alert('You have to add a image')
       return
     }
-    const yes = await yesno({
-      labelYes: "Yes", // `<img src="https://lh3.googleusercontent.com/proxy/hUCPTu4IWk6Fw59_Hgtv0OtVT27fWoSMacX5Sta1mwlDL81YTcLIszKGDPsR40eBahLQWO6OsHNRonW85Hk0VTiDeE_h2f2xeTE9YDn0acOVJaUAp_h6VyY90g" width='50px' height='30px' alt='yes '/>`,
-      labelNo:  "No", //`<img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Down_Sign_Emoji_Icon_ios10_grande.png?v=1571606114" width='10px' height='10px' alt='no'`,
-      bodyText: `Are you sure you want to add this medication? ` })   
-    // \n Name: ${name}, \n Description: ${description}, \n Image URL: ${image}`
-    if (yes) {
-      alert("Medication Added!")
-    } else {
-      return
-    }
-   
-    
-    
-    // if (window.confirm(`Are you sure you want to add this medication?
-    // \n Name: ${name} \n Description: ${description} \n Image URL: ${image}`)) {
-     
+
+    // yes or no plugin, it works but I rather fix the styling of it first.
+
+    // const yes = await yesno({
+    //   labelYes: "Yes", // `<img src="https://lh3.googleusercontent.com/proxy/hUCPTu4IWk6Fw59_Hgtv0OtVT27fWoSMacX5Sta1mwlDL81YTcLIszKGDPsR40eBahLQWO6OsHNRonW85Hk0VTiDeE_h2f2xeTE9YDn0acOVJaUAp_h6VyY90g" width='50px' height='30px' alt='yes '/>`,
+    //   labelNo:  "No", //`<img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Down_Sign_Emoji_Icon_ios10_grande.png?v=1571606114" width='10px' height='10px' alt='no'`,
+    //   bodyText: `Are you sure you want to add this medication? 
+    //    \n Name: ${name}, \n Description: ${description}, \n Image URL: ${image}`
+    // })   
+
+    // if (yes) {
     //   alert("Medication Added!")
     // } else {
     //   return
     // }
+   
+    
+    // using default window.confirm for now... 
+    
+    if (window.confirm(`Are you sure you want to add this medication?
+    \n Name: ${name} \n Description: ${description} \n Image URL: ${image}`)) {
+     
+      alert("Medication Added!")
+    } else {
+      return
+    }
 
     const fields = {
       name,
