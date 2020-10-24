@@ -1,8 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const Form = styled.form`
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 200px;
+  max-width: 200px;
+  margin: 0 auto;
+  border: 1px solid pink;
+  padding: 10px;
+  background-color: #ffccff;
+  box-shadow: 5px 5px peachpuff;
+  align-items: center;
+  margin-top: 20px;
+
 
 input {
   border: peachpuff;
@@ -39,7 +52,6 @@ img{
   height: 40%; 
 }
 `
-
 
 const CustomMedForm = (props) => 
       

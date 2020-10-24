@@ -1,12 +1,22 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import styled from 'styled-components'
+
+
+let StyledFooter = styled.footer`
+  position:fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  background:#999;
+  z-index: 100; 
+`
 
 const Footer = (props) => {
   return (
-    <div>
-      <footer>
-
-
+      
+    <StyledFooter>
 
         {/* ABOUT */}
       
@@ -21,9 +31,7 @@ const Footer = (props) => {
             />
           }
 
-        
           {props.location.pathname !== '/about' ? null :
-            
             <a onClick href='https://github.com/DannyMichaels/' target='_blank' rel="noopener noreferrer">
               <img
               src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
@@ -33,7 +41,6 @@ const Footer = (props) => {
                 alt='github'
               />
             </a>
-         
           }
         </Link>
        
@@ -61,11 +68,9 @@ const Footer = (props) => {
           }
         </Link>
      
-      </footer>
-    </div>
+      </StyledFooter>
   );
 };
 
 export default withRouter(Footer); 
 
-// withRouter gives access to the router props.

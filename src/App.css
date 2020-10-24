@@ -10,35 +10,16 @@ display: flex;
 flex-direction: column;
  min-height: 400px;
    margin-bottom: 120px;
-
 }
 
-nav {
-  text-align: center;
-}
-
-footer {
-  position:fixed;
-  left: 0px;
-  bottom: 0px;
-  height: 100px;
-  width: 100%;
-  background:#999;
-  z-index: 100; 
-}
 
 .about {
   width: 100px;
   height: 100px;
   position: absolute;
   right: 0px;
-
 }
 
-.rxguide-logo {
-width: 350px;
-
-}
 
 
 .plus-button {
@@ -63,20 +44,7 @@ width: 350px;
  height: 20px;
 }
 
-form {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  width: 200px;
-  max-width: 200px;
-  margin: 0 auto;
-  border: 1px solid pink;
-  padding: 10px;
-  background-color: #ffccff;
-  box-shadow: 5px 5px peachpuff;
-  align-items: center;
-  margin-top: 20px;
-}
+ 
 
 button {
   padding: 10px;
