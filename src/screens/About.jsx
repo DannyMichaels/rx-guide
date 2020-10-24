@@ -75,7 +75,7 @@ const About = () => {
       ) : (
         <div className="med-container">
           {filteredMeds.map((med) => (
-           <Link style={{color: 'black', textDecoration: 'none'}} to='/'>
+           <Link style={{color: 'black', textDecoration: 'none'}} to={`/medication/${med.fields.name}`}>
             <Med
               med={med}
               fetchMeds={fetchMeds}

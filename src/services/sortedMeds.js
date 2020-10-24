@@ -1,17 +1,20 @@
-import { getMeds } from './meds'
+import { getMeds } from './axiosCalls'
 
-const medications =  getMeds()
+const response =  getMeds()
 
- export const getSortedMeds = medications.sort((recordA, recordB) => {
-  const date1 = new Date(recordA.createdTime).getTime();
-  const date2 = new Date(recordB.createdTime).getTime();
+export const getSortedMeds = () => {
+  const sortedMeds = response.sort((recordA, recordB) => {
+    const date1 = new Date(recordA.createdTime).getTime();
+    const date2 = new Date(recordB.createdTime).getTime();
 
-  if (date1 < date2) {
-    return -1;
-  } else if (date1 > date2) {
-    return 1;
-  } else {
-    return 0;
-  }
-});
+    if (date1 < date2) {
+      return -1;
+    } else if (date1 > date2) {
+      return 1;
+    } else {
+      return 0;
+    }
+  })
+};
+
 

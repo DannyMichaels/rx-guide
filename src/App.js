@@ -5,8 +5,9 @@ import Home from "./screens/Home";
 import Custom from "./screens/Custom";
 import "./App.css";
 import MedDetail from "./Components/Medication/MedDetail";
-import axios from "axios";
 import Layout from './Components/shared/Layout/Layout'
+import { getMeds } from './services/axiosCalls'
+// import { getSortedMeds } from './services/sortedMeds'
 
 function App() {
   const [meds, setMeds] = useState([]);
@@ -14,14 +15,10 @@ function App() {
 
   useEffect(() => {
     const getApi = async () => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`;
-      const response = await axios.get(airtableURL, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      });
 
-      const sortedMeds = response.data.records.sort((recordA, recordB) => {
+        const response = await getMeds()
+
+        const sortedMeds = response.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
         const date2 = new Date(recordB.createdTime).getTime();
 
@@ -43,12 +40,10 @@ function App() {
       <Router>
         <div className="App">
           <Layout>
-          <main>
+            <Switch>
             <Route exact path="/">
               <Home />
             </Route>
-          </main>
-          <Switch>
               <Route path="/about" exact component={About} meds={meds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds}/>
             <Route path="/custom-medication" exact component={Custom} />
             <Route exact path="/medication/:name">
@@ -59,8 +54,7 @@ function App() {
               />
             </Route>
             </Switch>
-            </Layout >
-
+            </Layout>
         </div>
       </Router>
     </>
