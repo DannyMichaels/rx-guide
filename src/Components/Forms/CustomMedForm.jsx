@@ -2,32 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Form = styled.form`
-
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  width: 200px;
-  max-width: 200px;
-  margin: 0 auto;
-  border: 1px solid pink;
-  padding: 10px;
-  background-color: #ffccff;
-  box-shadow: 5px 5px peachpuff;
-  align-items: center;
-  margin-top: 20px;
-
-
 input {
   border: peachpuff;
   padding: 10px;
   text-align: center;
   margin: 5px;
 }
-
 input:focus {
   outline: none;
 }
-
 textarea {
   border: peachpuff;
   padding-bottom: 20px;
@@ -35,11 +18,9 @@ textarea {
   margin: 5px;
   resize: none;
 }
-
 textarea:focus {
   outline: none;
 }
-
 button {
   background: none;
   border: none;
@@ -53,9 +34,10 @@ img{
 }
 `
 
+
 const CustomMedForm = (props) => 
       
-<Form >
+<Form onSubmit={props.handleSubmit}>
       <label htmlFor="name" type="text">
         Name:
       </label>

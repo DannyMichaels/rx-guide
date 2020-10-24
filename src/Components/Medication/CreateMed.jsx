@@ -1,8 +1,34 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
+import CreateMedForm from '../Forms/CreateMedForm'
 
 const Form = styled.form`
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 200px;
+  max-width: 200px;
+  margin: 0 auto;
+  border: 1px solid pink;
+  padding: 10px;
+  background-color: #ffccff;
+  box-shadow: 5px 5px peachpuff;
+  align-items: center;
+  margin-top: 20px;
+
+button {
+  background: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+img{
+  width: 40%;
+  height: 40%; 
+}
 
 select {
   border: peachpuff;
@@ -91,24 +117,11 @@ const CreateMed = (props) => {
 
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <label htmlFor="name" type='text'>Name:</label>
-        <select className='select-css' name='name' type='text'
-          value={name}
-          onChange={(e) => setName(e.target.value)}>
-          {props.meds.map((med) => (
-            <option>{med.fields.name}</option>
-          ))}
-         </select>
-        
-          <label htmlFor="taken" type='text'>Taken At:</label>
-        <input name='taken' type='time'
-          value={taken} onChange={(e) => setTaken(e.target.value)}
-        />
-        <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" alt="Submit"/></button>
-      </Form>
-    </div>
+
+    <CreateMedForm med={props.med}
+     meds={props.meds}
+      taken={taken} setTaken={setTaken} name={name}
+      setName={setName} handleSubmit={handleSubmit} />
   );
 };
 

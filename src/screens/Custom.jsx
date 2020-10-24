@@ -60,7 +60,7 @@ function Custom(props) {
       <h1 style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>Add your own custom medication!</h1>
 
       <CustomMedForm 
-        onSubmit={handleSubmit}
+        handleSubmit={handleSubmit}
         name={name}
         setName={setName}
         description={description}

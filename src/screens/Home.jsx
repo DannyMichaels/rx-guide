@@ -55,7 +55,7 @@ export default function Home() {
         {addedMeds.map((med) =>
           <Med editable={true} med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />)}
 
-        < CreateMed meds={prescribedMeds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
+        <CreateMed meds={prescribedMeds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
 
       </div>
     </>
