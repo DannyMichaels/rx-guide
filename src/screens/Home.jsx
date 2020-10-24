@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Med from '../Components/Medication/Med'
 import CreateMed from '../Components/Medication/CreateMed'
+import { getMeds } from '../services/meds'
+import { getAddedMeds } from '../services/getAddedMeds'
 
 export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);
@@ -10,26 +11,17 @@ export default function Home() {
   
   useEffect(() => {
     const getApi = async () => {
-    const prescriptionsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions`
-      const prescriptionResponse = await axios.get(prescriptionsUrl, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-        }
-      })
-      setPrescribedMeds(prescriptionResponse.data.records);
+    const prescriptionResponse = await getMeds()
+      setPrescribedMeds(prescriptionResponse);
     }
     getApi();
-  },[])
+  }, [])
+  
   useEffect(() => {
     const getApi = async () => {
-      const addedMedsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
-      const response = await axios.get(addedMedsUrl, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-        }
-      })
       
-        const sortedMeds = response.data.records.sort((recordA, recordB) => {
+        const addedMedsResponse = await getAddedMeds()
+        const sortedMeds = addedMedsResponse.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
         const date2 = new Date(recordB.createdTime).getTime();
           

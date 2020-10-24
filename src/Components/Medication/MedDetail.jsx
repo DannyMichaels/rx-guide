@@ -5,13 +5,17 @@ import '../../App.css'
 
 export default function MedDetail(props) {
   const params = useParams();
-  const med = props.fetchMeds.find((m) =>  m.fields.name === params.name)  
+
+
+  const med = props.meds.find((m) =>  m.fields === params.name)  
+
+  console.log(med)
 
   return (
-    <div >
-     <h1> {med.name} </h1>
+    <div>
+       {/* <h1> {med.name} </h1> */}
+      {/* <h1>{med.fields.description}</h1>  */}
     </div>
   )
 }
 
-// this is unused right now in this deploy. Will update.

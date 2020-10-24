@@ -9,8 +9,9 @@ import Search from '../Components/Forms/Search'
 const About = () => {
   const [meds, setMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
-  const [search, setSearch] = useState("");
-
+  const [search, setSearch] = useState(false)
+  // const [filteredMeds, setFilteredMeds] = useState([])
+  
   useEffect(() => {
     const getApi = async () => {
       const medications = await getMeds() // importing axios call from a js file.
@@ -47,11 +48,30 @@ const About = () => {
         </p>
       </div>
 
+      {/* when someone starts searching something, I am going to set search to true */}
+      {/* and then I am going to render the filteredMeds */}
+      {/* if it's false render list of regular meds without any filter */}
+
       <Search setSearch={setSearch} />
 
       
-      {search === "" ? (
-        <h2 style={{ textAlign: "center", textShadow: '2px 2px peachpuff', color: 'black'}}>List of Medications:</h2>
+      {!search ? (
+        <div>
+        <h2 style={{ textAlign: "center", textShadow: '2px 2px peachpuff', color: 'black' }}>List of Medications:</h2>
+        <div className="med-container">
+          {meds.map((med) => (
+            <Link style={{color: 'black', textDecoration: 'none'}} to={`/medication/${med.fields.name}`}>
+            <Med
+              style={{ textAlign: "center" }}
+              med={med}
+              fetchMeds={fetchMeds}
+              setFetchMeds={setFetchMeds}
+              editable={false}
+              />
+            </Link>
+          ))}
+        </div>
+        </div>
       ) : (
         <div className="med-container">
           {filteredMeds.map((med) => (
@@ -65,23 +85,6 @@ const About = () => {
           ))}
         </div>
       )}
-
-      {search === "" ? (
-        <div className="med-container">
-          {meds.map((med) => (
-            // <Link style={{color: 'black', textDecoration: 'none'}} to={`/medication/${med.name}`}>
-
-            <Med
-              style={{ textAlign: "center" }}
-              med={med}
-              fetchMeds={fetchMeds}
-              setFetchMeds={setFetchMeds}
-              editable={false}
-              />
-            // </Link>
-          ))}
-        </div>
-      ) : <> </> }
     </div>
   );
 };
