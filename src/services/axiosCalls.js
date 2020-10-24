@@ -16,3 +16,19 @@ export const getMeds = async () => {
   }
 };
 
+
+const addedMedsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
+
+export const getAddedMeds = async () => {
+  try {
+    const response = await axios.get(addedMedsUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+      },
+    });
+    const addedMeds = response.data.records;
+    return addedMeds;
+  } catch (error) {
+    throw error;
+  }
+};

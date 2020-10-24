@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Med from '../Components/Medication/Med'
 import CreateMed from '../Components/Medication/CreateMed'
-import { getMeds } from '../services/meds'
-import { getAddedMeds } from '../services/getAddedMeds'
+import { getMeds, getAddedMeds } from '../services/axiosCalls'
+
+
 
 export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);
@@ -52,7 +53,6 @@ export default function Home() {
       <div>
 
         {addedMeds.map((med) =>
-
           <Med editable={true} med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />)}
 
         < CreateMed meds={prescribedMeds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />

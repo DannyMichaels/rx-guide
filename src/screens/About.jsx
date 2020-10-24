@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from 'react-router-dom'
-import { getMeds } from '../services/meds'
+import { getMeds } from '../services/axiosCalls'
 // import { getSortedMeds } from './services/sortedMeds'
 import Search from '../Components/Forms/Search'
 
