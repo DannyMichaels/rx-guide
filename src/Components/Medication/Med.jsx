@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom'
 import UpdateMed from './UpdateMed'
 import axios from 'axios'
 import styled from 'styled-components'
+import { CircularProgress } from '@material-ui/core'
+import { getDeleteMeds } from '../../services/axiosCalls'
 
 const Button = styled.button`
   background: none;
@@ -32,7 +34,7 @@ const Med = (props) => {
       });
       props.setFetchMeds(!props.fetchMeds)
       setDeleted(false)
-    }, 100)
+    }, 150)
   }
 
 
@@ -46,20 +48,19 @@ const Med = (props) => {
         alt="Medication"
       />
 
-      <p>{props.med.fields.description}</p>
+      <p>{props.med.fields.description}</p> 
       {props.editable && (<div>
         <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
 
         <UpdateMed med={props.med}
           fetchMeds={props.fetchMeds}
           setFetchMeds={props.setFetchMeds}
-
         />
-        <Button onClick={handleDelete}>{deleted ? <img src="https://i.imgur.com/JRRT416.png" alt='delete' width='20px'/> : <img src="https://i.imgur.com/NhIlDPF.png" alt="delete"
+        <button onClick={handleDelete} className='edit-button'>{deleted ? <CircularProgress/> : <img src="https://i.imgur.com/NhIlDPF.png" alt="delete"
           width='20px'
         />
         }
-        </Button>
+        </button>
       </div>)}
     </div>
   );

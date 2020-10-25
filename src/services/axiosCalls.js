@@ -34,3 +34,14 @@ export const getAddedMeds = async () => {
 };
 
 
+
+// export const getDeleteMeds = async (props) => {
+//   const deleteURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`
+//   await axios.delete(deleteURL, {
+//     headers: {
+//       Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+//     },
+//   });
+// }
+  
+  

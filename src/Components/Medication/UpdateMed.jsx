@@ -9,8 +9,6 @@ select {
   cursor: pointer;
 }
 
- 
-
 select:focus {
   outline: none;
 }
@@ -23,13 +21,13 @@ input:focus {
   outline: none;
 }
 
-button {
+/* button {
   background: none;
   border: none;
 }
 button:focus {
   outline: none;
-}
+} */
 img{
   width: 40%;
   height: 40%; 
@@ -64,18 +62,13 @@ const UpdateMed = (props) => {
 
 
   return (
-    <div>
       <Form className="update-med" onSubmit={handleSubmit}>
-     
-        
           <label htmlFor="taken" type='text'>Edit Time:</label>
         <input name='taken' type='time'
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
-
         <button className='edit-button' type='submit'><img className="add" src="https://i.imgur.com/SnXF0hi.png" alt="Add"/></button>
       </Form>
-    </div>
   );
 };
 

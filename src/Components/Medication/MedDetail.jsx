@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import '../../App.css'
+import { CircularProgress } from '@material-ui/core'
 
 
 export default function MedDetail(props) {
@@ -13,6 +13,8 @@ export default function MedDetail(props) {
 
   return (
     <div>
+      <CircularProgress />
+      UNDER CONSTRUCTION
        {/* <h1> {med.name} </h1> */}
       {/* <h1>{med.fields.description}</h1>  */}
     </div>

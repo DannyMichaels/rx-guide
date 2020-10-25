@@ -15,10 +15,8 @@ let StyledFooter = styled.footer`
 
 const Footer = (props) => {
   return (
-      
-    <StyledFooter>
-
-        {/* ABOUT */}
+   
+  <StyledFooter> 
       
         <Link to='/about'>
           {props.location.pathname === '/about' ? null :
@@ -56,7 +54,7 @@ const Footer = (props) => {
           }
         </Link>
 
-        <Link to='./custom-medication'>
+        <Link to='/custom-medication'>
         {props.location.pathname === '/custom-medication' ? null :
             <img
               src="https://i.imgur.com/BZOV6FC.png"

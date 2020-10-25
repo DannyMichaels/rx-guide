@@ -7,6 +7,7 @@ import "./App.css";
 import MedDetail from "./Components/Medication/MedDetail";
 import Layout from './Components/shared/Layout/Layout'
 import { getMeds } from './services/axiosCalls'
+import Error from './Error'
 // import { getSortedMeds } from './services/sortedMeds'
 
 function App() {
@@ -52,7 +53,8 @@ function App() {
                 fetchMeds={fetchMeds}
                 setFetchMeds={setFetchMeds}
               />
-            </Route>
+              </Route>
+              <Route component={Error}/>
             </Switch>
             </Layout>
         </div>

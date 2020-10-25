@@ -10,7 +10,6 @@ const About = () => {
   const [meds, setMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
   const [search, setSearch] = useState(false)
-  // const [filteredMeds, setFilteredMeds] = useState([])
   
   useEffect(() => {
     const getApi = async () => {

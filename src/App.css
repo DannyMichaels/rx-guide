@@ -2,6 +2,21 @@
   font-family: 'Sansita Swashed';
 }
 
+.edit-button{
+  background: none;
+  border: none;
+}
+
+.edit-button:focus {
+  outline: none;
+}
+
+.edit-button img{
+  width: 30%;
+  height: 30%;
+}
+
+
 body {
 background-color: #fffcdc;
 background: linear-gradient(to right, #ffefba, #ffffff);

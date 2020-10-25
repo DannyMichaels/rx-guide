@@ -3,12 +3,12 @@ import axios from "axios";
 import CustomMedForm from '../Components/Forms/CustomMedForm'
 
 
-function Custom(props) {
+function Custom() {
+
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
