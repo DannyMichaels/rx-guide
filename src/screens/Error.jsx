@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 let StyledError = styled.div`
@@ -11,6 +11,7 @@ border: 2px dashed black;
 padding-bottom: 50px;
 background-color: white;
 box-shadow: 2px 2px peachpuff;
+/* width: 50vw;  */
 
 a{
   text-decoration: none;
@@ -26,15 +27,14 @@ transform: skew(-10deg);
 p {
   font-size: larger;
 }
-
-
 `
 
 function Error() {
+let location = useLocation()
   return (
     <StyledError>
       <h1> 404  </h1>
-      <p>Sorry, this page doesn't exist!</p>
+      <p>Sorry, &nbsp; {location.pathname.replace('/', '')} doesn't exist!</p>
     <NavLink to='/'> Go Back </NavLink>
     </StyledError>
   )

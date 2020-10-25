@@ -54,7 +54,10 @@ function App() {
                 setFetchMeds={setFetchMeds}
               />
               </Route>
-              <Route component={Error}/>
+              <Route component={Error} />
+              <Route path="*" >
+                
+            </Route>
             </Switch>
             </Layout>
         </div>

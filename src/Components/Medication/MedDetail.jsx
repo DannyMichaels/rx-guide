@@ -15,7 +15,7 @@ export default function MedDetail(props) {
     <div>
      
        <h1> {med.fields.name} </h1>
-      {/* <h1>{med.fields.description}</h1>  */}
+      <h1>{med.fields.description}</h1> 
     </div>
   )
 }

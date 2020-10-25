@@ -147,3 +147,5 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 - 10/19/2020: Added a search medication functionality in the about page, got rid of border for buttons, changed styling for form, added more styling for text.
 
 - 10/21/2020: Added a window that asks user if he's sure he wants to submit his custom medication. 
+
+- 10/25/2020 : Added a loading icon if medication hasn't loaded yet in Homepage. Added an error 404 page if user searches for an unexisting page.
