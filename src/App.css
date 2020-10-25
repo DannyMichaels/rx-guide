@@ -20,11 +20,11 @@
 body {
 background-color: #fffcdc;
 background: linear-gradient(to right, #ffefba, #ffffff);
-
 display: flex;
 flex-direction: column;
  min-height: 400px;
    margin-bottom: 120px;
+   align-items: center;
 }
 
 form {
@@ -141,7 +141,8 @@ button:hover {
 
 @media only screen and (min-width: 1024px) {
  body{
-  display: flex;
+  display: none;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   min-height: 400px;

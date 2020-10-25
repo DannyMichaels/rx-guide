@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function ErrorHeader() {
   return (
-            <Link style={{ textAlign: 'center' }} to='/'>
+            <Link style={{display: 'flex', flexDirection: 'column' , textAlign: 'center' }} to='/'>
               <img
                 className="rxguide-logo"
                 src="https://i.imgur.com/wspOpB0.png"
