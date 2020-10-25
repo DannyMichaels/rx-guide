@@ -148,4 +148,8 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 
 - 10/21/2020: Added a window that asks user if he's sure he wants to submit his custom medication. 
 
-- 10/25/2020 : Added a loading icon if medication hasn't loaded yet in Homepage. Added an error 404 page if user searches for an unexisting page.
+#### 10/25/2020 : 
+ - Added a loading icon if medication hasn't loaded yet in Homepage. 
+ - Added an error 404 page if user searches for an unexisting page. 
+ - Added an option for user to click on a specific medication from the list in about page and get more    information.
+ - Updated file structure 

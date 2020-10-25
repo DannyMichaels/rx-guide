@@ -29,7 +29,6 @@ export default function Home() {
   return (
     <>
       <div>
-        
       {!addedMeds  ? ( <CircularProgress style={{ marginLeft: '50%', marginTop: '10%', width: '50px'}}/> ): (
         <>
             {addedMeds?.map((med) => (

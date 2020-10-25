@@ -3,10 +3,13 @@ import { Link, withRouter } from 'react-router-dom'
 
 function FooterLinks(props) {
  
-  const [whiteList] = [ '/about', '/', '/custom-medication', '/medication']
+  // const whiteList= [ '/about', '/', '/custom-medication', '/medication/']
   
 
   return (
+    
+    // whiteList.includes(props.location.pathname)?
+    // (<div>
     <div>
          <Link to='/about'>
           {props.location.pathname === '/about' ? null :
@@ -55,8 +58,8 @@ function FooterLinks(props) {
             />
           }
         </Link>
-     
-    </div>
+     </div>
+  //   </div>) : (<>  </>) 
   )
 }
 

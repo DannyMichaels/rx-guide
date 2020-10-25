@@ -6,7 +6,7 @@ const Layout = (props) => (
   <div className='layout'>
     <Header />
     <div className="layout-children">
-       {props.children}  {/* props.children is a feature of React */}
+       {props.children}
     </div>
     <Footer />
   </div>

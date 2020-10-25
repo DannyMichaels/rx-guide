@@ -26,6 +26,7 @@ const Med = (props) => {
 
 
   return (
+
     <div className='med'>
     
       <h3>{props.med.fields.name}</h3>
@@ -35,7 +36,8 @@ const Med = (props) => {
         alt="Medication"
       />
 
-      <p>{props.med.fields.description}</p> 
+      {/* <p>{props.med.fields.description}</p>  */}
+      
       {props.editable && (<div>
         <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
 
@@ -48,7 +50,7 @@ const Med = (props) => {
         />
         }
         </button>
-      </div>)}
+        </div>)}
     </div>
   );
 };

@@ -1,9 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
-export default function Header() {
+ function Header(props) {
+  const whiteList= [ '/about', '/', '/custom-medication', '/medication/']
+
   return (
-      <header style={{textAlign: "center"}}>
+    whiteList.includes(props.location.pathname)?( 
+    <header style={{ textAlign: "center" }}>
             <Link to='/'>
               <img
                 className="rxguide-logo"
@@ -13,6 +16,9 @@ export default function Header() {
                 alt="Logo"
               />
             </Link>
-    </header>
+    </header>) : null //<Link to='/'><img className="rxguide-logo" src="https://i.imgur.com/wspOpB0.png" alt="Worried Logo"width="350px"
+                // height="300" /></Link>
   )
-}
+ }
+
+ export default withRouter(Header)
