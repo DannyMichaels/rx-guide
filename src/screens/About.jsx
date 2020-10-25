@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from 'react-router-dom'
 import { getMeds } from '../services/axiosCalls'
-// import { getSortedMeds } from './services/sortedMeds'
 import Search from '../Components/Forms/Search'
+import { CircularProgress } from '@material-ui/core'
 
 
 const About = () => {
@@ -14,7 +14,7 @@ const About = () => {
   useEffect(() => {
     const getApi = async () => {
       const medications = await getMeds() 
-       setMeds(medications);
+      setMeds(medications);
     };
     getApi();
   }, [fetchMeds]);
@@ -22,6 +22,11 @@ const About = () => {
   const filteredMeds = meds.filter((med) =>
     med.fields.name.toLowerCase().includes(`${search}`.toLowerCase())
   );
+
+
+  if (!meds) {
+    return <CircularProgress style={{ marginLeft: '50%', marginTop: '10%', width: '50px'}}/>
+  }
 
   return (
     <div>

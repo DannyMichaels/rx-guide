@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMeds } from "../../services/axiosCalls";
 import MedDetailHeader from '../../Components/shared/Header/MedDetailHeader'
+import { CircularProgress } from '@material-ui/core'
 
 export default function MedDetail() {
   const params = useParams();
@@ -17,6 +18,9 @@ export default function MedDetail() {
   getApi();
   }, [params]);
 
+  if (!med?.fields?.image) {
+    return <><MedDetailHeader /> <CircularProgress style={{ marginLeft: '50%', marginTop: '10%', width: '50px'}}/></>
+  }
 
   return (
  <>

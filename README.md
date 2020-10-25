@@ -56,13 +56,12 @@ Airtable API : https://airtable.com/
 #### MVP
 
 
-- User should be able to add, remove, and edit RX.
+- User should be able to add, remove, and edit RX (have full crud).
 - Use ReactDOM for other page/s (About, etc).
 
 
 #### PostMVP
 
-- Create a RX interactions page.
 - User could choose a drug class before choosing drug name from list.
 - CSS animations and other candy
 
@@ -72,7 +71,7 @@ Airtable API : https://airtable.com/
 | ---------- | -------------------------------------------------- | ---------- |
 | October 8  | Prompt / Wireframes / Priority Matrix / Timeframes | Complete   |
 | October 9  | Project Approval                                   | Complete |
-| October 11 | Core Application Structure (HTML, CSS, etc.)       | Complete |
+| October 11 | Core Application Structure                         | Complete |
 | October 12 | Pseudocode / actual code                           | Complete |
 | October 13 | Initial Clickable Model                            | Complete |
 | October 14 | MVP                                                | Complete |
@@ -109,7 +108,7 @@ Airtable API : https://airtable.com/
 - There are other apps with the simillar idea competing for the same people.
 
 
-### Code snippet I'm proud of
+### Code snippet I'm happy with
 
 ```
 const sortedMeds = response.data.records.sort((recordA, recordB) => {
@@ -151,7 +150,7 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 #### 10/25/2020 Major Update: 
  - Updated file structure 
  - Added a loading icon if medication hasn't loaded yet in Homepage. 
- - Added an error 404 page if user searches for an unexisting page. 
+ - Added an error 404 page if user searches for an unexisting page.
  - Added an option for user to click on a specific medication from the list in about page and get more    information.
  - Medications now have classes in addition to names, images, and descriptions.
  
