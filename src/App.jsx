@@ -7,7 +7,7 @@ import "./App.css";
 import MedDetail from "./Components/Medication/MedDetail";
 import Layout from './Components/shared/Layout/Layout'
 import { getMeds } from './services/axiosCalls'
-import Error from './Error'
+import Error from './screens/Error'
 // import { getSortedMeds } from './services/sortedMeds'
 
 function App() {

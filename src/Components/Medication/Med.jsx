@@ -2,23 +2,10 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom'
 import UpdateMed from './UpdateMed'
 import axios from 'axios'
-import styled from 'styled-components'
 import { CircularProgress } from '@material-ui/core'
-import { getDeleteMeds } from '../../services/axiosCalls'
+// import { getDeleteMeds } from '../../services/axiosCalls'
 
-const Button = styled.button`
-  background: none;
-  border: none;
 
-&:focus {
-  outline: none;
-}
-
-img {
-  width: 30%;
-  height: 30%;
-}
-`
 
 const Med = (props) => {
   const [deleted, setDeleted] = useState(false)
