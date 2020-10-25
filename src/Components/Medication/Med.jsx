@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import UpdateMed from './UpdateMed'
 import axios from 'axios'
 import { CircularProgress } from '@material-ui/core'
-// import { getDeleteMeds } from '../../services/axiosCalls'
 
 
 
@@ -35,8 +34,6 @@ const Med = (props) => {
         height='50'
         alt="Medication"
       />
-
-      {/* <p>{props.med.fields.description}</p>  */}
       
       {props.editable && (<div>
         <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>

@@ -6,22 +6,9 @@ import Custom from "./screens/Custom";
 import "./App.css";
 import MedDetail from "./Components/Medication/MedDetail";
 import Layout from './Components/shared/Layout/Layout'
-// import { getMeds } from './services/axiosCalls'
-// import { getSortedMeds } from './services/sortedMeds'
 import Error from './screens/Error'
-// import { getSortedMeds } from './services/sortedMeds'
 
 function App() {
-  // const [meds, setMeds] = useState([]);
-  // const [fetchMeds, setFetchMeds] = useState([]);
-
-  // useEffect(() => {
-  //   const getApi = async () => {
-  //       const response = await getMeds()
-  //       setMeds(getSortedMeds(response));
-  //   };
-  //   getApi();
-  // }, [fetchMeds]);
 
   return (
     <>
