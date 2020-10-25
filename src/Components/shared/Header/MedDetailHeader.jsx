@@ -1,20 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ErrorHeader() {
+function MedDetailHeader() {
   return (
-            <header>
-            <Link to='/'>
+    <header style={{textAlign: 'center'}}>   
+    <Link to='/'>
               <img
                 className="rxguide-logo"
-                src="https://i.imgur.com/9E9bUyw.png"
+                src="https://i.imgur.com/O014jTc.png"
                 width="350px"
                 height="300"
                 alt="Logo"
               />
-      </Link>
-      </header>
+      </Link></header>  
   )
 }
 
-export default ErrorHeader
+export default MedDetailHeader

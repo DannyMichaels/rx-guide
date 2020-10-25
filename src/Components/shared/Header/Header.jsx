@@ -16,7 +16,7 @@ import { Link, withRouter } from 'react-router-dom'
                 alt="Logo"
               />
             </Link>
-    </header>) : null //<Link to='/'><img className="rxguide-logo" src="https://i.imgur.com/wspOpB0.png" alt="Worried Logo"width="350px"
+    </header>) : <></> //<Link to='/'><img className="rxguide-logo" src="https://i.imgur.com/wspOpB0.png" alt="Worried Logo"width="350px"
                 // height="300" /></Link>
   )
  }

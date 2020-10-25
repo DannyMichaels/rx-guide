@@ -23,8 +23,8 @@ background: linear-gradient(to right, #ffefba, #ffffff);
 display: flex;
 flex-direction: column;
  min-height: 400px;
-   margin-bottom: 120px;
-   align-items: center;
+ margin-bottom: 120px;
+ align-items: center;
 }
 
 form {

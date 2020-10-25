@@ -26,8 +26,8 @@ const About = () => {
   return (
     <div>
       <div className="about-text">
-      <h1 style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>About RXGuide:</h1>
-        <p style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>
+      <h1 style={{ textShadow: '2px 2px peachpuff'}}>About RXGuide:</h1>
+        <p  style={{ textShadow: '2px 2px peachpuff', marginLeft: '100px', marginRight: '100px'}}>
           RXGuide, created by Daniel Michael, is an app made to help the user
           organize his medication. The user will be able to add, edit or remove
           medication.
