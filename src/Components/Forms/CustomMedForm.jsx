@@ -49,6 +49,17 @@ const CustomMedForm = (props) =>
         onChange={(e) => props.setName(e.target.value)}
       />
 
+<label htmlFor="class" type="text">
+        Class:
+      </label>
+      <input
+        name="class"
+        type="text"
+        placeholder="Enter Drug Class"
+        value={props.medClass}
+        onChange={(e) => props.setMedClass(e.target.value)}
+      />
+
       <label htmlFor="description" type="text">
         Description:
       </label>
@@ -56,7 +67,7 @@ const CustomMedForm = (props) =>
         name="description"
         type="text"
         className="input-description"
-        placeholder="Drug Description"
+        placeholder="Enter Drug Description"
         value={props.description}
         onChange={(e) => props.setDescription(e.target.value)}
       ></textarea>
@@ -67,7 +78,7 @@ const CustomMedForm = (props) =>
       <input
         name="image"
         type="text"
-        placeholder="https://image.png"
+        placeholder="https://image.png/"
         value={props.image}
         onChange={(e) => props.setImage(e.target.value)}
       />

@@ -8,12 +8,11 @@ function Custom() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
-  
+  const [medClass, setMedClass] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
     if (!name) {
       alert('You have to add a name!')
       return
@@ -27,7 +26,7 @@ function Custom() {
 
       
     if (window.confirm(`Are you sure you want to add this medication?
-    \n Name: ${name} \n Description: ${description} \n Image URL: ${image}`)) {
+    \n Name: ${name}\n Class: ${medClass} \n Description: ${description} \n Image URL: ${image}`)) {
      
       alert("Medication Added!")
     } else {
@@ -66,6 +65,7 @@ function Custom() {
         description={description}
         setDescription={setDescription}
         image={image} setImage={setImage}
+        medClass={medClass} setMedClass={setMedClass}
         />
 
     </div>

@@ -22,10 +22,11 @@ export default function MedDetail() {
  <>
     <MedDetailHeader />
     <div className='about-text' style={{textShadow: '2px 2px peachpuff'}}>
-      <h1>{med?.fields?.name} </h1>
-      <h2>Description:</h2>
+     <h1>{med?.fields?.name} </h1>
+        <h2>Class: {med?.fields?.class}</h2>
+        <h2>Description:</h2>
         <h4 style={{marginLeft: '100px', marginRight: '100px'}}> {med?.fields?.description}</h4>  
-      <img src={med?.fields?.image} alt="medication" />
+      <img src={med?.fields?.image} style={{maxWidth: '350px',  maxHeight: '350px'}} alt="medication" />
       </div>
       </>
   );
