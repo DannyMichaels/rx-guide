@@ -47,12 +47,7 @@ const About = () => {
         </p>
       </div>
 
-      {/* when someone starts searching something, I am going to set search to true */}
-      {/* and then I am going to render the filteredMeds */}
-      {/* if it's false render list of regular meds without any filter */}
-
       <Search setSearch={setSearch} />
-
       
       {!search ? (
         <div>
