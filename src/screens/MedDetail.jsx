@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getMeds } from "../../services/axiosCalls";
-import MedDetailHeader from '../../Components/shared/Header/MedDetailHeader'
+import { getMeds } from "../services/axiosRequests";
+import MedDetailHeader from '../Components/shared/Header/MedDetailHeader'
 import { CircularProgress } from '@material-ui/core'
 
 export default function MedDetail() {

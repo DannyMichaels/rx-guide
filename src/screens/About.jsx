@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from 'react-router-dom'
-import { getMeds } from '../services/axiosCalls'
+import { getMeds } from '../services/axiosRequests'
 import Search from '../Components/Forms/Search'
 import { CircularProgress } from '@material-ui/core'
 

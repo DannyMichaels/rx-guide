@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Custom from "./screens/Custom";
 import "./App.css";
-import MedDetail from "./Components/Medication/MedDetail";
+import MedDetail from "./screens/MedDetail";
 import Layout from './Components/shared/Layout/Layout'
 // import { getMeds } from './services/axiosCalls'
 // import { getSortedMeds } from './services/sortedMeds'
@@ -25,12 +25,9 @@ function App() {
             </Route>
               <Route path="/about" exact component={About} />
             <Route path="/custom-medication" exact component={Custom} />
-            <Route exact path="/medication/:name">
-              <MedDetail />
-              </Route>
+              <Route path="/medication/:name" exact component={MedDetail}/>    
               <Route component={Error} />
               <Route path="*" >
-                
             </Route>
             </Switch>
             </Layout>

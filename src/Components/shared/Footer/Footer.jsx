@@ -14,7 +14,6 @@ let StyledFooter = styled.footer`
 
 const Footer = (props) => {
   
-
   return (
    
   <StyledFooter> 
