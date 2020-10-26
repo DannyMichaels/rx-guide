@@ -16,9 +16,10 @@ export const getMeds = async () => {
   }
 };
 
+// work on this
 export const getMedDetail = async (medName) => {
   try {
-    const response = await axios.get(`${airtableURL}?filterByFormula=SEARCH(${medName})`, {
+    const response = await axios.get(`${airtableURL}?filterByFormula=FIND(${medName},{name})>0`, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
       },
@@ -29,6 +30,8 @@ export const getMedDetail = async (medName) => {
     throw error;
   }
 };
+
+
 
 const addedMedsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
 

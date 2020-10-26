@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Custom from "./screens/Custom";
 import "./App.css";
-import MedDetail from "./Components/Medication/MedDetail";
+import MedDetail from "./screens/MedDetail";
 import Layout from './Components/shared/Layout/Layout'
 import Error from './screens/Error'
 
 function App() {
+ 
 
   return (
     <>
@@ -16,21 +17,11 @@ function App() {
         <div className="App">
           <Layout>
             <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-              <Route path="/about" exact component={About} />
+              <Route exact path="/" component={Home} />              <Route path="/about" exact component={About} />
             <Route path="/custom-medication" exact component={Custom} />
-            <Route exact path="/medication/:name">
-              <MedDetail
-                // meds={meds}
-                // fetchMeds={fetchMeds}
-                // setFetchMeds={setFetchMeds}
-              />
-              </Route>
+              <Route path="/medication/:name" exact component={MedDetail}/>    
               <Route component={Error} />
               <Route path="*" >
-                
             </Route>
             </Switch>
             </Layout>

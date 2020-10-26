@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Med from '../Components/Medication/Med'
 import CreateMed from '../Components/Medication/CreateMed'
-import { getMeds, getAddedMeds } from '../services/axiosCalls'
+import { getMeds, getAddedMeds } from '../services/axiosRequests'
 import { CircularProgress } from '@material-ui/core'
 import { getSortedMeds } from '../services/sortedMeds'
 

@@ -31,6 +31,7 @@ transform: skew(-10deg);
 
 p {
   font-size: larger;
+  max-width: 200px;
 }
 `
 
