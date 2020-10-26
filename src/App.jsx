@@ -12,16 +12,7 @@ import Error from './screens/Error'
 // import { getSortedMeds } from './services/sortedMeds'
 
 function App() {
-  // const [meds, setMeds] = useState([]);
-  // const [fetchMeds, setFetchMeds] = useState([]);
-
-  // useEffect(() => {
-  //   const getApi = async () => {
-  //       const response = await getMeds()
-  //       setMeds(getSortedMeds(response));
-  //   };
-  //   getApi();
-  // }, [fetchMeds]);
+ 
 
   return (
     <>
@@ -35,11 +26,7 @@ function App() {
               <Route path="/about" exact component={About} />
             <Route path="/custom-medication" exact component={Custom} />
             <Route exact path="/medication/:name">
-              <MedDetail
-                // meds={meds}
-                // fetchMeds={fetchMeds}
-                // setFetchMeds={setFetchMeds}
-              />
+              <MedDetail />
               </Route>
               <Route component={Error} />
               <Route path="*" >
