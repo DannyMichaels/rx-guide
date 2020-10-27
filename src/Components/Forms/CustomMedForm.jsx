@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const Img = styled.img`
-&:hover {
-  cursor: default;
-}
-`
-
 const Form = styled.form`
 input {
   border: peachpuff;
@@ -96,12 +90,11 @@ const CustomMedForm = (props) => {
         value={props.image}
         onChange={(e) => props.setImage(e.target.value)}
       />
-        <button style={{ backgroundColor: 'white', margin: '10px', fontFamily: 'Sansita Swashed'}}onClick={handleClick}> Preview Image </button>
+        <button style={{ backgroundColor: 'white', margin: '10px', fontFamily: 'Sansita Swashed'}}onClick={handleClick}> Preview Medication </button>
       <button><img src='https://i.imgur.com/BZOV6FC.png' className='add' alt='add custom medication' /></button>
     </Form>
-    {imagePreview ? <h4 style={{marginTop: '50px'}}>Image Preview:</h4> : null}
-
-      {imagePreview ? <Img className="li-button" src={imagePreview} style={{maxWidth: '200px', padding: '20px'}} alt={props.image}/> : null}
+    {imagePreview ? <h2 style={{marginTop: '50px'}}>Medication Preview:</h2> : null}
+      {imagePreview ? <div className="med"><h3>{props.name}</h3> <img className="" src={imagePreview} style={{maxWidth: '50px'}} alt={props.name}/> </div>  : null}
     </>
   )
 }
