@@ -82,7 +82,6 @@ function CreateMedForm(props) {
     />
     <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" alt="Submit"/></button>
     </Form>    
-    
   )
 }
 

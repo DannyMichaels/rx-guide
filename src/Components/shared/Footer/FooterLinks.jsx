@@ -16,11 +16,11 @@ function FooterLinks(props) {
               alt="About-Page Icon"
             />
           }
-
+</Link>
           {props.location.pathname !== '/about' ? null :
             <a onClick href='https://github.com/DannyMichaels/' target='_blank' rel="noopener noreferrer">
               <img
-              src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
+              src='https://svgur.com/i/Qug.svg'
                 width='150'
                 height='150'
                 className='about'
@@ -28,7 +28,7 @@ function FooterLinks(props) {
               />
             </a>
           }
-        </Link>
+        
        
         <Link to='/' >
           {props.location.pathname === '/' ? null :

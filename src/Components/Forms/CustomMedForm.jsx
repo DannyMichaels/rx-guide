@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Form = styled.form`
@@ -35,9 +35,17 @@ img{
 `
 
 
-const CustomMedForm = (props) => 
-      
-<Form onSubmit={props.handleSubmit}>
+const CustomMedForm = (props) => {
+  const [imagePreview, setImagePreview] = useState('')
+  
+  const handleClick = (e) => {
+    e.preventDefault();
+    setImagePreview(props.image)
+  }
+
+  return (
+  <>
+    <Form onSubmit={props.handleSubmit}>
       <label htmlFor="name" type="text">
         Name:
       </label>
@@ -49,7 +57,7 @@ const CustomMedForm = (props) =>
         onChange={(e) => props.setName(e.target.value)}
       />
 
-<label htmlFor="class" type="text">
+      <label htmlFor="class" type="text">
         Class:
       </label>
       <input
@@ -82,8 +90,12 @@ const CustomMedForm = (props) =>
         value={props.image}
         onChange={(e) => props.setImage(e.target.value)}
       />
-
-      <button><img src='https://i.imgur.com/BZOV6FC.png' className='add' alt='add custom medication'/></button>
-  </Form>
-    
+        <button style={{ backgroundColor: 'white', margin: '10px', fontFamily: 'Sansita Swashed'}}onClick={handleClick}> Preview Medication </button>
+      <button><img src='https://i.imgur.com/BZOV6FC.png' className='add' alt='add custom medication' /></button>
+    </Form>
+    {imagePreview ? <h2 style={{marginTop: '50px'}}>Medication Preview:</h2> : null}
+      {imagePreview ? <div className="med"><h3>{props.name}</h3> <img className="" src={imagePreview} style={{maxWidth: '50px'}} alt={props.name}/> </div>  : null}
+    </>
+  )
+}
     export default CustomMedForm

@@ -126,6 +126,10 @@ button:hover {
   cursor: pointer;
 }
 
+.li-button:hover{
+    animation: bounce 1s;
+    cursor: pointer;
+}
 .rxguide-logo:hover {
   animation: bounce 1s;
 }
