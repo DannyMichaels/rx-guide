@@ -12,11 +12,12 @@ border: 2px dashed black;
 padding-bottom: 50px;
 background-color: white;
 box-shadow: 2px 2px peachpuff;
+margin: 20px auto;
+box-shadow: 5px 5px peachpuff;
+width: 300px;
+max-width: 300px;
+text-align: center;
 
-  margin: 20px auto;
-  box-shadow: 5px 5px peachpuff;
-  max-width: 250px;
-  text-align: center;
 
 a{
   text-decoration: none;
@@ -30,8 +31,10 @@ transform: skew(-10deg);
 }
 
 p {
+  width: 12em;
   font-size: larger;
-  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 `
 
