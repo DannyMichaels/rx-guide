@@ -30,18 +30,14 @@ const Ul = styled.ul`
 
 `;
 
-// const handleClick = (e) => {
-//   e.preventDefault()
-// }
 
-// can't get rightnav to go back after click
 
-const RightNav = ({ open }, setOpen) => {
+const RightNav = ({ open , setOpen }) => {
   return (
     <Ul open={open} setOpen={setOpen}> 
-      <Link to='/' onClick={() => { setOpen(open) }}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2478/2478295.svg" alt="home" width='50px'/></li></Link> 
-      <Link to='/about'><li><img className="li-button" src="https://www.flaticon.com/premium-icon/icons/svg/2106/2106068.svg" alt="about" width='50px'/></li></Link>
-      <Link to= '/'><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2514/2514465.svg" alt="contact" width='50px'/></li></Link>
+      <Link to='/' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2478/2478295.svg" alt="home" width='50px'/></li></Link> 
+      <Link to='/about' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/premium-icon/icons/svg/2106/2106068.svg" alt="about" width='50px'/></li></Link>
+      <Link to= '/' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2514/2514465.svg" alt="contact" width='50px'/></li></Link>
     </Ul>
   )
 }
