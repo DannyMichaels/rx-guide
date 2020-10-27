@@ -6,10 +6,7 @@ import Custom from "./screens/Custom";
 import "./App.css";
 import MedDetail from "./screens/MedDetail";
 import Layout from './Components/shared/Layout/Layout'
-// import { getMeds } from './services/axiosCalls'
-// import { getSortedMeds } from './services/sortedMeds'
 import Error from './screens/Error'
-// import { getSortedMeds } from './services/sortedMeds'
 
 function App() {
  

@@ -21,13 +21,29 @@ const Ul = styled.ul`
 
     li {
       color: #fff;
-      padding: 20px;
+      padding: 40px;
+      text-decoration: none;
+  }
+  
+  li:hover {
+    cursor: default;
+  }
+  span {
+    margin-left: 10px;
+  }
+
+  span:hover{
+    cursor: pointer;
   }
   @media (max-width: 768px) {
    width: 100%;
    text-align: center;
   }
 
+  img {
+    width: 100px;
+  }
+  
 `;
 
 
@@ -35,9 +51,11 @@ const Ul = styled.ul`
 const RightNav = ({ open , setOpen }) => {
   return (
     <Ul open={open} setOpen={setOpen}> 
-      <Link to='/' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2478/2478295.svg" alt="home" width='50px'/></li></Link> 
-      <Link to='/about' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/premium-icon/icons/svg/2106/2106068.svg" alt="about" width='50px'/></li></Link>
-      <Link to= '/' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2514/2514465.svg" alt="contact" width='50px'/></li></Link>
+      <Link to='/' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2478/2478295.svg" alt="home" /><span>Home</span></li></Link> 
+      <Link to='/about' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/premium-icon/icons/svg/2106/2106068.svg" alt="about" /><span>About</span></li></Link>
+      <a href="https://www.linkedin.com/in/daniel-michael-718825155/" target="_blank" alt="LinkedIn" rel="noopener noreferrer" onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/408/408703.svg" alt="LinkedIn"/><span>LinkedIn</span></li></a>
+      <a href="https://www.github.com/dannymichaels" target="_blank" alt="GitHub" rel="noopener noreferrer" onClick={() => setOpen(!open)}><li><img className="li-button" src="https://svgur.com/i/Qug.svg" alt="GitHub" /><span>GitHub</span></li></a>
+
     </Ul>
   )
 }

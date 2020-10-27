@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMeds } from "../services/axiosRequests";
 import MedDetailHeader from '../Components/shared/Header/MedDetailHeader'
 import { CircularProgress } from '@material-ui/core'
+// import { getMedDetail} from '../services/axiosRequests'
 
 export default function MedDetail() {
   const params = useParams();
@@ -11,8 +12,8 @@ export default function MedDetail() {
 
   useEffect( () => {
     const getApi = async () => {
-        const response = await getMeds()
-        const med = response.find((m) =>  m.fields.name === params.name)
+      const response = await getMeds()
+      const med = response.find((m) =>  m.fields.name === params.name)
       setMed(med);
   };
   getApi();
