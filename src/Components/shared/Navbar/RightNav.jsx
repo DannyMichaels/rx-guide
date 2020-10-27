@@ -31,7 +31,9 @@ const Ul = styled.ul`
   span {
     margin-left: 10px;
   }
-
+  span:onClick {
+    text-decoration: none;
+  }
   span:hover{
     cursor: pointer;
   }
@@ -42,6 +44,10 @@ const Ul = styled.ul`
 
   img {
     width: 100px;
+  }
+  
+  a{
+    text-decoration: none;
   }
   
 `;
