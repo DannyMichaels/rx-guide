@@ -42,7 +42,7 @@ function Error() {
 let location = useLocation()
   return (
    <>
-          <ErrorHeader />
+    <ErrorHeader />
       <StyledError > 
       <h1> 404  </h1>
       <p>Sorry, &nbsp; {location.pathname.replace('/', '')} doesn't exist!</p>
