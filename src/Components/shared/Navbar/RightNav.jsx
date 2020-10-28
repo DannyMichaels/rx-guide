@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Ul = styled.ul`
 
-
     margin: 0;
     flex-flow: column nowrap;
     background-color: #0D2538;
@@ -31,9 +30,7 @@ const Ul = styled.ul`
   span {
     margin-left: 10px;
   }
-  span:onClick {
-    text-decoration: none;
-  }
+
   span:hover{
     cursor: pointer;
   }
