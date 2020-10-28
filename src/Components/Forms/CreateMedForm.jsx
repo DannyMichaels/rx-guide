@@ -59,8 +59,8 @@ button:focus {
   outline: none;
 }
 img{
-  width: 40%;
-  height: 40%; 
+  width: 70px;
+  height: 70px; 
 }
 `
 

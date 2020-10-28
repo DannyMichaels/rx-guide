@@ -57,7 +57,6 @@ form {
 }
 
 .med { 
- 
   margin: 20px auto;
   border: 1px solid pink;
   background: #ffccff;
@@ -67,12 +66,6 @@ form {
   text-align: center;
   padding-bottom: 20px;
 }
-
-.add {
- width: 20px;
- height: 20px;
-}
-
  
 
 button {
@@ -101,8 +94,6 @@ button {
 .about-text {
   text-align: center;
 }
-
-/* This button hover idea was taken from google. */
 
 @keyframes bounce {  
   0%, 20%, 60%, 100% {
@@ -146,7 +137,6 @@ button:hover {
 @media only screen and (min-width: 1024px) {
  body{
   display: none;
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   min-height: 400px;
