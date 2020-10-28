@@ -21,16 +21,10 @@ input:focus {
   outline: none;
 }
 
-/* button {
-  background: none;
-  border: none;
-}
-button:focus {
-  outline: none;
-} */
 img{
-  width: 40%;
-  height: 40%; 
+  margin-top: 5px;
+  width: 50px;
+  height: 50px; 
 }
 `
 
@@ -67,7 +61,7 @@ const UpdateMed = (props) => {
         <input name='taken' type='time'
           value={taken} onChange={(e) => setTaken(e.target.value)}
         />
-        <button className='edit-button' type='submit'><img className="add" src="https://i.imgur.com/SnXF0hi.png" alt="Add"/></button>
+        <button className='edit-button' type='submit'><img src="https://i.imgur.com/SnXF0hi.png" alt="Edit"/></button>
       </Form>
   );
 };

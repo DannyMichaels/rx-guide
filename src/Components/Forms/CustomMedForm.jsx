@@ -29,8 +29,8 @@ button:focus {
   outline: none;
 }
 img{
-  width: 40%;
-  height: 40%; 
+  width: 70px;
+  height: 70px; 
 }
 `
 
@@ -91,7 +91,7 @@ const CustomMedForm = (props) => {
         onChange={(e) => props.setImage(e.target.value)}
       />
         <button style={{ backgroundColor: 'white', margin: '10px', fontFamily: 'Sansita Swashed'}}onClick={handleClick}> Preview Medication </button>
-      <button><img src='https://i.imgur.com/BZOV6FC.png' className='add' alt='add custom medication' /></button>
+      <button><img src='https://i.imgur.com/BZOV6FC.png' alt='add custom medication' /></button>
     </Form>
     {imagePreview ? <h2 style={{marginTop: '50px'}}>Medication Preview:</h2> : null}
       {imagePreview ? <div className="med"><h3>{props.name}</h3> <img className="" src={imagePreview} style={{maxWidth: '50px'}} alt={props.name}/> </div>  : null}
