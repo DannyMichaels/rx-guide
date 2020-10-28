@@ -18,6 +18,7 @@ const Ul = styled.ul`
     list-style: none;
     z-index: 998;
     box-shadow: ${({ open }) => open ? '0 2px 5px 5px peachpuff' : 0};
+    overflow: scroll;
 
     li {
       padding: 40px;
