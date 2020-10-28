@@ -144,4 +144,4 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
  - Added an option for user to click on a specific medication from the list in about page and get more    information.
  - Medications now have classes in addition to names, images, and descriptions.
  
- - 10/27/2020: Added a hamburger menu, added a preview medication button on the create custom image form.
+ - 10/27/2020: Added a hamburger menu, added a preview medication button on the create custom image form, changed styling of footer.

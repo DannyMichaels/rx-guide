@@ -8,7 +8,8 @@ let StyledFooter = styled.footer`
   bottom: 0px;
   height: 100px;
   width: 100%;
-  background:#999;
+  background: #FECCFF;
+  box-shadow: 0px 0px 3.5px 5px peachpuff;
   z-index: 100; 
 `
 
