@@ -12,6 +12,10 @@ const StyledBurger = styled.div`
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
+  
+  &:hover {
+    cursor: pointer;
+  }
     
   div {
     width: 2rem;
@@ -32,6 +36,7 @@ const StyledBurger = styled.div`
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
+ 
 `;
 
 const Burger = () => {
