@@ -17,7 +17,7 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
     list-style: none;
     z-index: 998;
-    box-shadow: 0px 5px 5px 5px peachpuff;
+    box-shadow: ${({ open }) => open ? '0 2px 5px 5px peachpuff' : 0};
 
     li {
       padding: 40px;
