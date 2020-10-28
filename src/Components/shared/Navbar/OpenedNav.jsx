@@ -6,7 +6,7 @@ const Ul = styled.ul`
 
     margin: 0;
     flex-flow: column nowrap;
-    background-color: #0D2538;
+    background-color: #FFCCFF;
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
@@ -19,8 +19,10 @@ const Ul = styled.ul`
     z-index: 998;
 
     li {
-      color: #fff;
       padding: 40px;
+      font-size: large;
+      color: black;
+      font-weight: 30px;
       text-decoration: none;
   }
   
@@ -41,6 +43,7 @@ const Ul = styled.ul`
 
   img {
     width: 100px;
+    object-fit: contain;
   }
   
   a{
@@ -55,9 +58,9 @@ const RightNav = ({ open , setOpen }) => {
   return (
     <Ul open={open} setOpen={setOpen}> 
       <Link to='/' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/2478/2478295.svg" alt="home" /><span>Home</span></li></Link> 
-      <Link to='/about' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/premium-icon/icons/svg/2106/2106068.svg" alt="about" /><span>About</span></li></Link>
-      <a href="https://www.linkedin.com/in/daniel-michael-718825155/" target="_blank" alt="LinkedIn" rel="noopener noreferrer" onClick={() => setOpen(!open)}><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/408/408703.svg" alt="LinkedIn"/><span>LinkedIn</span></li></a>
-      <a href="https://www.github.com/dannymichaels" target="_blank" alt="GitHub" rel="noopener noreferrer" onClick={() => setOpen(!open)}><li><img className="li-button" src="https://svgur.com/i/Qug.svg" alt="GitHub" /><span>GitHub</span></li></a>
+      <Link to='/about' onClick={() => setOpen(!open)}><li><img className="li-button" src="https://i.imgur.com/Zhlm6SD.png" alt="about" /><span>About</span></li></Link>
+      <a href="https://www.linkedin.com/in/daniel-michael-718825155/" target="_blank" alt="LinkedIn" rel="noopener noreferrer"><li><img className="li-button" src="https://www.flaticon.com/svg/static/icons/svg/408/408703.svg" alt="LinkedIn"/><span>LinkedIn</span></li></a>
+      <a href="https://www.github.com/dannymichaels" target="_blank" alt="GitHub" rel="noopener noreferrer"><li><img className="li-button" src="https://svgur.com/i/Qug.svg" alt="GitHub" /><span>GitHub</span></li></a>
 
     </Ul>
   )
