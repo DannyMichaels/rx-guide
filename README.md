@@ -28,29 +28,19 @@ The user will be able to add, edit or remove medication.
 
 ## API and Data Sample
 
-Airtable API : https://airtable.com/
 ```
-[
-    {
-        "id": "att6f75cc83f1b648",
-        "size": 26317,
-        "url": "https://www.filepicker.io/api/file/5YTJXioCQG0tYWPw6OPw",
-        "type": "image/jpeg",
-        "filename": "33823_3_xl.jpg",
-        "thumbnails": {
-            "small": {
-                 "url": "https://www.filepicker.io/api/file/Dy5gioxaShSUvHX0LgIC",
-                 "width": 54,
-                 "height": 36
-             },
-            "large": {
-                 "url": "https://www.filepicker.io/api/file/ueYi00yRiqhuUn420UZA",
-                 "width": 197,
-                 "height": 131
-             }
-         }
-    }
-]
+  "records": [
+        {
+            "id": "recwYDDpqd5VVF5N0",
+            "fields": {
+                "class": "Anti-Depressant",
+                "name": "Amitryptiline",
+                "description": "Anti-Depressant + Nerve pain medication",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Amitriptyline2DACS.svg/1200px-Amitriptyline2DACS.svg.png"
+            },
+            "createdTime": "2020-10-09T13:21:03.000Z"
+        },
+              
 ```                         
 
 #### MVP
