@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Ul = styled.ul`
 
-    margin: 0;
+    margin: 0;  
     flex-flow: column nowrap;
     background-color: #FFCCFF;
     position: fixed;
@@ -17,6 +17,7 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
     list-style: none;
     z-index: 998;
+    box-shadow: 0px 5px 5px 5px peachpuff;
 
     li {
       padding: 40px;
