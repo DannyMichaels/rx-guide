@@ -52,7 +52,9 @@ const CustomMedForm = (props) => {
       <input
         name="name"
         type="text"
-        placeholder="Enter Drug Name"
+          placeholder="Enter Drug Name"
+          required
+          autoFocus
         value={props.name}
         onChange={(e) => props.setName(e.target.value)}
       />
@@ -62,9 +64,11 @@ const CustomMedForm = (props) => {
       </label>
       <input
         name="class"
-        type="text"
+          type="text"
+          required
+          autoFocus
         placeholder="Enter Drug Class"
-        value={props.medClass}
+          value={props.medClass}
         onChange={(e) => props.setMedClass(e.target.value)}
       />
 
@@ -77,6 +81,8 @@ const CustomMedForm = (props) => {
         className="input-description"
         placeholder="Enter Drug Description"
         value={props.description}
+          required
+          autoFocus
         onChange={(e) => props.setDescription(e.target.value)}
       ></textarea>
 
@@ -87,7 +93,9 @@ const CustomMedForm = (props) => {
         name="image"
         type="text"
         placeholder="https://image.png/"
-        value={props.image}
+          value={props.image}
+          required
+          autoFocus
         onChange={(e) => props.setImage(e.target.value)}
       />
         <button style={{ backgroundColor: 'white', margin: '10px', fontFamily: 'Sansita Swashed'}}onClick={handleClick}> Preview Medication </button>

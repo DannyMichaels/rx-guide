@@ -26,14 +26,16 @@ export default function Home() {
     getApi()
   }, [fetchMeds])
 
+  const ADDEDMEDS = addedMeds?.map((med) => (
+    <Med editable={true} med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
+  ))
+
   return (
     <>
       <div>
       {!addedMeds  ? ( <CircularProgress style={{ marginLeft: '50%', marginTop: '10%', width: '50px'}}/> ): (
         <>
-            {addedMeds?.map((med) => (
-              <Med editable={true} med={med} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
-            ))}
+            {ADDEDMEDS}
         <CreateMed meds={prescribedMeds} fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
         </>
         )}

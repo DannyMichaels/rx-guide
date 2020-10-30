@@ -13,18 +13,6 @@ function Custom() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name) {
-      alert('You have to add a name!')
-      return
-    } else if (!description) {
-      alert('You have to add a description!')
-      return
-    } else if (!image) {
-      alert('You have to add a image')
-      return
-    }
-
-      
     if (window.confirm(`Are you sure you want to add this medication?
     \n Name: ${name}\n Class: ${medClass} \n Description: ${description} \n Image URL: ${image}`)) {
      

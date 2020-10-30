@@ -16,7 +16,6 @@ export const getMeds = async () => {
   }
 };
 
-// work on this
 export const getMedDetail = async (medName) => {
   try {
     const response = await axios.get(`${airtableURL}?filterByFormula=FIND(${medName},{name})>0`, {
@@ -59,5 +58,4 @@ export const getAddedMeds = async () => {
 //     },
 //   });
 // }
-  
   

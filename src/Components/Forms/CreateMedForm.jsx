@@ -64,16 +64,19 @@ img{
 }
 `
 
+
 function CreateMedForm(props) {
+  const MEDS = props.meds.map((med) => (
+    <option>{med.fields.name}</option>
+  )) 
+  
   return (
     <Form onSubmit={props.handleSubmit}>
     <label htmlFor="name" type='text'>Name:</label>
     <select className='select-css' name='name' type='text'
       value={props.name}
       onChange={(e) => props.setName(e.target.value)}>
-      {props.meds.map((med) => (
-        <option>{med.fields.name}</option>
-      ))} 
+        {MEDS}
      </select>
     
       <label htmlFor="taken" type='text'>Taken At:</label>
