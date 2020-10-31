@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CustomMedForm from '../Components/Forms/CustomMedForm'
+import { Redirect } from 'react-router-dom'
 
 
 function Custom() {
@@ -9,6 +10,7 @@ function Custom() {
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [medClass, setMedClass] = useState("")
+  const [isCreated, setCreated] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ function Custom() {
     };
 
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/`;
-    await axios.post(
+    const created = await axios.post(
       airtableURL,
       { fields },
       {
@@ -37,11 +39,15 @@ function Custom() {
         },
       }
     );
+    setCreated({ created })
     setName("");
     setImage("");
     setDescription("");
   };
 
+  if (isCreated) {
+    return <Redirect to={'/about'}/>
+  }
   return (
     <div className="about-text">
       <h1 style={{ textShadow: '2px 2px peachpuff', color: 'black'}}>Add your own custom medication!</h1>
