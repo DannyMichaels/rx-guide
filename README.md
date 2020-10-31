@@ -145,3 +145,5 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
  - Medications now have classes in addition to names, images, and descriptions.
  
  - 10/27/2020: Added a hamburger menu, added a preview medication button on the create custom image form, changed styling of footer.
+
+- 10/30/2020: added an "Move In Left" animation for logo on page load.
