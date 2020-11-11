@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { getMeds } from "../services/axiosRequests";
 import MedDetailHeader from '../Components/shared/Header/MedDetailHeader'
 import { CircularProgress } from '@material-ui/core'
-// import { getMedDetail} from '../services/axiosRequests'
 
 export default function MedDetail() {
   const params = useParams();
