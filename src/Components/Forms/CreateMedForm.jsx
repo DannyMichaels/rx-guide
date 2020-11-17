@@ -82,7 +82,8 @@ function CreateMedForm(props) {
       <label htmlFor="taken" type='text'>Taken At:</label>
     <input name='taken' type='time'
       value={props.taken} onChange={(e) => props.setTaken(e.target.value)}
-    />
+      />
+      { navigator?.userAgent?.indexOf("Firefox") !== -1 ? <p>Sorry, the time selector is unsupported on Firefox, try a different browser!</p> : <> </> }
     <button type='Submit'><img className="add" src="https://i.imgur.com/BZOV6FC.png" alt="Submit"/></button>
     </Form>    
   )
