@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Med from "../Components/Medication/Med";
-import { Link } from 'react-router-dom'
-import { getMeds } from '../services/axiosRequests'
-import Search from '../Components/Forms/Search'
-import { CircularProgress } from '@material-ui/core'
-
+import { Link } from "react-router-dom";
+import { getMeds } from "../services/axiosRequests";
+import Search from "../Components/Forms/Search";
+import { CircularProgress } from "@material-ui/core";
 
 const About = () => {
   const [meds, setMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
-  const [search, setSearch] = useState(false)
-  
+  const [search, setSearch] = useState(false);
+
   useEffect(() => {
     const getApi = async () => {
-      const medications = await getMeds() 
+      const medications = await getMeds();
       setMeds(medications);
     };
     getApi();
@@ -23,16 +22,58 @@ const About = () => {
     med.fields.name.toLowerCase().includes(`${search}`.toLowerCase())
   );
 
+  const MEDS = React.Children.toArray(
+    meds.map((med) => (
+      <Link
+        style={{ color: "black", textDecoration: "none" }}
+        to={`/medication/${med.fields.name}`}
+      >
+        <Med
+          style={{ textAlign: "center" }}
+          med={med}
+          fetchMeds={fetchMeds}
+          setFetchMeds={setFetchMeds}
+          editable={false}
+        />
+      </Link>
+    ))
+  );
+
+  const medsJSX = React.Children.toArray(
+    filteredMeds.map((med) => (
+      <Link
+        style={{ color: "black", textDecoration: "none" }}
+        to={`/medication/${med.fields.name}`}
+      >
+        <Med
+          med={med}
+          fetchMeds={fetchMeds}
+          setFetchMeds={setFetchMeds}
+          editable={false}
+        />
+      </Link>
+    ))
+  );
 
   if (!meds) {
-    return <CircularProgress style={{ marginLeft: '50%', marginTop: '10%', width: '50px'}}/>
+    return (
+      <CircularProgress
+        style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
+      />
+    );
   }
 
   return (
     <div>
       <div className="about-text">
-      <h1 style={{ textShadow: '2px 2px peachpuff'}}>About RXGuide:</h1>
-        <p  style={{ textShadow: '2px 2px peachpuff', marginLeft: '100px', marginRight: '100px'}}>
+        <h1 style={{ textShadow: "2px 2px peachpuff" }}>About RXGuide:</h1>
+        <p
+          style={{
+            textShadow: "2px 2px peachpuff",
+            marginLeft: "100px",
+            marginRight: "100px",
+          }}
+        >
           RXGuide, created by Daniel Michael, is an app made to help the user
           organize his medication. The user will be able to add, edit or remove
           medication.
@@ -40,36 +81,22 @@ const About = () => {
       </div>
 
       <Search setSearch={setSearch} />
-      
+
       {!search ? (
         <div>
-        <h2 style={{ textAlign: "center", textShadow: '2px 2px peachpuff', color: 'black' }}>List of Medications:</h2>
-        <div className="med-container">
-          {meds.map((med) => (
-            <Link style={{color: 'black', textDecoration: 'none'}} to={`/medication/${med.fields.name}`}>
-            <Med
-              style={{ textAlign: "center" }}
-              med={med}
-              fetchMeds={fetchMeds}
-              setFetchMeds={setFetchMeds}
-              editable={false}
-              />
-            </Link>
-          ))}
-        </div>
+          <h2
+            style={{
+              textAlign: "center",
+              textShadow: "2px 2px peachpuff",
+              color: "black",
+            }}
+          >
+            List of Medications:
+          </h2>
+          <div className="med-container">{MEDS}</div>
         </div>
       ) : (
-        <div className="med-container">
-          {filteredMeds.map((med) => (
-           <Link style={{color: 'black', textDecoration: 'none'}} to={`/medication/${med.fields.name}`}>
-            <Med
-              med={med}
-              fetchMeds={fetchMeds}
-              setFetchMeds={setFetchMeds}
-              editable={false}
-            /></Link>
-          ))}
-        </div>
+        <div className="med-container">{medsJSX}</div>
       )}
     </div>
   );
