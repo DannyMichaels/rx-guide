@@ -1,8 +1,8 @@
 .App {
-  font-family: 'Sansita Swashed';
+  font-family: "Sansita Swashed";
 }
 
-.edit-button{
+.edit-button {
   background: none;
   border: none;
 }
@@ -11,20 +11,19 @@
   outline: none;
 }
 
-.edit-button img{
+.edit-button img {
   width: 30%;
   height: 30%;
 }
 
-
 body {
-background-color: #fffcdc;
-background: linear-gradient(to right, #ffefba, #ffffff);
-display: flex;
-flex-direction: column;
- min-height: 400px;
- margin-bottom: 120px;
- align-items: center;
+  background-color: #fffcdc;
+  background: linear-gradient(to right, #ffefba, #ffffff);
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  margin-bottom: 120px;
+  align-items: center;
 }
 
 form {
@@ -49,24 +48,27 @@ form {
   right: 0px;
 }
 
-
-
 .plus-button {
   position: absolute;
   left: 0px;
 }
 
-.med { 
-  margin: 20px auto;
+.med-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.med {
+  margin: 20px;
   border: 1px solid pink;
   background: #ffccff;
   box-shadow: 5px 5px peachpuff;
   width: 250px;
   max-width: 250px;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
 }
- 
 
 button {
   padding: 10px;
@@ -74,11 +76,11 @@ button {
   border: 1px solid pink;
   align-items: center;
   text-align: center;
-  padding: 10px 40px;  
-  overflow:hidden;
+  padding: 10px 40px;
+  overflow: hidden;
 }
 
-.med-pic{
+.med-pic {
   margin-left: 75%;
   margin-bottom: -10%;
 }
@@ -92,8 +94,11 @@ button {
   text-align: center;
 }
 
-@keyframes bounce {  
-  0%, 20%, 60%, 100% {
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -114,9 +119,9 @@ button:hover {
   cursor: pointer;
 }
 
-.li-button:hover{
-    animation: bounce 1s;
-    cursor: pointer;
+.li-button:hover {
+  animation: bounce 1s;
+  cursor: pointer;
 }
 .rxguide-logo:hover {
   animation: bounce 1s;
@@ -127,87 +132,79 @@ button:hover {
 }
 
 .custom-link:hover {
-  animation:bounce 1s;
+  animation: bounce 1s;
 }
-
 
 @media only screen and (min-width: 1024px) {
- body{
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 400px;
-   margin-bottom: 120px;
-   align-items: center;
-   margin-bottom: 120px;
-
- }
-.med{
-   display: inline-block;
-  margin-left: 20px; 
- 
-}
-
-.med-container{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 10px;
-}
-
-button:before {
-  position: absolute;
-  top: 11px;
-  left: -30px;
-  transition: all 300ms ease;
-}
-
-.med:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  margin-bottom: 30px;
- }
-
-}
-
-@media only screen and (min-width: 768px) {
-
-  body{
-    display: flex;
+  body {
     flex-direction: column;
     justify-content: center;
     min-height: 400px;
-     align-items: center;
-     margin-bottom: 120px;
-   }
-
-  .med{
-     display: inline-block;
-    margin: 20px; 
+    margin-bottom: 120px;
+    align-items: center;
+    margin-bottom: 120px;
   }
-  
-  .med-container{
-    display:flex;
+
+  .med-container {
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 10px;
+    flex-flow: row wrap;
+    padding: 20px;
   }
-  
+
+  .med {
+    display: inline-block;
+    transition: transform 300ms ease-out;
+  }
+
+  .med:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1) ease-in;
+  }
+
   button:before {
     position: absolute;
     top: 11px;
     left: -30px;
     transition: all 300ms ease;
   }
-  
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+    align-items: center;
+    margin-bottom: 120px;
+  }
+
+  .med {
+    display: inline-block;
+    margin: 20px;
+  }
+
+  .med-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: row wrap;
+    margin: 10px;
+  }
+
+  button:before {
+    position: absolute;
+    top: 11px;
+    left: -30px;
+    transition: all 300ms ease;
+  }
+
   .med:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    margin-bottom: 30px;
-   }
-   
+  }
 }

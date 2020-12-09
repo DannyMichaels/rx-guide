@@ -65,7 +65,9 @@ const Form = styled.form`
 `;
 
 function CreateMedForm(props) {
-  const MEDS = React.Children.toArray(props.meds.map((med) => <option>{med.fields.name}</option>));
+  const MEDS = React.Children.toArray(
+    props.meds.map((med) => <option>{med.fields.name}</option>)
+  );
 
   return (
     <Form onSubmit={props.handleSubmit}>
@@ -91,13 +93,11 @@ function CreateMedForm(props) {
         value={props.taken}
         onChange={(e) => props.setTaken(e.target.value)}
       />
-      {navigator?.userAgent?.indexOf("Firefox") !== -1 ? (
+      {navigator?.userAgent?.indexOf("Firefox") !== -1 && (
         <p>
           Sorry, the time selector is unsupported on Firefox, try a different
           browser!
         </p>
-      ) : (
-        <> </>
       )}
       <button type="Submit">
         <img
