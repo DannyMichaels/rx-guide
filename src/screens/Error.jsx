@@ -26,8 +26,7 @@ a{
 }
 
 a:hover {
-  font-size: ;  
-transform: skew(-10deg);
+  transform: skew(-10deg);
 }
 
 p {
