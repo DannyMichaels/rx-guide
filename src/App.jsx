@@ -20,7 +20,7 @@ function App() {
               <Route path="/custom-medication" exact component={Custom} />
               <Route path="/medication/:name" exact component={MedDetail} />
               <Route component={Error} />
-              <Route path="*"></Route>
+              <Route path="*" />
             </Switch>
           </Layout>
         </div>
