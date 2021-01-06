@@ -5,10 +5,10 @@ import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
 
 const Med = (props) => {
-  const [deleted, setDeleted] = useState(false);
+  const [isRefreshed, setIsRefreshed] = useState(false);
 
   const handleDelete = async () => {
-    setDeleted(true);
+    setIsRefreshed(true);
     setTimeout(async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`;
       await axios.delete(airtableURL, {
@@ -17,7 +17,7 @@ const Med = (props) => {
         },
       });
       props.setFetchMeds(!props.fetchMeds);
-      setDeleted(false);
+      setIsRefreshed(false);
     }, 150);
   };
 
@@ -28,7 +28,7 @@ const Med = (props) => {
         src={props.med.fields.image}
         width="100"
         height="50"
-        alt="Medication"
+        alt={props.med.fields.name}
       />
 
       {props.editable && (
@@ -40,7 +40,7 @@ const Med = (props) => {
             setFetchMeds={props.setFetchMeds}
           />
           <button onClick={handleDelete} className="edit-button">
-            {deleted ? (
+            {isRefreshed ? (
               <CircularProgress />
             ) : (
               <img

@@ -13,7 +13,7 @@ let StyledFooter = styled.footer`
   z-index: 100;
 `;
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <StyledFooter>
       <FooterLinks />

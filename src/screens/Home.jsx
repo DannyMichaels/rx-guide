@@ -26,7 +26,7 @@ export default function Home() {
     getApi();
   }, [fetchMeds]);
 
-  const ADDEDMEDS = React.Children.toArray(
+  const PRESCRIPTIONS = React.Children.toArray(
     addedMeds?.map((med) => (
       <Med
         editable={true}
@@ -46,7 +46,7 @@ export default function Home() {
           />
         ) : (
           <>
-            {ADDEDMEDS}
+            {PRESCRIPTIONS}
             <CreateMed
               meds={prescribedMeds}
               fetchMeds={fetchMeds}

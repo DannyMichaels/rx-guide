@@ -6,28 +6,27 @@ import Search from "../Components/Forms/Search";
 import { CircularProgress } from "@material-ui/core";
 
 const About = () => {
-  const [meds, setMeds] = useState([]);
+  const [allMeds, setAllMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
   const [search, setSearch] = useState(false);
 
   useEffect(() => {
     const getApi = async () => {
       const medications = await getMeds();
-      setMeds(medications);
+      setAllMeds(medications);
     };
     getApi();
   }, [fetchMeds]);
 
-  const filteredMeds = meds.filter((med) =>
+  const filteredMeds = allMeds.filter((med) =>
     med.fields.name.toLowerCase().includes(`${search}`.toLowerCase())
   );
 
   const MEDS = React.Children.toArray(
-    meds.map((med) => (
+    allMeds.map((med) => (
       <Link
         style={{ color: "black", textDecoration: "none" }}
-        to={`/medication/${med.fields.name}`}
-      >
+        to={`/medication/${med.fields.name}`}>
         <Med
           style={{ textAlign: "center" }}
           med={med}
@@ -43,8 +42,7 @@ const About = () => {
     filteredMeds.map((med) => (
       <Link
         style={{ color: "black", textDecoration: "none" }}
-        to={`/medication/${med.fields.name}`}
-      >
+        to={`/medication/${med.fields.name}`}>
         <Med
           med={med}
           fetchMeds={fetchMeds}
@@ -55,7 +53,7 @@ const About = () => {
     ))
   );
 
-  if (!meds) {
+  if (!allMeds) {
     return (
       <CircularProgress
         style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
@@ -72,8 +70,7 @@ const About = () => {
             textShadow: "2px 2px peachpuff",
             marginLeft: "100px",
             marginRight: "100px",
-          }}
-        >
+          }}>
           RXGuide, created by Daniel Michael, is an app made to help the user
           organize his medication. The user will be able to add, edit or remove
           medication.
@@ -89,8 +86,7 @@ const About = () => {
               textAlign: "center",
               textShadow: "2px 2px peachpuff",
               color: "black",
-            }}
-          >
+            }}>
             List of Medications:
           </h2>
           <div className="med-container">{MEDS}</div>
