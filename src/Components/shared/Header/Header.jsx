@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import StyledHeader from "./header";
 import MoveInLeft from "./animation";
+import ErrorHeader from "./ErrorHeader";
 
 function Header(props) {
   const whiteList = ["/about", "/", "/custom-medication", "/medication/"];
@@ -21,7 +22,7 @@ function Header(props) {
       </StyledHeader>
     </MoveInLeft>
   ) : (
-    <></>
+    <ErrorHeader />
   );
 }
 

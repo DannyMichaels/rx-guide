@@ -53,7 +53,7 @@ const Ul = styled.ul`
   }
 `;
 
-const RightNav = ({ open, setOpen }) => {
+const OpenNav = ({ open, setOpen }) => {
   return (
     <Ul open={open} setOpen={setOpen}>
       <Link to="/" onClick={() => setOpen(!open)}>
@@ -108,4 +108,4 @@ const RightNav = ({ open, setOpen }) => {
   );
 };
 
-export default RightNav;
+export default OpenNav;

@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import ErrorHeader from "../Components/shared/Header/ErrorHeader";
 
 let StyledError = styled.div`
   display: flex;
@@ -40,7 +39,6 @@ function Error() {
   let location = useLocation();
   return (
     <>
-      <ErrorHeader />
       <StyledError>
         <h1> 404 </h1>
         <p>Sorry, &nbsp; {location.pathname.replace("/", "")} doesn't exist!</p>

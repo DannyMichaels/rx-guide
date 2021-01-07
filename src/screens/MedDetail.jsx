@@ -21,7 +21,7 @@ export default function MedDetail() {
   if (!med?.fields?.image) {
     return (
       <>
-        <MedDetailHeader />{" "}
+        <MedDetailHeader />
         <CircularProgress
           style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
         />
@@ -39,7 +39,6 @@ export default function MedDetail() {
         ) : null}
         <h2>Description:</h2>
         <h4 style={{ marginLeft: "100px", marginRight: "100px" }}>
-          {" "}
           {med?.fields?.description}
         </h4>
         <img
