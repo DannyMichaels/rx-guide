@@ -16,14 +16,14 @@ function Custom() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (
-    //   window.confirm(`Are you sure you want to add this medication?
-    // \n Name: ${name}\n Class: ${medClass} \n Description: ${description} \n Image URL: ${image}`)
-    // ) {
-    //   alert("Medication Added!");
-    // } else {
-    //   return;
-    // }
+    if (
+      window.confirm(`Are you sure you want to add this medication?
+    \n Name: ${name}\n Class: ${medClass} \n Description: ${description} \n Image URL: ${image}`)
+    ) {
+      alert("Medication Added!");
+    } else {
+      return;
+    }
 
     const fields = {
       name,
@@ -52,7 +52,6 @@ function Custom() {
     setMedClass("");
     setDescription("");
 
-    console.log({ data });
     await dispatch({ TYPE: "CREATE_MED", payload: data });
     push("/about");
   };
