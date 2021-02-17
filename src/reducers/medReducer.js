@@ -4,6 +4,10 @@ export const medReducer = (state, action) => {
       return {
         allMeds: action.allMeds,
       };
+    case "SET_MEDS":
+      return {
+        allMeds: action.payload,
+      };
     default:
       return state;
   }

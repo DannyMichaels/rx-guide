@@ -10,16 +10,15 @@ export const MedDispatchConsumer = MedDispatchContext.Consumer;
 const MedContextProvider = ({ children }) => {
   const initialMedState = {
     allMeds: [],
+    isLoading: true,
   };
 
   const [state, dispatch] = useReducer(medReducer, initialMedState);
 
-  useMemo(() => {
-    const getApi = async () => {
-      const medData = await getMeds();
-      dispatch({ type: "INIT", allMeds: medData });
-    };
-    getApi();
+  useMemo(async () => {
+    const medData = await getMeds();
+    console.log({ medData });
+    dispatch({ type: "INIT", allMeds: medData, isLoading: false });
   }, []);
 
   return (

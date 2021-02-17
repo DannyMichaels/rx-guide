@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from "react-router-dom";
 import Search from "../Components/Forms/Search";
@@ -10,9 +10,9 @@ const About = () => {
   const [fetchMeds, setFetchMeds] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
-  const { allMeds } = useContext(MedStateContext);
+  const { allMeds, isLoading } = useContext(MedStateContext);
 
-  useMemo(async () => {
+  useEffect(() => {
     setQueriedMeds(allMeds);
   }, [allMeds]);
 
@@ -24,7 +24,6 @@ const About = () => {
     );
 
     setIsSearching(value);
-
     setQueriedMeds(newQueriedMeds);
   };
 
@@ -43,7 +42,7 @@ const About = () => {
     ))
   );
 
-  if (!allMeds) {
+  if (isLoading) {
     return (
       <CircularProgress
         style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}

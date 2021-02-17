@@ -1,26 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import CustomMedForm from "../Components/Forms/CustomMedForm";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { MedDispatchContext, MedStateContext } from "../context/medContext";
 
 function Custom() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [medClass, setMedClass] = useState("");
-  const [isCreated, setCreated] = useState(false);
+
+  const { allMeds } = useContext(MedStateContext);
+  const dispatch = useContext(MedDispatchContext);
+  const { push } = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      window.confirm(`Are you sure you want to add this medication?
-    \n Name: ${name}\n Class: ${medClass} \n Description: ${description} \n Image URL: ${image}`)
-    ) {
-      alert("Medication Added!");
-    } else {
-      return;
-    }
+    // if (
+    //   window.confirm(`Are you sure you want to add this medication?
+    // \n Name: ${name}\n Class: ${medClass} \n Description: ${description} \n Image URL: ${image}`)
+    // ) {
+    //   alert("Medication Added!");
+    // } else {
+    //   return;
+    // }
 
     const fields = {
       name,
@@ -30,7 +34,7 @@ function Custom() {
     };
 
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/`;
-    const created = await axios.post(
+    const medData = await axios.post(
       airtableURL,
       { fields },
       {
@@ -39,16 +43,20 @@ function Custom() {
         },
       }
     );
-    setCreated({ created });
+
+    console.log({ medData });
+
+    const data = medData.data;
+
     setName("");
     setImage("");
     setMedClass("");
     setDescription("");
+
+    await dispatch({ TYPE: "SET_MEDS", payload: [...allMeds, data] });
+    return push("/about");
   };
 
-  if (isCreated) {
-    return <Redirect to={"/about"} />;
-  }
   return (
     <div className="about-text">
       <h1 style={{ textShadow: "2px 2px peachpuff", color: "black" }}>
