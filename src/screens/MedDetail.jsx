@@ -32,9 +32,9 @@ export default function MedDetail() {
     <>
       <div className="about-text" style={{ textShadow: "2px 2px peachpuff" }}>
         <h1>{med?.fields?.name} </h1>
-        {med?.fields?.medClass !== undefined ? (
+        {med?.fields?.medClass !== undefined && (
           <h2>Class: {med?.fields?.medClass}</h2>
-        ) : null}
+        )}
         <h2>Description:</h2>
         <h4 style={{ marginLeft: "100px", marginRight: "100px" }}>
           {med?.fields?.description}
