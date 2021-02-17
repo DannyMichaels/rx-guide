@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getMeds } from "../services/axiosRequests";
 import { CircularProgress } from "@material-ui/core";
+import { MedStateContext } from "../context/medContext";
 
 export default function MedDetail() {
-  const params = useParams();
-
   const [med, setMed] = useState({});
 
+  const params = useParams();
+
+  const { allMeds } = useContext(MedStateContext);
+
   useEffect(() => {
-    const getApi = async () => {
-      const response = await getMeds();
-      const med = response.find((m) => m.fields.name === params.name);
-      setMed(med);
+    const getMed = async () => {
+      const oneMed = allMeds.find((m) => m.fields.name === params.name);
+      setMed(oneMed);
     };
-    getApi();
-  }, [params]);
+    getMed();
+  }, [allMeds, params]);
 
   if (!med?.fields?.image) {
     return (
