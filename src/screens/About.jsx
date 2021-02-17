@@ -8,12 +8,15 @@ import { CircularProgress } from "@material-ui/core";
 const About = () => {
   const [allMeds, setAllMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
+  const [queriedMeds, setQueriedMeds] = useState([]);
+
   const [search, setSearch] = useState(false);
 
   useEffect(() => {
     const getApi = async () => {
       const medications = await getMeds();
       setAllMeds(medications);
+      setQueriedMeds(medications);
     };
     getApi();
   }, [fetchMeds]);

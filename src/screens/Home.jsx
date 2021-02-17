@@ -6,7 +6,7 @@ import { CircularProgress } from "@material-ui/core";
 import { getSortedMeds } from "../services/sortedMeds";
 
 export default function Home() {
-  const [addedMeds, setAddedMeds] = useState();
+  const [addedMeds, setAddedMeds] = useState([]);
   const [prescribedMeds, setPrescribedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
 
