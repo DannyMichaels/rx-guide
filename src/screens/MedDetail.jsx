@@ -6,7 +6,7 @@ import { CircularProgress } from "@material-ui/core";
 export default function MedDetail() {
   const params = useParams();
 
-  const [med, setMed] = useState([]);
+  const [med, setMed] = useState({});
 
   useEffect(() => {
     const getApi = async () => {
