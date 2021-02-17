@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMeds } from "../services/axiosRequests";
-import MedDetailHeader from "../Components/shared/Header/MedDetailHeader";
 import { CircularProgress } from "@material-ui/core";
 
 export default function MedDetail() {
@@ -21,7 +20,6 @@ export default function MedDetail() {
   if (!med?.fields?.image) {
     return (
       <>
-        <MedDetailHeader />
         <CircularProgress
           style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
         />
@@ -31,7 +29,6 @@ export default function MedDetail() {
 
   return (
     <>
-      <MedDetailHeader />
       <div className="about-text" style={{ textShadow: "2px 2px peachpuff" }}>
         <h1>{med?.fields?.name} </h1>
         {med?.fields?.medClass !== undefined ? (

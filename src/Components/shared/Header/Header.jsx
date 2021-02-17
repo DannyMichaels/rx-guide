@@ -5,9 +5,9 @@ import MoveInLeft from "./animation";
 import ErrorHeader from "./ErrorHeader";
 
 function Header(props) {
-  const whiteList = ["/about", "/", "/custom-medication", "/medication/"];
+  const whiteList = /^\/about|^\/custom-medication|^\/medication|^\/$/;
 
-  return whiteList.includes(props.location.pathname) ? (
+  return props.location.pathname.match(whiteList) ? (
     <MoveInLeft>
       <StyledHeader className="rxguide-logo">
         <Link to="/">
