@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Med from "../Components/Medication/Med";
 import CreateMed from "../Components/Medication/CreateMed";
-import { getMeds, getAddedMeds } from "../services/axiosRequests";
+import { getAddedMeds } from "../services/axiosRequests";
 import { CircularProgress } from "@material-ui/core";
 import { getSortedMeds } from "../services/sortedMeds";
 
 export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);
-  const [prescribedMeds, setPrescribedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
-
-  useEffect(() => {
-    const getApi = async () => {
-      const prescriptionResponse = await getMeds();
-      setPrescribedMeds(prescriptionResponse);
-    };
-    getApi();
-  }, []);
 
   useEffect(() => {
     const getApi = async () => {
@@ -47,11 +38,7 @@ export default function Home() {
         ) : (
           <>
             {PRESCRIPTIONS}
-            <CreateMed
-              meds={prescribedMeds}
-              fetchMeds={fetchMeds}
-              setFetchMeds={setFetchMeds}
-            />
+            <CreateMed fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
           </>
         )}
       </div>

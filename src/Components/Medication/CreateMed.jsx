@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import CreateMedForm from "../Forms/CreateMedForm";
+import { MedStateContext } from "../../context/medContext";
 
 const CreateMed = (props) => {
   const [name, setName] = useState("Prozac");
   const [taken, setTaken] = useState("");
 
+  const { allMeds } = useContext(MedStateContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const selectedMed = props.meds.find(
+    const selectedMed = allMeds.find(
       (m) => m.fields.name.trim() === name.trim()
     );
 
@@ -43,7 +46,7 @@ const CreateMed = (props) => {
   return (
     <CreateMedForm
       med={props.med}
-      meds={props.meds}
+      meds={allMeds}
       taken={taken}
       setTaken={setTaken}
       name={name}

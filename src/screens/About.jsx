@@ -6,7 +6,6 @@ import { CircularProgress } from "@material-ui/core";
 import { MedStateContext } from "../context/medContext";
 
 const About = () => {
-  // const [allMeds, setAllMeds] = useState([]);
   const [queriedMeds, setQueriedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
