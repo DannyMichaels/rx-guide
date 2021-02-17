@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Form = styled.div`
   padding-top: 50px;
@@ -23,16 +23,16 @@ const Form = styled.div`
   }
 `;
 
-const Search = (props) => 
+const Search = (props) => (
   <Form>
     <input
       type="text"
       name="search"
       id="search"
       placeholder="Search Medication"
-      value={props.search}
-      onChange={(e) => props.setSearch(e.target.value)}
+      onChange={(e) => props.handleSearch(e)}
     />
   </Form>
+);
 
-  export default Search;
+export default Search;
