@@ -147,3 +147,5 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
  - 10/27/2020: Added a hamburger menu, added a preview medication button on the create custom image form, changed styling of footer.
 
 - 10/30/2020: added an "Move In Left" animation for logo on page load.
+
+- 2/17/2021: refactor some files with more elegant code.
