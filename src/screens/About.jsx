@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo, useContext } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from "react-router-dom";
-import { getMeds } from "../services/axiosRequests";
 import Search from "../Components/Forms/Search";
 import { CircularProgress } from "@material-ui/core";
+import { MedStateContext } from "../context/medContext";
 
 const About = () => {
-  const [allMeds, setAllMeds] = useState([]);
+  // const [allMeds, setAllMeds] = useState([]);
   const [queriedMeds, setQueriedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
-  useEffect(() => {
-    const getApi = async () => {
-      const medications = await getMeds();
-      setAllMeds(medications);
-      setQueriedMeds(medications);
-    };
-    getApi();
-  }, [fetchMeds]);
+  const { allMeds } = useContext(MedStateContext);
+
+  useMemo(async () => {
+    setQueriedMeds(allMeds);
+  }, [allMeds]);
 
   const handleSearch = (event) => {
     const { value } = event.target;

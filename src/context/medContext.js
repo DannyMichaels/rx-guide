@@ -14,11 +14,12 @@ const MedContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(medReducer, initialMedState);
 
-  console.log({ state, dispatch });
-
-  useMemo(async () => {
-    const allMedData = await getMeds();
-    dispatch({ type: "INIT_MEDS", allMeds: allMedData });
+  useMemo(() => {
+    const getApi = async () => {
+      const medData = await getMeds();
+      dispatch({ type: "INIT", allMeds: medData });
+    };
+    getApi();
   }, []);
 
   return (
