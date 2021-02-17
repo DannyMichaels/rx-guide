@@ -148,4 +148,4 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 
 - 10/30/2020: added an "Move In Left" animation for logo on page load.
 
-- 2/17/2021: refactor some files with more elegant code.
+- 2/17/2021: refactor some files with more elegant code, create reducer and context for allMeds.
