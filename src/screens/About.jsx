@@ -7,10 +7,9 @@ import { CircularProgress } from "@material-ui/core";
 
 const About = () => {
   const [allMeds, setAllMeds] = useState([]);
-  const [fetchMeds, setFetchMeds] = useState(false);
   const [queriedMeds, setQueriedMeds] = useState([]);
-
-  const [search, setSearch] = useState(false);
+  const [fetchMeds, setFetchMeds] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     const getApi = async () => {
@@ -21,28 +20,20 @@ const About = () => {
     getApi();
   }, [fetchMeds]);
 
-  const filteredMeds = allMeds.filter((med) =>
-    med.fields.name.toLowerCase().includes(`${search}`.toLowerCase())
-  );
+  const handleSearch = (event) => {
+    const { value } = event.target;
 
-  const MEDS = React.Children.toArray(
-    allMeds.map((med) => (
-      <Link
-        style={{ color: "black", textDecoration: "none" }}
-        to={`/medication/${med.fields.name}`}>
-        <Med
-          style={{ textAlign: "center" }}
-          med={med}
-          fetchMeds={fetchMeds}
-          setFetchMeds={setFetchMeds}
-          editable={false}
-        />
-      </Link>
-    ))
-  );
+    const newQueriedMeds = allMeds.filter((med) =>
+      med.fields.name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    setIsSearching(value);
+
+    setQueriedMeds(newQueriedMeds);
+  };
 
   const medsJSX = React.Children.toArray(
-    filteredMeds.map((med) => (
+    queriedMeds.map((med) => (
       <Link
         style={{ color: "black", textDecoration: "none" }}
         to={`/medication/${med.fields.name}`}>
@@ -80,10 +71,10 @@ const About = () => {
         </p>
       </div>
 
-      <Search setSearch={setSearch} />
+      <Search handleSearch={handleSearch} />
 
-      {!search ? (
-        <div>
+      <div>
+        {!isSearching && (
           <h2
             style={{
               textAlign: "center",
@@ -92,11 +83,9 @@ const About = () => {
             }}>
             List of Medications:
           </h2>
-          <div className="med-container">{MEDS}</div>
-        </div>
-      ) : (
+        )}
         <div className="med-container">{medsJSX}</div>
-      )}
+      </div>
     </div>
   );
 };
