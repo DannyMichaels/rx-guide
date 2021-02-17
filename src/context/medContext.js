@@ -17,7 +17,7 @@ const MedContextProvider = ({ children }) => {
   useMemo(async () => {
     const medData = await getMeds();
     dispatch({ type: "INIT", allMeds: medData, medsAreLoading: false });
-  }, [dispatch]);
+  }, []);
 
   return (
     <MedStateContext.Provider value={state}>
