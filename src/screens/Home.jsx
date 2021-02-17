@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import Med from "../Components/Medication/Med";
 import CreateMed from "../Components/Medication/CreateMed";
 import { getAddedMeds } from "../services/axiosRequests";
@@ -7,15 +7,14 @@ import { getSortedMeds } from "../services/sortedMeds";
 
 export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);
+  const [medsAreLoading, setMedsAreLoading] = useState(true);
   const [fetchMeds, setFetchMeds] = useState(false);
 
-  useEffect(() => {
-    const getApi = async () => {
-      const addedMedsResponse = await getAddedMeds();
-      setAddedMeds(getSortedMeds(addedMedsResponse));
-    };
-    getApi();
-  }, [fetchMeds]);
+  useMemo(async () => {
+    const addedMedsResponse = await getAddedMeds();
+    setAddedMeds(getSortedMeds(addedMedsResponse));
+    setMedsAreLoading(false);
+  }, []);
 
   const PRESCRIPTIONS = React.Children.toArray(
     addedMeds?.map((med) => (
@@ -31,7 +30,7 @@ export default function Home() {
   return (
     <>
       <div>
-        {!addedMeds ? (
+        {medsAreLoading ? (
           <CircularProgress
             style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
           />
