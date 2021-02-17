@@ -14,12 +14,6 @@ const MedContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(medReducer, initialMedState);
 
-  // useMemo(async () => {
-  //   const medData = await getMeds();
-  //   console.log({ medData });
-  //   dispatch({ type: "INIT", allMeds: medData, medsAreLoading: false });
-  // }, []);
-
   return (
     <MedStateContext.Provider value={state}>
       <MedDispatchContext.Provider value={dispatch}>
