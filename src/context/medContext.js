@@ -1,6 +1,5 @@
-import React, { createContext, useMemo, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import { medReducer } from "../reducers/medReducer";
-import { getMeds } from "../services/axiosRequests";
 
 export const MedStateContext = createContext();
 export const MedDispatchContext = createContext();
@@ -10,16 +9,16 @@ export const MedDispatchConsumer = MedDispatchContext.Consumer;
 const MedContextProvider = ({ children }) => {
   const initialMedState = {
     allMeds: [],
-    isLoading: true,
+    medsAreLoading: true,
   };
 
   const [state, dispatch] = useReducer(medReducer, initialMedState);
 
-  useMemo(async () => {
-    const medData = await getMeds();
-    console.log({ medData });
-    dispatch({ type: "INIT", allMeds: medData, isLoading: false });
-  }, []);
+  // useMemo(async () => {
+  //   const medData = await getMeds();
+  //   console.log({ medData });
+  //   dispatch({ type: "INIT", allMeds: medData, medsAreLoading: false });
+  // }, []);
 
   return (
     <MedStateContext.Provider value={state}>

@@ -18,11 +18,14 @@ export const getMeds = async () => {
 
 export const getMedDetail = async (medName) => {
   try {
-    const response = await axios.get(`${airtableURL}?filterByFormula=FIND(${medName},{name})>0`, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-      },
-    });
+    const response = await axios.get(
+      `${airtableURL}?filterByFormula=FIND(${medName},{name})>0`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      }
+    );
     const meds = response.data.records;
     return meds;
   } catch (error) {
@@ -30,9 +33,7 @@ export const getMedDetail = async (medName) => {
   }
 };
 
-
-
-const addedMedsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`
+const addedMedsUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`;
 
 export const getAddedMeds = async () => {
   try {
@@ -48,8 +49,6 @@ export const getAddedMeds = async () => {
   }
 };
 
-
-
 // export const getDeleteMeds = async (props) => {
 //   const deleteURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`
 //   await axios.delete(deleteURL, {
@@ -58,4 +57,3 @@ export const getAddedMeds = async () => {
 //     },
 //   });
 // }
-  

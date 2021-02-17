@@ -4,10 +4,8 @@ export const medReducer = (state, action) => {
       return {
         allMeds: action.allMeds,
       };
-    case "SET_MEDS":
-      return {
-        allMeds: action.payload,
-      };
+    case "CREATE_MED":
+      return { ...state, allMeds: [...state.allMeds, action.payload] };
     default:
       return state;
   }

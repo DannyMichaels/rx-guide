@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import CustomMedForm from "../Components/Forms/CustomMedForm";
 import { useHistory } from "react-router-dom";
-import { MedDispatchContext, MedStateContext } from "../context/medContext";
+import { MedDispatchContext } from "../context/medContext";
 
 function Custom() {
   const [name, setName] = useState("");
@@ -10,7 +10,6 @@ function Custom() {
   const [description, setDescription] = useState("");
   const [medClass, setMedClass] = useState("");
 
-  const { allMeds } = useContext(MedStateContext);
   const dispatch = useContext(MedDispatchContext);
   const { push } = useHistory();
 
@@ -53,8 +52,9 @@ function Custom() {
     setMedClass("");
     setDescription("");
 
-    await dispatch({ TYPE: "SET_MEDS", payload: [...allMeds, data] });
-    return push("/about");
+    console.log({ data });
+    await dispatch({ TYPE: "CREATE_MED", payload: data });
+    push("/about");
   };
 
   return (

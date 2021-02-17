@@ -1,16 +1,24 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useMemo, useContext } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from "react-router-dom";
 import Search from "../Components/Forms/Search";
 import { CircularProgress } from "@material-ui/core";
-import { MedStateContext } from "../context/medContext";
+import { MedDispatchConsumer, MedStateContext } from "../context/medContext";
+import { getMeds } from "../services/axiosRequests";
 
 const About = () => {
   const [queriedMeds, setQueriedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
-  const { allMeds, isLoading } = useContext(MedStateContext);
+  const { allMeds, medsAreLoading } = useContext(MedStateContext);
+
+  const dispatch = useContext(MedDispatchConsumer);
+
+  useMemo(async () => {
+    const medData = await getMeds();
+    dispatch({ type: "INIT", allMeds: medData, medsAreLoading: false });
+  }, [dispatch]);
 
   useEffect(() => {
     setQueriedMeds(allMeds);
@@ -42,7 +50,7 @@ const About = () => {
     ))
   );
 
-  if (isLoading) {
+  if (medsAreLoading) {
     return (
       <CircularProgress
         style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
