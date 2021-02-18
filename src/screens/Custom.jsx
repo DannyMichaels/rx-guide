@@ -1,7 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import CustomMedForm from "../Components/Forms/CustomMedForm";
 import { useHistory } from "react-router-dom";
-import { MedDispatchContext } from "../context/medContext";
 import { createCustomMed } from "../services/axiosRequests";
 
 function Custom() {
@@ -14,7 +13,6 @@ function Custom() {
 
   const { name, image, description, medClass } = formData;
 
-  const dispatch = useContext(MedDispatchContext);
   const { push } = useHistory();
 
   const handleSubmit = async (e) => {

@@ -48,6 +48,23 @@ export const getAddedMeds = async () => {
     throw error;
   }
 };
+export const prescribeMed = async (fields) => {
+  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`;
+  try {
+    const response = await axios.post(
+      airtableURL,
+      { fields },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 
 export const createCustomMed = async (fields) => {
   try {

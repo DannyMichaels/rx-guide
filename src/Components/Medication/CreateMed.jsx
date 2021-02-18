@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import CreateMedForm from "../Forms/CreateMedForm";
 import { MedStateContext } from "../../context/medContext";
+import { prescribeMed } from "../../services/axiosRequests";
 
 const CreateMed = (props) => {
   const [name, setName] = useState("Prozac");
@@ -27,16 +27,7 @@ const CreateMed = (props) => {
       taken,
     };
 
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds`;
-    await axios.post(
-      airtableURL,
-      { fields },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      }
-    );
+    prescribeMed(fields);
 
     props.setFetchMeds(!props.fetchMeds);
     setName("");
