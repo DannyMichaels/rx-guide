@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useMemo } from "react";
 import { medReducer } from "../reducers/medReducer";
-import { getMeds } from "../services/axiosRequests";
+import { getMeds } from "../services/globalMeds";
 export const MedStateContext = createContext();
 export const MedDispatchContext = createContext();
 export const MedStateConsumer = MedStateContext.Consumer;

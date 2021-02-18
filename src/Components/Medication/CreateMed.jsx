@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import CreateMedForm from "../Forms/CreateMedForm";
 import { MedStateContext } from "../../context/medContext";
-import { prescribeMed } from "../../services/axiosRequests";
+import { prescribeMed } from "../../services/userMeds";
 
 const CreateMed = (props) => {
   const [name, setName] = useState("Prozac");

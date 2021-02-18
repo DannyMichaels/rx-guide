@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import Med from "../Components/Medication/Med";
 import CreateMed from "../Components/Medication/CreateMed";
-import { getAddedMeds } from "../services/axiosRequests";
+import { getAddedMeds } from "../services/userMeds";
 import { CircularProgress } from "@material-ui/core";
-import { getSortedMeds } from "../services/sortedMeds";
+import { getSortedMeds } from "../utils/sortedMeds";
 import { MedStateContext } from "../context/medContext";
 
 export default function Home() {
