@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
+import { editMed } from "../../services/userMeds";
 
 const Form = styled.form`
   select {
@@ -43,16 +43,7 @@ const UpdateMed = (props) => {
       image,
     };
 
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`;
-    await axios.put(
-      airtableURL,
-      { fields },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      }
-    );
+    editMed(fields, props.med.id);
     props.setFetchMeds(!props.fetchMeds);
   };
 

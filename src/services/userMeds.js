@@ -33,3 +33,16 @@ export const prescribeMed = async (fields) => {
     throw error;
   }
 };
+
+export const editMed = async (fields, medId) => {
+  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${medId}`;
+  await axios.put(
+    airtableURL,
+    { fields },
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+      },
+    }
+  );
+};
