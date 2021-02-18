@@ -94,6 +94,13 @@ button {
   text-align: center;
 }
 
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes bounce {
   0%,
   20%,
@@ -206,5 +213,11 @@ button:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+  }
+  .search-container {
+    /* display: flex; */
+    /* justify-content: center; */
+    flex-direction: row;
+    /* align-items: center; */
   }
 }

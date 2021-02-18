@@ -5,6 +5,7 @@ import Search from "../Components/Forms/Search";
 import { CircularProgress } from "@material-ui/core";
 import { MedStateContext } from "../context/medContext";
 import { AZ, ZA } from "../utils/sort";
+import Sort from "../Components/Forms/Sort";
 
 const About = () => {
   const [queriedMeds, setQueriedMeds] = useState([]);
@@ -88,13 +89,10 @@ const About = () => {
         </p>
       </div>
 
-      <select onChange={onSelectChange}>
-        <option value="name-ascending">Ascending A-Z</option>
-        <option value="name-descending">Descending Z-A</option>
-      </select>
-
-      <Search handleSearch={handleSearch} />
-
+      <div className="search-container">
+        <Search handleSearch={handleSearch} onSortChange={onSelectChange} />
+        <Sort onChange={onSelectChange} />
+      </div>
       <div>
         {!isSearching && (
           <h2

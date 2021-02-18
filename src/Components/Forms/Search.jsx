@@ -18,6 +18,7 @@ const Form = styled.div`
     text-align: center;
     box-shadow: 5px 5px peachpuff;
   }
+
   input:focus {
     outline: none;
   }
