@@ -1,14 +1,18 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import CustomMedForm from "../Components/Forms/CustomMedForm";
 import { useHistory } from "react-router-dom";
 import { MedDispatchContext } from "../context/medContext";
+import { createCustomMed } from "../services/axiosRequests";
 
 function Custom() {
-  const [name, setName] = useState("");
-  const [image, setImage] = useState("");
-  const [description, setDescription] = useState("");
-  const [medClass, setMedClass] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    image: "",
+    description: "",
+    medClass: "",
+  });
+
+  const { name, image, description, medClass } = formData;
 
   const dispatch = useContext(MedDispatchContext);
   const { push } = useHistory();
@@ -24,7 +28,6 @@ function Custom() {
     } else {
       return;
     }
-
     const fields = {
       name,
       description,
@@ -32,26 +35,19 @@ function Custom() {
       medClass,
     };
 
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/`;
-    const medData = await axios.post(
-      airtableURL,
-      { fields },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      }
-    );
+    createCustomMed(fields);
 
-    const data = medData.data;
-
-    setName("");
-    setImage("");
-    setMedClass("");
-    setDescription("");
-
-    await dispatch({ TYPE: "CREATE_MED", payload: data });
+    setFormData("");
     push("/about");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
@@ -62,14 +58,11 @@ function Custom() {
 
       <CustomMedForm
         handleSubmit={handleSubmit}
+        handleChange={handleChange}
         name={name}
-        setName={setName}
-        description={description}
-        setDescription={setDescription}
-        image={image}
-        setImage={setImage}
         medClass={medClass}
-        setMedClass={setMedClass}
+        description={description}
+        image={image}
       />
     </div>
   );

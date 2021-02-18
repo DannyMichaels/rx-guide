@@ -16,8 +16,8 @@ const About = () => {
     setQueriedMeds(allMeds);
   }, [allMeds]);
 
-  const handleSearch = (event) => {
-    const { value } = event.target;
+  const handleSearch = (e) => {
+    const { value } = e.target;
 
     const newQueriedMeds = allMeds.filter((med) =>
       med.fields.name.toLowerCase().includes(value.toLowerCase())
