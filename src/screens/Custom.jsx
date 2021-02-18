@@ -43,8 +43,6 @@ function Custom() {
       }
     );
 
-    console.log({ medData });
-
     const data = medData.data;
 
     setName("");
