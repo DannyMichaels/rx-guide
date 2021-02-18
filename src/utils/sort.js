@@ -33,9 +33,7 @@ const compare = (key) => (a, b) => {
     } else {
       return 0;
     }
-  } else {
-    return;
-  }
+  } 
 };
 
 // export const AZ = (arr) => arr.sort((a, b) => compare(a, b, "name"));
