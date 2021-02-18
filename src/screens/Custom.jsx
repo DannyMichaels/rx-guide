@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomMedForm from "../Components/Forms/CustomMedForm";
 import { useHistory } from "react-router-dom";
-import { createCustomMed } from "../services/axiosRequests";
+import { createCustomMed } from "../services/globalMeds";
 
 function Custom() {
   const [formData, setFormData] = useState({
