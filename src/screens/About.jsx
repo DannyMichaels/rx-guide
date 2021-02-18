@@ -1,20 +1,39 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useMemo, useContext } from "react";
 import Med from "../Components/Medication/Med";
 import { Link } from "react-router-dom";
 import Search from "../Components/Forms/Search";
 import { CircularProgress } from "@material-ui/core";
 import { MedStateContext } from "../context/medContext";
+import { AZ, ZA } from "../utils/sort";
 
 const About = () => {
   const [queriedMeds, setQueriedMeds] = useState([]);
   const [fetchMeds, setFetchMeds] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
-
+  const [sortType, setSortType] = useState("");
   const { allMeds, medsAreLoading } = useContext(MedStateContext);
+
+  const handleSort = (type) => {
+    setSortType(type);
+    switch (type) {
+      case "name-ascending":
+        setQueriedMeds(AZ(queriedMeds));
+        break;
+      case "name-descending":
+        setQueriedMeds(ZA(queriedMeds));
+        break;
+      default:
+    }
+  };
 
   useEffect(() => {
     setQueriedMeds(allMeds);
   }, [allMeds]);
+
+  useMemo(() => {
+    queriedMeds && handleSort("name-ascending");
+    // eslint-disable-next-line
+  }, [queriedMeds]);
 
   const handleSearch = (e) => {
     const { value } = e.target;
@@ -24,7 +43,11 @@ const About = () => {
     );
 
     setIsSearching(value);
-    setQueriedMeds(newQueriedMeds);
+    setQueriedMeds(newQueriedMeds, () => handleSort(sortType));
+  };
+
+  const onSelectChange = (e) => {
+    handleSort(e.target.value);
   };
 
   const medsJSX = queriedMeds.map((med) => (
@@ -64,6 +87,11 @@ const About = () => {
           medication.
         </p>
       </div>
+
+      <select onChange={onSelectChange}>
+        <option value="name-ascending">Ascending A-Z</option>
+        <option value="name-descending">Descending Z-A</option>
+      </select>
 
       <Search handleSearch={handleSearch} />
 

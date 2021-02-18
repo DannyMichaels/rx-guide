@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import CustomMedForm from "../Components/Forms/CustomMedForm";
 import { useHistory } from "react-router-dom";
 import { createCustomMed } from "../services/globalMeds";
+import { MedDispatchContext } from "../context/medContext";
 
 function Custom() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ function Custom() {
     description: "",
     medClass: "",
   });
+
+  const dispatch = useContext(MedDispatchContext);
 
   const { name, image, description, medClass } = formData;
 
@@ -33,8 +36,9 @@ function Custom() {
       medClass,
     };
 
-    createCustomMed(fields);
+    const createdMed = await createCustomMed(fields);
 
+    dispatch({ type: "CREATE_MED", payload: createdMed });
     setFormData("");
     push("/about");
   };
