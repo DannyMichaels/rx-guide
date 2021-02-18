@@ -27,20 +27,19 @@ const About = () => {
     setQueriedMeds(newQueriedMeds);
   };
 
-  const medsJSX = React.Children.toArray(
-    queriedMeds.map((med) => (
-      <Link
-        style={{ color: "black", textDecoration: "none" }}
-        to={`/medication/${med.fields.name}`}>
-        <Med
-          med={med}
-          fetchMeds={fetchMeds}
-          setFetchMeds={setFetchMeds}
-          editable={false}
-        />
-      </Link>
-    ))
-  );
+  const medsJSX = queriedMeds.map((med) => (
+    <Link
+      key={med.id}
+      style={{ color: "black", textDecoration: "none" }}
+      to={`/medication/${med.fields.name}`}>
+      <Med
+        med={med}
+        fetchMeds={fetchMeds}
+        setFetchMeds={setFetchMeds}
+        editable={false}
+      />
+    </Link>
+  ));
 
   if (medsAreLoading) {
     return (

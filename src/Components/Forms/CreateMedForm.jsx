@@ -79,8 +79,7 @@ function CreateMedForm(props) {
         name="name"
         type="text"
         value={props.name}
-        onChange={(e) => props.setName(e.target.value)}
-      >
+        onChange={(e) => props.setName(e.target.value)}>
         {MEDS}
       </select>
 

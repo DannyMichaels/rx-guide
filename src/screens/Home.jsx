@@ -20,16 +20,15 @@ export default function Home() {
     getApi();
   }, [fetchMeds]);
 
-  const PRESCRIPTIONS = React.Children.toArray(
-    addedMeds?.map((med) => (
-      <Med
-        editable={true}
-        med={med}
-        fetchMeds={fetchMeds}
-        setFetchMeds={setFetchMeds}
-      />
-    ))
-  );
+  const PRESCRIPTIONS = addedMeds?.map((med) => (
+    <Med
+      key={med.id}
+      editable={true}
+      med={med}
+      fetchMeds={fetchMeds}
+      setFetchMeds={setFetchMeds}
+    />
+  ));
 
   return (
     <>
