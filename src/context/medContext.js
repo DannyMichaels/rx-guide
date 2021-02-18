@@ -3,8 +3,6 @@ import { medReducer } from "../reducers/medReducer";
 import { getMeds } from "../services/globalMeds";
 export const MedStateContext = createContext();
 export const MedDispatchContext = createContext();
-export const MedStateConsumer = MedStateContext.Consumer;
-export const MedDispatchConsumer = MedDispatchContext.Consumer;
 
 const MedContextProvider = ({ children }) => {
   const initialMedState = {
