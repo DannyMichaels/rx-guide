@@ -43,7 +43,7 @@ const About = () => {
       med.fields.name.toLowerCase().includes(value.toLowerCase())
     );
 
-    setIsSearching(value);
+    setIsSearching(value);          // Thanks Bruno!
     setQueriedMeds(newQueriedMeds, () => handleSort(sortType));
   };
 
