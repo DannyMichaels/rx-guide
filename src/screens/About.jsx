@@ -93,6 +93,7 @@ const About = () => {
         <Search handleSearch={handleSearch} onSortChange={onSelectChange} />
         <Sort onChange={onSelectChange} />
       </div>
+
       <div>        
           <h2
             style={{
@@ -102,6 +103,7 @@ const About = () => {
             }}>
             {isSearching ? "Search Results" : "List of Medications"}
           </h2>
+
         <div className="med-container">{medsJSX}</div>
       </div>
     </div>
