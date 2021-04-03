@@ -33,11 +33,11 @@ const compare = (key) => (a, b) => {
     } else {
       return 0;
     }
-  } 
+  }
 };
 
 // export const AZ = (arr) => arr.sort((a, b) => compare(a, b, "name"));
 // export const ZA = (arr) => arr.sort((a, b) => compare(a, b, "name")).reverse();
 
-export const AZ = (arr) => arr.sort(compare("name"));
-export const ZA = (arr) => arr.sort(compare("name")).reverse();
+export const AZ = (arr) => arr.sort(compare('name'));
+export const ZA = (arr) => arr.sort(compare('name')).reverse();

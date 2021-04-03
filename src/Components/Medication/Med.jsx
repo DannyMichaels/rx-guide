@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
-import UpdateMed from "./UpdateMed";
-import axios from "axios";
-import { CircularProgress } from "@material-ui/core";
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import UpdateMed from './UpdateMed';
+import { CircularProgress } from '@material-ui/core';
+import { deleteMed } from '../../services/userMeds';
 
 const Med = (props) => {
   const [isRefreshed, setIsRefreshed] = useState(false);
@@ -10,12 +10,7 @@ const Med = (props) => {
   const handleDelete = async () => {
     setIsRefreshed(true);
     setTimeout(async () => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${props.med.id}`;
-      await axios.delete(airtableURL, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      });
+      await deleteMed(props.med.id);
       props.setFetchMeds(!props.fetchMeds);
       setIsRefreshed(false);
     }, 150);
