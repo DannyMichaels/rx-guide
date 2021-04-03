@@ -23,7 +23,7 @@ class Med extends Component {
   };
 
   render() {
-    const { med, editable, fetchMeds, setFetchMeds } = this.props;
+    const { med, editable, fetchMeds, setFetchMeds, onUpdateMed } = this.props;
     const { isRefreshed } = this.state;
 
     return (
@@ -43,6 +43,7 @@ class Med extends Component {
               med={med}
               fetchMeds={fetchMeds}
               setFetchMeds={setFetchMeds}
+              onUpdateMed={onUpdateMed}
             />
             <button onClick={this.handleDelete} className="edit-button">
               {isRefreshed ? (

@@ -69,6 +69,7 @@ class Home extends Component {
         setFetchMeds={(this.setFetchMeds = this.setFetchMeds.bind(this))}
         onAddMed={(this.onAddMed = this.onAddMed.bind(this))}
         onDeleteMed={(this.onDeleteMed = this.onDeleteMed.bind(this))}
+        onUpdateMed={(this.onUpdateMed = this.onUpdateMed.bind(this))}
       />
     ));
 

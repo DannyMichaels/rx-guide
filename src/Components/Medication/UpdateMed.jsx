@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { editMed } from '../../services/userMeds';
 
@@ -27,42 +27,59 @@ const Form = styled.form`
   }
 `;
 
-const UpdateMed = (props) => {
-  const [name] = useState(props.med.fields.name);
+class UpdateMed extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      taken: props.med.fields.taken,
+    };
+  }
 
-  const [taken, setTaken] = useState(props.med.fields.taken);
-
-  const handleSubmit = async (e) => {
+  async handleSubmit(e) {
     e.preventDefault();
 
-    const image = props.med.fields.image;
+    const { image, name } = this.props.med.fields;
 
     const fields = {
       name,
-      taken,
+      taken: this.state.taken,
       image,
     };
 
-    editMed(fields, props.med.id);
-    props.setFetchMeds();
-  };
+    const updatedMed = {
+      ...this.props.med,
+      fields: {
+        ...fields,
+      },
+    };
 
-  return (
-    <Form className="update-med" onSubmit={handleSubmit}>
-      <label htmlFor="taken" type="text">
-        Edit Time:
-      </label>
-      <input
-        name="taken"
-        type="time"
-        value={taken}
-        onChange={(e) => setTaken(e.target.value)}
-      />
-      <button className="edit-button" type="submit">
-        <img src="https://i.imgur.com/SnXF0hi.png" alt="Edit" />
-      </button>
-    </Form>
-  );
-};
+    editMed(fields, this.props.med.id);
+    this.props.onUpdateMed(updatedMed);
+  }
+
+  handleChange(e) {
+    this.setState({ taken: e.target.value });
+  }
+
+  render() {
+    return (
+      <Form className="update-med" onSubmit={this.handleSubmit}>
+        <label htmlFor="taken" type="text">
+          Edit Time:
+        </label>
+        <input
+          name="taken"
+          type="time"
+          value={this.state.taken}
+          onChange={(e) => this.handleChange(e)}
+        />
+        <button className="edit-button" type="submit">
+          <img src="https://i.imgur.com/SnXF0hi.png" alt="Edit" />
+        </button>
+      </Form>
+    );
+  }
+}
 
 export default UpdateMed;
