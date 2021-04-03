@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 let StyledError = styled.div`
   display: flex;
@@ -35,17 +35,19 @@ let StyledError = styled.div`
   }
 `;
 
-function Error() {
-  let location = useLocation();
-  return (
-    <>
+class Error extends Component {
+  render() {
+    return (
       <StyledError>
         <h1> 404 </h1>
-        <p>Sorry, &nbsp; {location.pathname.replace("/", "")} doesn't exist!</p>
+        <p>
+          Sorry, &nbsp; {this.props.location.pathname.replace('/', '')} doesn't
+          exist!
+        </p>
         <NavLink to="/"> Go Back </NavLink>
       </StyledError>
-    </>
-  );
+    );
+  }
 }
 
 export default Error;
