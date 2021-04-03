@@ -28,7 +28,9 @@ const Med = (props) => {
 
       {props.editable && (
         <div>
-          <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
+          <h4>Taken At: </h4>
+
+          <h5>{props.med.fields.taken}</h5>
           <UpdateMed
             med={props.med}
             fetchMeds={props.fetchMeds}
