@@ -6,6 +6,7 @@ import { deleteMed } from '../../services/userMeds';
 class Med extends Component {
   constructor(props) {
     super(props);
+    // this.props.onAddMed = this.props.onAddMed.bind(this);
     this.state = {
       isRefreshed: false,
     };
@@ -16,7 +17,7 @@ class Med extends Component {
 
     setTimeout(async () => {
       await deleteMed(this.props.med.id);
-      this.props.setFetchMeds(!this.props.fetchMeds);
+      this.props.onDeleteMed(this.props.med.id);
       this.setState({ isRefreshed: false });
     }, 150);
   };

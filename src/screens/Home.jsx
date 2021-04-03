@@ -9,6 +9,7 @@ import { MedStateContext } from '../context/medContext';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.setFetchMeds = this.setFetchMeds.bind(this);
     this.state = {
       addedMeds: [],
       fetchMeds: false,
@@ -32,6 +33,29 @@ class Home extends Component {
     }));
   }
 
+  onAddMed(newMed) {
+    this.setState((prevState) => ({
+      ...prevState,
+      addedMeds: [...this.state.addedMeds, newMed],
+    }));
+  }
+
+  onUpdateMed(updatedMed) {
+    this.setState((prevState) => ({
+      ...prevState,
+      addedMeds: this.state.addedMeds.map((med) =>
+        med.id === updatedMed.id ? updatedMed : med
+      ),
+    }));
+  }
+
+  onDeleteMed(id) {
+    this.setState((prevState) => ({
+      ...prevState,
+      addedMeds: this.state.addedMeds.filter((med) => med.id !== id),
+    }));
+  }
+
   render() {
     const { addedMeds, fetchMeds } = this.state;
     const { medsAreLoading } = this.context;
@@ -43,6 +67,8 @@ class Home extends Component {
         med={med}
         fetchMeds={fetchMeds}
         setFetchMeds={(this.setFetchMeds = this.setFetchMeds.bind(this))}
+        onAddMed={(this.onAddMed = this.onAddMed.bind(this))}
+        onDeleteMed={(this.onDeleteMed = this.onDeleteMed.bind(this))}
       />
     ));
 
