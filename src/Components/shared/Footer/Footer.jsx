@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import FooterLinks from "./FooterLinks";
+import React from 'react';
+import styled from 'styled-components';
+import FooterLinks from './FooterLinks';
 
 let StyledFooter = styled.footer`
   position: fixed;
@@ -13,12 +13,10 @@ let StyledFooter = styled.footer`
   z-index: 100;
 `;
 
-const Footer = () => {
-  return (
-    <StyledFooter>
-      <FooterLinks />
-    </StyledFooter>
-  );
-};
+const Footer = () => (
+  <StyledFooter>
+    <FooterLinks />
+  </StyledFooter>
+);
 
 export default Footer;
