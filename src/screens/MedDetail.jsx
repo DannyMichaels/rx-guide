@@ -1,50 +1,63 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { CircularProgress } from "@material-ui/core";
-import { MedStateContext } from "../context/medContext";
+import React, { Component } from 'react';
+import { CircularProgress } from '@material-ui/core';
+import { MedStateContext } from '../context/medContext';
+import { getMeds } from '../services/globalMeds';
 
-export default function MedDetail() {
-  const [med, setMed] = useState({});
-
-  const params = useParams();
-
-  const { allMeds } = useContext(MedStateContext);
-
-  useEffect(() => {
-    const getMed = async () => {
-      const oneMed = allMeds.find((m) => m.fields.name === params.name);
-      setMed(oneMed);
+class MedDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      med: {},
     };
-    getMed();
-  }, [allMeds, params]);
-
-  if (!med?.fields?.image) {
-    return (
-      <>
-        <CircularProgress
-          style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
-        />
-      </>
-    );
   }
 
-  return (
-    <>
-      <div className="about-text" style={{ textShadow: "2px 2px peachpuff" }}>
+  async componentDidMount() {
+    let { params } = this.props.match;
+    let allMeds = [];
+
+    if (!allMeds.length) {
+      // if someone typed this in url (no useEffect, and componentDidUpdate causes errors due to re-renders)
+      allMeds = await getMeds().then((resp) => resp);
+    } else {
+      // else get them from the context
+      allMeds = this.context.allMeds;
+    }
+
+    const oneMed = allMeds?.find((m) => m.fields.name === params.name);
+    this.setState({ med: oneMed });
+  }
+
+  render() {
+    const { med } = this.state;
+
+    if (!med?.fields?.image) {
+      return (
+        <CircularProgress
+          style={{ marginLeft: '50%', marginTop: '10%', width: '50px' }}
+        />
+      );
+    }
+
+    return (
+      <div className="about-text" style={{ textShadow: '2px 2px peachpuff' }}>
         <h1>{med?.fields?.name} </h1>
         {med?.fields?.medClass !== undefined && (
           <h2>Class: {med?.fields?.medClass}</h2>
         )}
         <h2>Description:</h2>
-        <h4 style={{ marginLeft: "100px", marginRight: "100px" }}>
+        <h4 style={{ marginLeft: '100px', marginRight: '100px' }}>
           {med?.fields?.description}
         </h4>
         <img
           src={med?.fields?.image}
-          style={{ maxWidth: "350px", maxHeight: "350px" }}
+          style={{ maxWidth: '350px', maxHeight: '350px' }}
           alt="medication"
         />
       </div>
-    </>
-  );
+    );
+  }
 }
+
+MedDetail.contextType = MedStateContext;
+
+export default MedDetail;
