@@ -1,8 +1,12 @@
-import React, { createContext, useReducer, useMemo } from "react";
-import { medReducer } from "../reducers/medReducer";
-import { getMeds } from "../services/globalMeds";
+import React, { createContext, useReducer, useMemo } from 'react';
+import { medReducer } from '../reducers/medReducer';
+import { getMeds } from '../services/globalMeds';
 export const MedStateContext = createContext();
 export const MedDispatchContext = createContext();
+
+// need consumers for class based React.
+export const MedStateConsumer = MedStateContext.Consumer;
+export const MedDispatchConsumer = MedDispatchContext.Consumer;
 
 const MedContextProvider = ({ children }) => {
   const initialMedState = {
@@ -14,7 +18,7 @@ const MedContextProvider = ({ children }) => {
 
   useMemo(async () => {
     const medData = await getMeds();
-    dispatch({ type: "INIT", allMeds: medData, medsAreLoading: false });
+    dispatch({ type: 'INIT', allMeds: medData, medsAreLoading: false });
   }, []);
 
   return (

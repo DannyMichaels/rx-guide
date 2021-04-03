@@ -1,54 +1,64 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import UpdateMed from './UpdateMed';
 import { CircularProgress } from '@material-ui/core';
 import { deleteMed } from '../../services/userMeds';
 
-const Med = (props) => {
-  const [isRefreshed, setIsRefreshed] = useState(false);
+class Med extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isRefreshed: false,
+    };
+  }
 
-  const handleDelete = async () => {
-    setIsRefreshed(true);
+  handleDelete = async () => {
+    this.setState({ isRefreshed: true });
+
     setTimeout(async () => {
-      await deleteMed(props.med.id);
-      props.setFetchMeds(!props.fetchMeds);
-      setIsRefreshed(false);
+      await deleteMed(this.props.med.id);
+      this.props.setFetchMeds(!this.props.fetchMeds);
+      this.setState({ isRefreshed: false });
     }, 150);
   };
 
-  return (
-    <div className="med">
-      <h3>{props.med.fields.name}</h3>
-      <img
-        src={props.med.fields.image}
-        width="100"
-        height="50"
-        alt={props.med.fields.name}
-      />
+  render() {
+    const { med, editable, fetchMeds, setFetchMeds } = this.props;
+    const { isRefreshed } = this.state;
 
-      {props.editable && (
-        <div>
-          <h4>Taken At: </h4> <h5>{props.med.fields.taken}</h5>
-          <UpdateMed
-            med={props.med}
-            fetchMeds={props.fetchMeds}
-            setFetchMeds={props.setFetchMeds}
-          />
-          <button onClick={handleDelete} className="edit-button">
-            {isRefreshed ? (
-              <CircularProgress />
-            ) : (
-              <img
-                src="https://i.imgur.com/NhIlDPF.png"
-                alt="delete"
-                width="20px"
-              />
-            )}
-          </button>
-        </div>
-      )}
-    </div>
-  );
-};
+    return (
+      <div className="med">
+        <h3>{med.fields.name}</h3>
+        <img
+          src={med.fields.image}
+          width="100"
+          height="50"
+          alt={med.fields.name}
+        />
 
-export default withRouter(Med);
+        {editable && (
+          <div>
+            <h4>Taken At: </h4> <h5>{med.fields.taken}</h5>
+            <UpdateMed
+              med={med}
+              fetchMeds={fetchMeds}
+              setFetchMeds={setFetchMeds}
+            />
+            <button onClick={this.handleDelete} className="edit-button">
+              {isRefreshed ? (
+                <CircularProgress />
+              ) : (
+                <img
+                  src="https://i.imgur.com/NhIlDPF.png"
+                  alt="delete"
+                  width="20px"
+                />
+              )}
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+
+export default Med;
