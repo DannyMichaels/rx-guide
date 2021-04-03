@@ -155,4 +155,4 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 
 - 2/18/2021: added a sort by option in about page.
 
-- 4/3/2021: created a separate Class Component based React branch for practice.
+- 4/3/2021: created a separate Class Component based React branch for fun.
