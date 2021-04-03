@@ -4,7 +4,7 @@
 
 RXGuide
 
-## Project Link 
+## Project Link
 
 https://rxguide.netlify.app/
 
@@ -15,11 +15,16 @@ The user will be able to add, edit or remove medication.
 
 ## Wireframes
 
-#### Desktop: 
+#### Desktop:
+
 ![desktop](https://i.imgur.com/nGl2Pbi.png)
-#### Mobile: 
+
+#### Mobile:
+
 ![mobile](https://i.imgur.com/1d2Rrpz.png)
-#### Tablet: 
+
+#### Tablet:
+
 ![tablet](https://i.imgur.com/5UDLN0K.png)
 
 ## Component Hierarchy
@@ -40,15 +45,13 @@ The user will be able to add, edit or remove medication.
             },
             "createdTime": "2020-10-09T13:21:03.000Z"
         },
-              
-```                         
+
+```
 
 #### MVP
 
-
 - User should be able to add, remove, and edit RX (have full crud).
 - Use ReactDOM for other page/s (About, etc).
-
 
 #### PostMVP
 
@@ -57,9 +60,9 @@ The user will be able to add, edit or remove medication.
 
 ## Project Schedule
 
-| Day        | Deliverable                                        | Status     |
-| ---------- | -------------------------------------------------- | ---------- |
-| October 8  | Prompt / Wireframes / Priority Matrix / Timeframes | Complete   |
+| Day        | Deliverable                                        | Status   |
+| ---------- | -------------------------------------------------- | -------- |
+| October 8  | Prompt / Wireframes / Priority Matrix / Timeframes | Complete |
 | October 9  | Project Approval                                   | Complete |
 | October 11 | Core Application Structure                         | Complete |
 | October 12 | Pseudocode / actual code                           | Complete |
@@ -71,11 +74,11 @@ The user will be able to add, edit or remove medication.
 
 | Component        | Priority | Estimated Time | Time Invested | Actual Time |
 | ---------------- | :------: | :------------: | :-----------: | :---------: |
-| Creating base    |    H     |     10hrs      |      4hrs     |     4hrs    |
-| Working with API |    H     |      8hrs      |      10hrs    |     10hrs   |
-| MVP              |    H     |     10hrs      |      12       |     12hrs   |
-| Post MVP         |    H     |     10hrs      |      10hrs    |     10hrs   |
-| Total            |    H     |                |               |     36hrs    |
+| Creating base    |    H     |     10hrs      |     4hrs      |    4hrs     |
+| Working with API |    H     |      8hrs      |     10hrs     |    10hrs    |
+| MVP              |    H     |     10hrs      |      12       |    12hrs    |
+| Post MVP         |    H     |     10hrs      |     10hrs     |    10hrs    |
+| Total            |    H     |                |               |    36hrs    |
 
 ## SWOT Analysis
 
@@ -97,14 +100,13 @@ The user will be able to add, edit or remove medication.
 
 - There are other apps with the simillar idea competing for the same people.
 
-
 ### Code snippet I'm happy with
 
 ```
 const sortedMeds = response.data.records.sort((recordA, recordB) => {
         const date1 = new Date(recordA.createdTime).getTime();
         const date2 = new Date(recordB.createdTime).getTime();
-          
+
         if (date1 < date2) {
           // console.log('less than');
           return -1;
@@ -135,16 +137,17 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 
 - 10/19/2020: Added a search medication functionality in the about page, got rid of border for buttons, changed styling for form, added more styling for text.
 
-- 10/21/2020: Added a window that asks user if he's sure he wants to submit his custom medication. 
+- 10/21/2020: Added a window that asks user if he's sure he wants to submit his custom medication.
 
-#### 10/25/2020 Major Update: 
- - Updated file structure 
- - Added a loading icon if medication hasn't loaded yet in Homepage. 
- - Added an error 404 page if user searches for an unexisting page.
- - Added an option for user to click on a specific medication from the list in about page and get more    information.
- - Medications now have classes in addition to names, images, and descriptions.
- 
- - 10/27/2020: Added a hamburger menu, added a preview medication button on the create custom image form, changed styling of footer.
+#### 10/25/2020 Major Update:
+
+- Updated file structure
+- Added a loading icon if medication hasn't loaded yet in Homepage.
+- Added an error 404 page if user searches for an unexisting page.
+- Added an option for user to click on a specific medication from the list in about page and get more information.
+- Medications now have classes in addition to names, images, and descriptions.
+
+- 10/27/2020: Added a hamburger menu, added a preview medication button on the create custom image form, changed styling of footer.
 
 - 10/30/2020: added an "Move In Left" animation for logo on page load.
 
@@ -152,3 +155,4 @@ const sortedMeds = response.data.records.sort((recordA, recordB) => {
 
 - 2/18/2021: added a sort by option in about page.
 
+- 4/3/2021: created a separate Class Component based React branch for practice.

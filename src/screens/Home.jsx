@@ -9,41 +9,29 @@ import { MedStateContext } from '../context/medContext';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.setFetchMeds = this.setFetchMeds.bind(this);
     this.state = {
       addedMeds: [],
-      fetchMeds: false,
     };
   }
   componentDidMount() {
     const getApi = async () => {
       const addedMedsResponse = await getAddedMeds();
-      this.setState((prevState) => ({
-        ...prevState,
+      this.setState({
         addedMeds: getSortedMeds(addedMedsResponse),
-      }));
+      });
     };
     getApi();
   }
 
-  setFetchMeds() {
-    this.setState((prevState) => ({
-      ...prevState,
-      fetchMeds: !this.state.fetchMeds,
-    }));
-  }
-
   onAddMed(newMed) {
     this.setState((prevState) => ({
-      ...prevState,
-      addedMeds: [...this.state.addedMeds, newMed],
+      addedMeds: [...prevState.addedMeds, newMed],
     }));
   }
 
   onUpdateMed(updatedMed) {
     this.setState((prevState) => ({
-      ...prevState,
-      addedMeds: this.state.addedMeds.map((med) =>
+      addedMeds: prevState.addedMeds.map((med) =>
         med.id === updatedMed.id ? updatedMed : med
       ),
     }));
@@ -51,13 +39,12 @@ class Home extends Component {
 
   onDeleteMed(id) {
     this.setState((prevState) => ({
-      ...prevState,
-      addedMeds: this.state.addedMeds.filter((med) => med.id !== id),
+      addedMeds: prevState.addedMeds.filter((med) => med.id !== id),
     }));
   }
 
   render() {
-    const { addedMeds, fetchMeds } = this.state;
+    const { addedMeds } = this.state;
     const { medsAreLoading } = this.context;
 
     const PRESCRIPTIONS = addedMeds?.map((med) => (
@@ -65,9 +52,6 @@ class Home extends Component {
         key={med.id}
         editable={true}
         med={med}
-        fetchMeds={fetchMeds}
-        setFetchMeds={(this.setFetchMeds = this.setFetchMeds.bind(this))}
-        onAddMed={(this.onAddMed = this.onAddMed.bind(this))}
         onDeleteMed={(this.onDeleteMed = this.onDeleteMed.bind(this))}
         onUpdateMed={(this.onUpdateMed = this.onUpdateMed.bind(this))}
       />
@@ -84,10 +68,7 @@ class Home extends Component {
             <>
               {PRESCRIPTIONS}
               <CreateMed
-                fetchMeds={fetchMeds}
-                setFetchMeds={
-                  (this.setFetchMeds = this.setFetchMeds.bind(this))
-                }
+                onAddMed={(this.onAddMed = this.onAddMed.bind(this))}
               />
             </>
           )}

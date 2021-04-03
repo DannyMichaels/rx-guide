@@ -23,7 +23,7 @@ class Med extends Component {
   };
 
   render() {
-    const { med, editable, fetchMeds, setFetchMeds, onUpdateMed } = this.props;
+    const { med, editable, onUpdateMed } = this.props;
     const { isRefreshed } = this.state;
 
     return (
@@ -39,12 +39,7 @@ class Med extends Component {
         {editable && (
           <div>
             <h4>Taken At: </h4> <h5>{med.fields.taken}</h5>
-            <UpdateMed
-              med={med}
-              fetchMeds={fetchMeds}
-              setFetchMeds={setFetchMeds}
-              onUpdateMed={onUpdateMed}
-            />
+            <UpdateMed med={med} onUpdateMed={onUpdateMed} />
             <button onClick={this.handleDelete} className="edit-button">
               {isRefreshed ? (
                 <CircularProgress />

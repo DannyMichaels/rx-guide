@@ -1,24 +1,32 @@
-import React, { useState, useContext } from "react";
-import CreateMedForm from "../Forms/CreateMedForm";
-import { MedStateContext } from "../../context/medContext";
-import { prescribeMed } from "../../services/userMeds";
+import React, { Component } from 'react';
+import CreateMedForm from '../Forms/CreateMedForm';
+import { MedStateContext } from '../../context/medContext';
+import { prescribeMed } from '../../services/userMeds';
 
-const CreateMed = (props) => {
-  const [name, setName] = useState("Prozac");
-  const [taken, setTaken] = useState("");
+class CreateMed extends Component {
+  constructor(props) {
+    super(props);
 
-  const { allMeds } = useContext(MedStateContext);
+    this.state = {
+      name: 'Prozac',
+      taken: '',
+    };
+  }
 
-  const handleSubmit = async (e) => {
+  async handleSubmit(e) {
+    const { name, taken } = this.state;
+    const { allMeds } = this.context;
+
     e.preventDefault();
     const selectedMed = allMeds.find(
       (m) => m.fields.name.trim() === name.trim()
     );
 
     if (!taken) {
-      alert("You have to choose the time!");
+      alert('You have to choose the time!');
       return;
     }
+
     const image = selectedMed?.fields?.image;
 
     const fields = {
@@ -27,24 +35,38 @@ const CreateMed = (props) => {
       taken,
     };
 
-    prescribeMed(fields);
+    const newMed = await prescribeMed(fields);
 
-    props.setFetchMeds(!props.fetchMeds);
-    setName("");
-    setTaken("");
-  };
+    this.props.onAddMed(newMed);
+    this.setState({ name: '', taken: '' });
+  }
 
-  return (
-    <CreateMedForm
-      med={props.med}
-      meds={allMeds}
-      taken={taken}
-      setTaken={setTaken}
-      name={name}
-      setName={setName}
-      handleSubmit={handleSubmit}
-    />
-  );
-};
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  }
+
+  render() {
+    const {
+      context: { allMeds },
+      state: { name, taken },
+    } = this;
+
+    return (
+      <CreateMedForm
+        meds={allMeds}
+        name={name}
+        taken={taken}
+        onChange={(this.handleChange = this.handleChange.bind(this))}
+        handleSubmit={(this.handleSubmit = this.handleSubmit.bind(this))}
+      />
+    );
+  }
+}
+
+CreateMed.contextType = MedStateContext;
 
 export default CreateMed;
