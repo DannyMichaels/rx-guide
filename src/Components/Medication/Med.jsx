@@ -11,7 +11,7 @@ const Med = (props) => {
     setIsRefreshed(true);
     setTimeout(async () => {
       await deleteMed(props.med.id);
-      props.setFetchMeds(!props.fetchMeds);
+      props.onDeleteMed(props.med.id);
       setIsRefreshed(false);
     }, 150);
   };
@@ -31,11 +31,7 @@ const Med = (props) => {
           <h4>Taken At: </h4>
 
           <h5>{props.med.fields.taken}</h5>
-          <UpdateMed
-            med={props.med}
-            fetchMeds={props.fetchMeds}
-            setFetchMeds={props.setFetchMeds}
-          />
+          <UpdateMed med={props.med} onUpdateMed={props.onUpdateMed} />
           <button onClick={handleDelete} className="edit-button">
             {isRefreshed ? (
               <CircularProgress />

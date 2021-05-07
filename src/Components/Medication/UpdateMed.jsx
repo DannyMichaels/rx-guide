@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { editMed } from "../../services/userMeds";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { editMed } from '../../services/userMeds';
 
 const Form = styled.form`
   select {
@@ -43,8 +43,15 @@ const UpdateMed = (props) => {
       image,
     };
 
+    const updatedMed = {
+      ...props.med,
+      fields: {
+        ...fields,
+      },
+    };
+
     editMed(fields, props.med.id);
-    props.setFetchMeds(!props.fetchMeds);
+    props.onUpdateMed(updatedMed);
   };
 
   return (

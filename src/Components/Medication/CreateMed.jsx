@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
-import CreateMedForm from "../Forms/CreateMedForm";
-import { MedStateContext } from "../../context/medContext";
-import { prescribeMed } from "../../services/userMeds";
+import React, { useState, useContext } from 'react';
+import CreateMedForm from '../Forms/CreateMedForm';
+import { MedStateContext } from '../../context/medContext';
+import { prescribeMed } from '../../services/userMeds';
 
 const CreateMed = (props) => {
-  const [name, setName] = useState("Prozac");
-  const [taken, setTaken] = useState("");
+  const [name, setName] = useState('Prozac');
+  const [taken, setTaken] = useState('');
 
   const { allMeds } = useContext(MedStateContext);
 
@@ -16,7 +16,7 @@ const CreateMed = (props) => {
     );
 
     if (!taken) {
-      alert("You have to choose the time!");
+      alert('You have to choose the time!');
       return;
     }
     const image = selectedMed?.fields?.image;
@@ -27,11 +27,11 @@ const CreateMed = (props) => {
       taken,
     };
 
-    prescribeMed(fields);
+    const newMed = await prescribeMed(fields);
 
-    props.setFetchMeds(!props.fetchMeds);
-    setName("");
-    setTaken("");
+    props.onAddMed(newMed);
+    setName('');
+    setTaken('');
   };
 
   return (

@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
-import Med from "../Components/Medication/Med";
-import CreateMed from "../Components/Medication/CreateMed";
-import { getAddedMeds } from "../services/userMeds";
-import { CircularProgress } from "@material-ui/core";
-import { getSortedMeds } from "../utils/sortedMeds";
-import { MedStateContext } from "../context/medContext";
+import React, { useState, useEffect, useContext } from 'react';
+import Med from '../Components/Medication/Med';
+import CreateMed from '../Components/Medication/CreateMed';
+import { getAddedMeds } from '../services/userMeds';
+import { CircularProgress } from '@material-ui/core';
+import { getSortedMeds } from '../utils/sortedMeds';
+import { MedStateContext } from '../context/medContext';
 
 export default function Home() {
   const [addedMeds, setAddedMeds] = useState([]);
-  const [fetchMeds, setFetchMeds] = useState(false);
 
   const { medsAreLoading } = useContext(MedStateContext);
 
@@ -18,15 +17,31 @@ export default function Home() {
       setAddedMeds(getSortedMeds(addedMedsResponse));
     };
     getApi();
-  }, [fetchMeds]);
+  }, []);
+
+  const onAddMed = (newMed) => {
+    setAddedMeds((prevState) => [...prevState, newMed]);
+  };
+
+  const onDeleteMed = (removedMedId) => {
+    setAddedMeds((prevState) =>
+      prevState.filter((med) => med.id !== removedMedId)
+    );
+  };
+
+  const onUpdateMed = (updatedMed) => {
+    setAddedMeds((prevState) =>
+      prevState.map((med) => (med.id === updatedMed.id ? updatedMed : med))
+    );
+  };
 
   const PRESCRIPTIONS = addedMeds?.map((med) => (
     <Med
       key={med.id}
       editable={true}
       med={med}
-      fetchMeds={fetchMeds}
-      setFetchMeds={setFetchMeds}
+      onDeleteMed={onDeleteMed}
+      onUpdateMed={onUpdateMed}
     />
   ));
 
@@ -35,12 +50,12 @@ export default function Home() {
       <div>
         {medsAreLoading ? (
           <CircularProgress
-            style={{ marginLeft: "50%", marginTop: "10%", width: "50px" }}
+            style={{ marginLeft: '50%', marginTop: '10%', width: '50px' }}
           />
         ) : (
           <>
             {PRESCRIPTIONS}
-            <CreateMed fetchMeds={fetchMeds} setFetchMeds={setFetchMeds} />
+            <CreateMed onAddMed={onAddMed} />
           </>
         )}
       </div>
