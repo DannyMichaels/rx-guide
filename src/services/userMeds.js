@@ -35,7 +35,7 @@ export const prescribeMed = async (fields) => {
 };
 
 export const editMed = async (fields, medId) => {
-  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${medId}`;
+  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds/${medId}`;
   await axios.put(
     airtableURL,
     { fields },
@@ -48,7 +48,7 @@ export const editMed = async (fields, medId) => {
 };
 
 export const deleteMed = async (medId) => {
-  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/prescriptions/${medId}`;
+  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/addedMeds/${medId}`;
   await axios.delete(airtableURL, {
     headers: {
       Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
