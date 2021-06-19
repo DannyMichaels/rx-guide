@@ -3,8 +3,6 @@ import { withRouter } from 'react-router-dom';
 import UpdateMed from './UpdateMed';
 import { CircularProgress } from '@material-ui/core';
 import { deleteMed } from '../../services/userMeds';
-import Moment from 'react-moment';
-import 'moment-timezone';
 
 const Med = (props) => {
   const [isRefreshed, setIsRefreshed] = useState(false);
