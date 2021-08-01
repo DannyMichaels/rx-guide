@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Ul = styled.ul`
   margin: 0;
   flex-flow: column nowrap;
   background-color: #ffccff;
   position: fixed;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   top: 0;
   right: 0;
   height: 100vh;
@@ -16,7 +16,7 @@ const Ul = styled.ul`
   transition: transform 0.3s ease-in-out;
   list-style: none;
   z-index: 998;
-  box-shadow: ${({ open }) => (open ? "0 2px 5px 5px peachpuff" : 0)};
+  box-shadow: ${({ open }) => (open ? '0 2px 5px 5px peachpuff' : 0)};
   overflow: scroll;
 
   li {
@@ -25,6 +25,14 @@ const Ul = styled.ul`
     color: black;
     font-weight: 30px;
     text-decoration: none;
+
+    // move the links from off screen to middle of nav with opacity
+    // not a part of opening navbar, it's just the links.
+    opacity: ${({ open }) => (open ? 1 : 0)};
+    transition: opacity 300ms cubic-bezier(0.1, 0.25, 0.3, 1) 300ms,
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1) 300ms;
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+    will-change: opacity, transform;
   }
 
   li:hover {
