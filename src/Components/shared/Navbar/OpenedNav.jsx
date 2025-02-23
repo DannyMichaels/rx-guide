@@ -68,7 +68,7 @@ const OpenNav = ({ open, setOpen }) => {
         <li>
           <img
             className="li-button"
-            src="https://www.flaticon.com/svg/static/icons/svg/2478/2478295.svg"
+            src="https://i.imgur.com/yM56ZTA.png"
             alt="home"
           />
           <span>Home</span>
@@ -84,7 +84,7 @@ const OpenNav = ({ open, setOpen }) => {
           <span>About</span>
         </li>
       </Link>
-      <a
+      {/* <a
         href="https://www.linkedin.com/in/daniel-michael-718825155/"
         target="_blank"
         alt="LinkedIn"
@@ -97,7 +97,7 @@ const OpenNav = ({ open, setOpen }) => {
           />
           <span>LinkedIn</span>
         </li>
-      </a>
+      </a> */?
       <a
         href="https://www.github.com/dannymichaels"
         target="_blank"
@@ -106,7 +106,7 @@ const OpenNav = ({ open, setOpen }) => {
         <li>
           <img
             className="li-button"
-            src="https://svgur.com/i/Qug.svg"
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
             alt="GitHub"
           />
           <span>GitHub</span>
